@@ -1,0 +1,67 @@
+{%- liquid
+  assign current_collection = collection
+  assign sort_by = collection.sort_by | default: collection.default_sort_by
+-%}
+
+<section class="collection-page section">
+  <div class="container">
+    <div class="filter-bar">
+      <div class="filter-bar__left">
+        <button class="filter-chip active" data-filter="all" data-filter-group="brand">Alle merken</button>
+        {%- for tag in collection.all_tags -%}
+          {%- if tag contains 'merk:' -%}
+            <button class="filter-chip" data-filter="{{ tag | remove: 'merk:' | handleize }}" data-filter-group="brand">
+              {{ tag | remove: 'merk:' }}
+            </button>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+      <div class="filter-bar__right">
+        <button class="filter-chip active" data-filter="all" data-filter-group="level">Alle niveaus</button>
+        {%- for tag in collection.all_tags -%}
+          {%- if tag contains 'niveau:' -%}
+            <button class="filter-chip" data-filter="{{ tag | remove: 'niveau:' | handleize }}" data-filter-group="level">
+              {{ tag | remove: 'niveau:' }}
+            </button>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    </div>
+
+    <div class="products-grid">
+      {%- for product in collection.products -%}
+        {%- render 'product-card', product: product -%}
+      {%- else -%}
+        <p class="no-products">Geen producten gevonden in deze categorie.</p>
+      {%- endfor -%}
+    </div>
+
+    {%- if paginate.pages > 1 -%}
+      <div class="pagination">
+        {{ paginate | default_pagination }}
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Collectie raster",
+  "settings": [
+    {
+      "type": "range",
+      "id": "products_per_page",
+      "min": 6,
+      "max": 24,
+      "step": 3,
+      "label": "Producten per pagina",
+      "default": 12
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collectie raster"
+    }
+  ]
+}
+{% endschema %}

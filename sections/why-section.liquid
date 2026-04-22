@@ -1,0 +1,77 @@
+<section class="why-section section">
+  <div class="container">
+    <div class="section-header" data-reveal>
+      <h2 class="section-title">{{ section.settings.heading }}</h2>
+      <p class="section-subtitle">{{ section.settings.subtext }}</p>
+    </div>
+
+    <div class="why-grid">
+      {%- for block in section.blocks -%}
+        <div class="why-card" {{ block.shopify_attributes }} data-reveal>
+          <div class="why-card__icon">{{ block.settings.icon }}</div>
+          <h3 class="why-card__title">{{ block.settings.title }}</h3>
+          <p class="why-card__text">{{ block.settings.text }}</p>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Waarom wij",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Koptekst",
+      "default": "Waarom PadelRefurbished?"
+    },
+    {
+      "type": "text",
+      "id": "subtext",
+      "label": "Ondertekst",
+      "default": "Meer dan alleen een racket"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Kaart",
+      "settings": [
+        {
+          "type": "text",
+          "id": "icon",
+          "label": "Emoji icoon",
+          "default": "♻️"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Titel",
+          "default": "Duurzaam"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Tekst",
+          "default": "Elk racket krijgt een tweede leven."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Waarom wij",
+      "blocks": [
+        { "type": "card", "settings": { "icon": "♻️", "title": "Duurzaam", "text": "Elk racket krijgt een tweede leven en draagt bij aan minder afval in de sportsector." } },
+        { "type": "card", "settings": { "icon": "💰", "title": "Betaalbaar", "text": "Tot 60% goedkoper dan nieuw, zonder in te leveren op kwaliteit." } },
+        { "type": "card", "settings": { "icon": "🔍", "title": "Gekeurd", "text": "Elk racket wordt professioneel geïnspecteerd en hersteld voor verzending." } },
+        { "type": "card", "settings": { "icon": "🚀", "title": "Snel geleverd", "text": "Binnen 2-3 werkdagen bij jou thuis, veilig verpakt." } },
+        { "type": "card", "settings": { "icon": "↩️", "title": "14 dagen retour", "text": "Niet tevreden? Stuur gratis retour binnen 14 dagen." } },
+        { "type": "card", "settings": { "icon": "🎯", "title": "Expert advies", "text": "Twijfel je welk racket bij jou past? Wij helpen je kiezen." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

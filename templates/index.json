@@ -1,0 +1,88 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "headline": "Jouw eerste racket. Slimmer gekozen.",
+        "subtext": "Topkwaliteit refurbished padelrackets — duurzaam, betaalbaar en klaar voor de baan.",
+        "cta_primary_label": "Bekijk rackets",
+        "cta_secondary_label": "Ons verhaal"
+      },
+      "blocks": {
+        "trust-1": { "type": "trust_item", "settings": { "icon": "🚚", "text": "Gratis verzending v.a. €100" } },
+        "trust-2": { "type": "trust_item", "settings": { "icon": "↩", "text": "14 dagen retour" } },
+        "trust-3": { "type": "trust_item", "settings": { "icon": "♻", "text": "Duurzaam gecertificeerd" } }
+      },
+      "blocks_order": ["trust-1", "trust-2", "trust-3"]
+    },
+    "stats": {
+      "type": "stats-bar",
+      "blocks": {
+        "s1": { "type": "stat", "settings": { "number": "500+", "label": "Verkochte rackets" } },
+        "s2": { "type": "stat", "settings": { "number": "98%", "label": "Tevreden klanten" } },
+        "s3": { "type": "stat", "settings": { "number": "€0", "label": "Toeslag duurzaamheid" } },
+        "s4": { "type": "stat", "settings": { "number": "2x", "label": "Leven verlengd" } }
+      },
+      "blocks_order": ["s1", "s2", "s3", "s4"]
+    },
+    "featured": {
+      "type": "featured-products",
+      "settings": {
+        "heading": "Populaire rackets",
+        "subtext": "Handgeselecteerd voor starters en gevorderden",
+        "products_count": 4,
+        "cta_label": "Alle rackets bekijken"
+      }
+    },
+    "why": {
+      "type": "why-section",
+      "settings": {
+        "heading": "Waarom PadelRefurbished?",
+        "subtext": "Meer dan alleen een racket"
+      },
+      "blocks": {
+        "w1": { "type": "card", "settings": { "icon": "♻️", "title": "Duurzaam", "text": "Elk racket krijgt een tweede leven en draagt bij aan minder afval in de sportsector." } },
+        "w2": { "type": "card", "settings": { "icon": "💰", "title": "Betaalbaar", "text": "Tot 60% goedkoper dan nieuw, zonder in te leveren op kwaliteit." } },
+        "w3": { "type": "card", "settings": { "icon": "🔍", "title": "Gekeurd", "text": "Elk racket wordt professioneel geïnspecteerd en hersteld voor verzending." } },
+        "w4": { "type": "card", "settings": { "icon": "🚀", "title": "Snel geleverd", "text": "Binnen 2-3 werkdagen bij jou thuis, veilig verpakt." } },
+        "w5": { "type": "card", "settings": { "icon": "↩️", "title": "14 dagen retour", "text": "Niet tevreden? Stuur gratis retour binnen 14 dagen." } },
+        "w6": { "type": "card", "settings": { "icon": "🎯", "title": "Expert advies", "text": "Twijfel je welk racket bij jou past? Wij helpen je kiezen." } }
+      },
+      "blocks_order": ["w1", "w2", "w3", "w4", "w5", "w6"]
+    },
+    "process": {
+      "type": "process-section",
+      "settings": {
+        "heading": "Hoe het werkt",
+        "subtext": "Van inspectie tot jouw voordeur"
+      },
+      "blocks": {
+        "p1": { "type": "step", "settings": { "title": "Inspectie", "text": "Elk ingekomen racket wordt grondig geïnspecteerd op slijtage en schade." } },
+        "p2": { "type": "step", "settings": { "title": "Reiniging", "text": "Professionele reiniging van frame, handvat en beschermfolie." } },
+        "p3": { "type": "step", "settings": { "title": "Herstel", "text": "Kleine beschadigingen worden hersteld, grip vervangen indien nodig." } },
+        "p4": { "type": "step", "settings": { "title": "Kwaliteitscontrole", "text": "Laatste check: gewicht, balans en speelklaarheid worden gevalideerd." } },
+        "p5": { "type": "step", "settings": { "title": "Verzending", "text": "Veilig verpakt en binnen 2-3 werkdagen bij jou thuis." } }
+      },
+      "blocks_order": ["p1", "p2", "p3", "p4", "p5"]
+    },
+    "cta": {
+      "type": "cta-banner",
+      "settings": {
+        "heading": "Klaar om te beginnen?",
+        "subtext": "Vind jouw perfecte racket en start vandaag nog.",
+        "cta_primary_label": "Rackets bekijken",
+        "cta_secondary_label": "Contact opnemen"
+      }
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "settings": {
+        "heading": "Blijf op de hoogte",
+        "subtext": "Ontvang als eerste nieuws over nieuwe rackets en exclusieve aanbiedingen.",
+        "placeholder": "Jouw e-mailadres",
+        "button_label": "Aanmelden"
+      }
+    }
+  },
+  "order": ["hero", "stats", "featured", "why", "process", "cta", "newsletter"]
+}

@@ -1,0 +1,78 @@
+<section class="cart-page section">
+  <div class="container">
+    <h1 class="page-title">Winkelmandje</h1>
+
+    {%- if cart.item_count == 0 -%}
+      <div class="cart-empty" data-reveal>
+        <p>Je winkelmandje is leeg.</p>
+        <a href="{{ routes.collections_url }}" class="btn btn-primary btn-lg">Bekijk rackets</a>
+      </div>
+    {%- else -%}
+      {%- form 'cart', cart -%}
+        <div class="cart-layout">
+          <div class="cart-items">
+            {%- for item in cart.items -%}
+              <div class="cart-item">
+                <a href="{{ item.url }}" class="cart-item__image-link">
+                  {%- if item.image -%}
+                    <img src="{{ item.image | image_url: width: 160 }}" alt="{{ item.title | escape }}" loading="lazy" width="80" height="80">
+                  {%- endif -%}
+                </a>
+                <div class="cart-item__details">
+                  <a href="{{ item.url }}" class="cart-item__title">{{ item.product.title }}</a>
+                  {%- unless item.product.has_only_default_variant -%}
+                    <p class="cart-item__variant">{{ item.variant.title }}</p>
+                  {%- endunless -%}
+                  <div class="cart-item__actions">
+                    <div class="quantity-selector">
+                      <input type="number"
+                        name="updates[]"
+                        value="{{ item.quantity }}"
+                        min="0"
+                        aria-label="Aantal"
+                        class="input quantity-input">
+                    </div>
+                    <a href="{{ item.url_to_remove }}" class="cart-item__remove">Verwijderen</a>
+                  </div>
+                </div>
+                <div class="cart-item__price">{{ item.final_line_price | money }}</div>
+              </div>
+            {%- endfor -%}
+          </div>
+
+          <div class="cart-summary">
+            <div class="cart-summary__inner">
+              <div class="cart-summary__row">
+                <span>Subtotaal</span>
+                <span>{{ cart.total_price | money }}</span>
+              </div>
+              {%- if cart.total_price < 10000 -%}
+                <p class="cart-shipping-note">Voeg nog {{ 10000 | minus: cart.total_price | money }} toe voor gratis verzending.</p>
+              {%- else -%}
+                <p class="cart-shipping-free">✓ Je komt in aanmerking voor gratis verzending!</p>
+              {%- endif -%}
+              <div class="cart-note">
+                <label for="cart-note">Notitie bij bestelling</label>
+                <textarea id="cart-note" name="note" class="input" rows="3" placeholder="Eventuele opmerkingen…">{{ cart.note }}</textarea>
+              </div>
+              <button type="submit" name="checkout" class="btn btn-primary btn-lg btn-full">
+                Afrekenen →
+              </button>
+              <a href="{{ routes.collections_url }}" class="cart-continue">← Verder winkelen</a>
+            </div>
+          </div>
+        </div>
+      {%- endform -%}
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Winkelmandje",
+  "settings": [],
+  "presets": [
+    { "name": "Winkelmandje" }
+  ]
+}
+{% endschema %}

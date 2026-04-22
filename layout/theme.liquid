@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page_title }} — {{ shop.name }}</title>
+  <meta name="description" content="{{ page_description | escape }}">
+
+  {{ content_for_header }}
+
+  {%- liquid
+    assign heading_font = settings.heading_font
+    assign body_font    = settings.body_font
+  -%}
+
+  <style>
+    {{ heading_font | font_face: font_display: 'swap' }}
+    {{ body_font    | font_face: font_display: 'swap' }}
+
+    :root {
+      --primary:       {{ settings.primary_color }};
+      --accent:        {{ settings.accent_color }};
+      --bg:            {{ settings.bg_color }};
+      --text:          {{ settings.text_color }};
+
+      /* Derived shades (lightened / darkened via opacity layers) */
+      --primary-pale:  color-mix(in srgb, {{ settings.primary_color }} 10%, white);
+      --primary-light: color-mix(in srgb, {{ settings.primary_color }} 20%, white);
+      --primary-dark:  color-mix(in srgb, {{ settings.primary_color }} 80%, black);
+      --accent-pale:   color-mix(in srgb, {{ settings.accent_color }} 10%, white);
+      --accent-light:  color-mix(in srgb, {{ settings.accent_color }} 20%, white);
+      --accent-dark:   color-mix(in srgb, {{ settings.accent_color }} 80%, black);
+
+      --font-heading:  {{ heading_font.family }}, {{ heading_font.fallback_families }};
+      --font-body:     {{ body_font.family }},    {{ body_font.fallback_families }};
+      --font-weight-heading: {{ heading_font.weight }};
+    }
+  </style>
+
+  {{ 'theme.css' | asset_url | stylesheet_tag }}
+</head>
+<body class="template-{{ template.name }}">
+
+  {%- sections 'header' -%}
+
+  <main id="main-content">
+    {{ content_for_layout }}
+  </main>
+
+  {%- sections 'footer' -%}
+
+  <div id="cart-notification" class="cart-notification" role="status" aria-live="polite">
+    <div class="cart-notification__inner">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+      <span class="cart-notification__message">Toegevoegd aan je winkelmandje!</span>
+      <button data-cart-notification-close aria-label="Sluiten">✕</button>
+    </div>
+  </div>
+
+  <script src="{{ 'theme.js' | asset_url }}" defer></script>
+</body>
+</html>

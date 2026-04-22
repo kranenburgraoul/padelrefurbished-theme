@@ -1,0 +1,47 @@
+<div class="stats-bar">
+  <div class="container stats-inner">
+    {%- for block in section.blocks -%}
+      <div class="stat-item" {{ block.shopify_attributes }}>
+        <span class="stat-number">{{ block.settings.number }}</span>
+        <span class="stat-label">{{ block.settings.label }}</span>
+      </div>
+    {%- endfor -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Statistieken balk",
+  "blocks": [
+    {
+      "type": "stat",
+      "name": "Statistiek",
+      "settings": [
+        {
+          "type": "text",
+          "id": "number",
+          "label": "Getal / waarde",
+          "default": "500+"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "Verkochte rackets"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Statistieken balk",
+      "blocks": [
+        { "type": "stat", "settings": { "number": "500+", "label": "Verkochte rackets" } },
+        { "type": "stat", "settings": { "number": "98%", "label": "Tevreden klanten" } },
+        { "type": "stat", "settings": { "number": "€0", "label": "Toeslag duurzaamheid" } },
+        { "type": "stat", "settings": { "number": "2x", "label": "Leven verlengd" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

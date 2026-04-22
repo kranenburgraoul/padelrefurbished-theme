@@ -1,0 +1,67 @@
+<section class="newsletter-section section">
+  <div class="container">
+    <div class="newsletter-inner" data-reveal>
+      <div class="newsletter-text">
+        <h2>{{ section.settings.heading }}</h2>
+        <p>{{ section.settings.subtext }}</p>
+      </div>
+      <div class="newsletter-form">
+        {%- form 'customer', id: 'newsletter-form' -%}
+          <input type="hidden" name="contact[tags]" value="newsletter">
+          <div class="form-row">
+            <input
+              type="email"
+              name="contact[email]"
+              placeholder="{{ section.settings.placeholder }}"
+              required
+              class="input"
+              aria-label="E-mailadres">
+            <button type="submit" class="btn btn-primary">
+              {{ section.settings.button_label }}
+            </button>
+          </div>
+          {%- if form.posted_successfully? -%}
+            <p class="form-success">Bedankt voor je aanmelding!</p>
+          {%- endif -%}
+        {%- endform -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Nieuwsbrief",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Koptekst",
+      "default": "Blijf op de hoogte"
+    },
+    {
+      "type": "text",
+      "id": "subtext",
+      "label": "Ondertekst",
+      "default": "Ontvang als eerste nieuws over nieuwe rackets en exclusieve aanbiedingen."
+    },
+    {
+      "type": "text",
+      "id": "placeholder",
+      "label": "Invoerveld placeholder",
+      "default": "Jouw e-mailadres"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Knop tekst",
+      "default": "Aanmelden"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Nieuwsbrief"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,108 @@
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">{{ shop.name }}</div>
+        <p class="footer-tagline">{{ settings.slogan }}</p>
+        <p class="footer-desc">{{ section.settings.description }}</p>
+        <div class="footer-social">
+          {%- if settings.instagram_url != blank -%}
+            <a href="{{ settings.instagram_url }}" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+          {%- endif -%}
+          {%- if settings.facebook_url != blank -%}
+            <a href="{{ settings.facebook_url }}" target="_blank" rel="noopener" aria-label="Facebook">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            </a>
+          {%- endif -%}
+          {%- if settings.linkedin_url != blank -%}
+            <a href="{{ settings.linkedin_url }}" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+          {%- endif -%}
+        </div>
+      </div>
+
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'menu_column' -%}
+          <div class="footer-col" {{ block.shopify_attributes }}>
+            <h4>{{ block.settings.heading }}</h4>
+            <ul>
+              {%- for link in linklists[block.settings.menu].links -%}
+                <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+              {%- endfor -%}
+            </ul>
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+
+      <div class="footer-col footer-contact">
+        <h4>Contact</h4>
+        <ul>
+          {%- if section.settings.email != blank -%}
+            <li><a href="mailto:{{ section.settings.email }}">{{ section.settings.email }}</a></li>
+          {%- endif -%}
+          {%- if section.settings.phone != blank -%}
+            <li><a href="tel:{{ section.settings.phone }}">{{ section.settings.phone }}</a></li>
+          {%- endif -%}
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; {{ 'now' | date: '%Y' }} {{ shop.name }}. Alle rechten voorbehouden.</p>
+      <p class="footer-legal">KVK: {{ settings.kvk_number }} &nbsp;|&nbsp; BTW: {{ settings.btw_number }}</p>
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Beschrijving",
+      "default": "Refurbished padelrackets van topkwaliteit. Duurzaam, betaalbaar en klaar voor de baan."
+    },
+    {
+      "type": "text",
+      "id": "email",
+      "label": "E-mailadres"
+    },
+    {
+      "type": "text",
+      "id": "phone",
+      "label": "Telefoonnummer"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "menu_column",
+      "name": "Menukolom",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Koptekst"
+        },
+        {
+          "type": "link_list",
+          "id": "menu",
+          "label": "Menu"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Footer",
+      "blocks": [
+        { "type": "menu_column" }
+      ]
+    }
+  ]
+}
+{% endschema %}

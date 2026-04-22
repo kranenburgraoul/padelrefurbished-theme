@@ -1,0 +1,72 @@
+<section class="cta-banner" style="{% if section.settings.bg_image != blank %}background-image: url('{{ section.settings.bg_image | image_url: width: 1600 }}'); background-size: cover; background-position: center;{% endif %}">
+  <div class="container cta-banner__inner" data-reveal>
+    <div class="cta-banner__text">
+      <h2>{{ section.settings.heading }}</h2>
+      <p>{{ section.settings.subtext }}</p>
+    </div>
+    <div class="cta-banner__actions">
+      {%- if section.settings.cta_primary_url != blank -%}
+        <a href="{{ section.settings.cta_primary_url }}" class="btn btn-white btn-lg">
+          {{ section.settings.cta_primary_label }}
+        </a>
+      {%- endif -%}
+      {%- if section.settings.cta_secondary_url != blank -%}
+        <a href="{{ section.settings.cta_secondary_url }}" class="btn btn-outline-white btn-lg">
+          {{ section.settings.cta_secondary_label }}
+        </a>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "CTA banner",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Koptekst",
+      "default": "Klaar om te beginnen?"
+    },
+    {
+      "type": "text",
+      "id": "subtext",
+      "label": "Ondertekst",
+      "default": "Vind jouw perfecte racket en start vandaag nog."
+    },
+    {
+      "type": "text",
+      "id": "cta_primary_label",
+      "label": "Primaire knop tekst",
+      "default": "Rackets bekijken"
+    },
+    {
+      "type": "url",
+      "id": "cta_primary_url",
+      "label": "Primaire knop link"
+    },
+    {
+      "type": "text",
+      "id": "cta_secondary_label",
+      "label": "Secundaire knop tekst",
+      "default": "Contact opnemen"
+    },
+    {
+      "type": "url",
+      "id": "cta_secondary_url",
+      "label": "Secundaire knop link"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_image",
+      "label": "Achtergrondafbeelding (optioneel)"
+    }
+  ],
+  "presets": [
+    {
+      "name": "CTA banner"
+    }
+  ]
+}
+{% endschema %}

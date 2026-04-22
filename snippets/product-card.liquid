@@ -1,0 +1,54 @@
+{%- liquid
+  assign condition_label = product.metafields.custom.condition | default: 'Goed'
+  assign condition_class = 'good'
+  if condition_label == 'Uitstekend'
+    assign condition_class = 'excellent'
+  elsif condition_label == 'Redelijk'
+    assign condition_class = 'fair'
+  endif
+-%}
+<article class="product-card" data-brand="{{ product.vendor | handleize }}" data-level="{{ product.metafields.custom.level | handleize | default: 'beginner' }}" data-reveal>
+  <a href="{{ product.url }}" class="product-card__image-link">
+    {%- if product.featured_image -%}
+      <img src="{{ product.featured_image | image_url: width: 400 }}" alt="{{ product.title | escape }}" loading="lazy" width="400" height="300">
+    {%- else -%}
+      <div class="product-card__placeholder">{{ product.title | truncate: 1, '' }}</div>
+    {%- endif -%}
+    <div class="product-card__badges">
+      <span class="badge badge-condition badge-{{ condition_class }}">{{ condition_label }}</span>
+      {%- if product.compare_at_price > product.price -%}
+        <span class="badge badge-sale">Sale</span>
+      {%- endif -%}
+    </div>
+  </a>
+
+  <div class="product-card__body">
+    <div class="product-card__brand">{{ product.vendor }}</div>
+    <h3 class="product-card__title">
+      <a href="{{ product.url }}">{{ product.title }}</a>
+    </h3>
+    <div class="product-card__tags">
+      {%- for tag in product.tags limit: 3 -%}
+        <span class="tag">{{ tag }}</span>
+      {%- endfor -%}
+    </div>
+    <div class="product-card__footer">
+      <div class="product-card__price">
+        <span class="price-current">{{ product.price | money }}</span>
+        {%- if product.compare_at_price > product.price -%}
+          <span class="price-original">{{ product.compare_at_price | money }}</span>
+        {%- endif -%}
+      </div>
+      {%- if product.available -%}
+        <button class="btn btn-primary btn-sm"
+          data-add-to-cart="{{ product.selected_or_first_available_variant.id }}"
+          data-product-title="{{ product.title | escape }}"
+          data-variant-id="{{ product.selected_or_first_available_variant.id }}">
+          In mandje
+        </button>
+      {%- else -%}
+        <span class="badge badge-sold">Uitverkocht</span>
+      {%- endif -%}
+    </div>
+  </div>
+</article>

@@ -1,0 +1,114 @@
+[
+  {
+    "name": "Huisstijl",
+    "settings": [
+      {
+        "type": "color",
+        "id": "primary_color",
+        "label": "Hoofdkleur",
+        "default": "#2E69DD"
+      },
+      {
+        "type": "color",
+        "id": "accent_color",
+        "label": "Accentkleur",
+        "default": "#7B9E87"
+      },
+      {
+        "type": "color",
+        "id": "bg_color",
+        "label": "Achtergrondkleur",
+        "default": "#FFFFFF"
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Tekstkleur",
+        "default": "#0F172A"
+      },
+      {
+        "type": "text",
+        "id": "slogan",
+        "label": "Slogan",
+        "default": "Slim Starten, Sterk Spelen"
+      }
+    ]
+  },
+  {
+    "name": "Typografie",
+    "settings": [
+      {
+        "type": "font_picker",
+        "id": "heading_font",
+        "label": "Koppen lettertype",
+        "default": "inter_n7"
+      },
+      {
+        "type": "font_picker",
+        "id": "body_font",
+        "label": "Tekst lettertype",
+        "default": "inter_n4"
+      }
+    ]
+  },
+  {
+    "name": "Verzending & beleid",
+    "settings": [
+      {
+        "type": "text",
+        "id": "free_shipping_threshold",
+        "label": "Gratis verzending vanaf (€)",
+        "default": "100"
+      },
+      {
+        "type": "text",
+        "id": "shipping_cost",
+        "label": "Standaard verzendkosten",
+        "default": "€6,95"
+      },
+      {
+        "type": "number",
+        "id": "return_days",
+        "label": "Retourperiode (dagen)",
+        "default": 14
+      }
+    ]
+  },
+  {
+    "name": "Sociaal",
+    "settings": [
+      {
+        "type": "url",
+        "id": "instagram_url",
+        "label": "Instagram URL"
+      },
+      {
+        "type": "url",
+        "id": "facebook_url",
+        "label": "Facebook URL"
+      },
+      {
+        "type": "url",
+        "id": "linkedin_url",
+        "label": "LinkedIn URL"
+      }
+    ]
+  },
+  {
+    "name": "Bedrijfsgegevens",
+    "settings": [
+      {
+        "type": "text",
+        "id": "kvk_number",
+        "label": "KVK-nummer",
+        "default": "01166795"
+      },
+      {
+        "type": "text",
+        "id": "btw_number",
+        "label": "BTW-nummer",
+        "default": "NL 8215 17 338 B01"
+      }
+    ]
+  }
+]

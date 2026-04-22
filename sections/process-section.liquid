@@ -1,0 +1,75 @@
+<section class="process-section section">
+  <div class="container">
+    <div class="section-header" data-reveal>
+      <h2 class="section-title">{{ section.settings.heading }}</h2>
+      <p class="section-subtitle">{{ section.settings.subtext }}</p>
+    </div>
+
+    <div class="process-steps">
+      {%- for block in section.blocks -%}
+        <div class="process-step" {{ block.shopify_attributes }} data-reveal>
+          <div class="process-step__number">{{ forloop.index }}</div>
+          <div class="process-step__content">
+            <h3>{{ block.settings.title }}</h3>
+            <p>{{ block.settings.text }}</p>
+          </div>
+          {%- unless forloop.last -%}
+            <div class="process-step__connector"></div>
+          {%- endunless -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Werkwijze",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Koptekst",
+      "default": "Hoe het werkt"
+    },
+    {
+      "type": "text",
+      "id": "subtext",
+      "label": "Ondertekst",
+      "default": "Van inspectie tot jouw voordeur"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Stap",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Titel",
+          "default": "Inspectie"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Tekst",
+          "default": "Elk ingekomen racket wordt grondig geïnspecteerd."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Werkwijze",
+      "blocks": [
+        { "type": "step", "settings": { "title": "Inspectie", "text": "Elk ingekomen racket wordt grondig geïnspecteerd op slijtage en schade." } },
+        { "type": "step", "settings": { "title": "Reiniging", "text": "Professionele reiniging van frame, handvat en beschermfolie." } },
+        { "type": "step", "settings": { "title": "Herstel", "text": "Kleine beschadigingen worden hersteld, grip vervangen indien nodig." } },
+        { "type": "step", "settings": { "title": "Kwaliteitscontrole", "text": "Laatste check: gewicht, balans en speelklaarheid worden gevalideerd." } },
+        { "type": "step", "settings": { "title": "Verzending", "text": "Veilig verpakt en binnen 2-3 werkdagen bij jou thuis." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

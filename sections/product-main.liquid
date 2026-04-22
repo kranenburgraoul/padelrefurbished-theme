@@ -1,0 +1,134 @@
+{%- assign current_variant = product.selected_or_first_available_variant -%}
+
+<section class="product-page section">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Kruimelpad">
+      <a href="{{ routes.root_url }}">Home</a>
+      <span>›</span>
+      <a href="{{ collection.url | default: routes.collections_url }}">Rackets</a>
+      <span>›</span>
+      <span>{{ product.title }}</span>
+    </nav>
+
+    <div class="product-layout">
+      <!-- Gallery -->
+      <div class="product-gallery">
+        <div class="gallery-main">
+          <img
+            id="gallery-main-img"
+            src="{{ product.featured_image | image_url: width: 800 }}"
+            alt="{{ product.title | escape }}"
+            width="800"
+            height="600">
+        </div>
+        <div class="gallery-thumbs">
+          {%- for img in product.images limit: 5 -%}
+            <div class="gallery-thumb {% if forloop.first %}active{% endif %}" data-src="{{ img | image_url: width: 800 }}">
+              <img src="{{ img | image_url: width: 120 }}" alt="{{ product.title | escape }} {{ forloop.index }}" loading="lazy">
+            </div>
+          {%- endfor -%}
+        </div>
+      </div>
+
+      <!-- Info -->
+      <div class="product-info">
+        <div class="product-info__brand">{{ product.vendor }}</div>
+        <h1 class="product-info__title">{{ product.title }}</h1>
+
+        <div class="product-info__price">
+          <span class="price-current">{{ current_variant.price | money }}</span>
+          {%- if current_variant.compare_at_price > current_variant.price -%}
+            <span class="price-original">{{ current_variant.compare_at_price | money }}</span>
+            <span class="price-savings">
+              -{%- assign savings = current_variant.compare_at_price | minus: current_variant.price -%}
+              {{ savings | money }} korting
+            </span>
+          {%- endif -%}
+        </div>
+
+        {%- if product.metafields.custom.condition -%}
+          <div class="condition-block">
+            <span class="condition-label">Staat:</span>
+            <span class="condition-badge condition-{{ product.metafields.custom.condition | downcase }}">
+              {{ product.metafields.custom.condition }}
+            </span>
+          </div>
+        {%- endif -%}
+
+        {%- unless product.has_only_default_variant -%}
+          {%- for option in product.options_with_values -%}
+            <div class="variant-group">
+              <label class="variant-group__label">{{ option.name }}</label>
+              <div class="variant-options">
+                {%- for value in option.values -%}
+                  <button class="variant-option {% if option.selected_value == value %}active{% endif %}"
+                    data-option-group="{{ option.name | handleize }}"
+                    data-option-position="{{ option.position }}"
+                    data-option-value="{{ value | escape }}">
+                    {{ value }}
+                  </button>
+                {%- endfor -%}
+              </div>
+            </div>
+          {%- endfor -%}
+        {%- endunless -%}
+
+        {%- form 'product', product, id: 'product-form' -%}
+          <input type="hidden" name="id" value="{{ current_variant.id }}">
+          <div class="product-actions">
+            {%- if product.available -%}
+              <button type="submit" class="btn btn-primary btn-lg btn-full"
+                data-add-to-cart="{{ current_variant.id }}"
+                data-product-title="{{ product.title | escape }}">
+                In winkelmandje
+              </button>
+            {%- else -%}
+              <button type="button" class="btn btn-disabled btn-lg btn-full" disabled>
+                Uitverkocht
+              </button>
+            {%- endif -%}
+            <button type="button" class="btn btn-outline btn-lg" data-wishlist aria-label="Toevoegen aan verlanglijst">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+            </button>
+          </div>
+        {%- endform -%}
+
+        <div class="product-guarantees">
+          <div class="guarantee-item">🚚 Gratis verzending v.a. {{ settings.free_shipping_threshold | prepend: '€' }}</div>
+          <div class="guarantee-item">↩ {{ settings.return_days }} dagen retour</div>
+          <div class="guarantee-item">🔍 Professioneel geïnspecteerd</div>
+        </div>
+
+        {%- if product.description != blank -%}
+          <div class="product-description accordion-item">
+            <button class="accordion-trigger">Productomschrijving</button>
+            <div class="accordion-content">
+              {{ product.description }}
+            </div>
+          </div>
+        {%- endif -%}
+
+        {%- if product.metafields.custom.specs -%}
+          <div class="product-specs accordion-item">
+            <button class="accordion-trigger">Specificaties</button>
+            <div class="accordion-content">
+              {{ product.metafields.custom.specs | metafield_tag }}
+            </div>
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Product detail",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Product detail"
+    }
+  ]
+}
+{% endschema %}

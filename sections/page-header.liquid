@@ -1,0 +1,37 @@
+<div class="page-header">
+  <div class="container">
+    <div class="page-header__eyebrow">{{ section.settings.eyebrow }}</div>
+    <h1 class="page-header__title">{{ section.settings.title | default: page.title }}</h1>
+    {%- if section.settings.subtitle != blank -%}
+      <p class="page-header__subtitle">{{ section.settings.subtitle }}</p>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Paginakoptekst",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Bovenkoptekst"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titel (leeg = paginatitel)"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Ondertitel"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Paginakoptekst"
+    }
+  ]
+}
+{% endschema %}

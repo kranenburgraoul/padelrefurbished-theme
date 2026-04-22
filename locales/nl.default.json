@@ -1,0 +1,168 @@
+{
+  "general": {
+    "password_page": {
+      "login_form_heading": "Voer wachtwoord in",
+      "login_form_password_label": "Wachtwoord",
+      "login_form_password_placeholder": "Jouw wachtwoord",
+      "login_form_submit": "Inloggen",
+      "signup_form_email_label": "E-mail",
+      "signup_form_success": "We sturen je een e-mail als de winkel opent!",
+      "meta_description": "Binnenkort beschikbaar"
+    },
+    "meta": {
+      "tags": "Getagd met \"{{ tags }}\"",
+      "author": "Door {{ author }}"
+    }
+  },
+  "products": {
+    "product": {
+      "add_to_cart": "In winkelmandje",
+      "sold_out": "Uitverkocht",
+      "unavailable": "Niet beschikbaar",
+      "on_sale": "Sale",
+      "quantity": {
+        "label": "Aantal",
+        "note": "Maximaal {{ quantity }} beschikbaar"
+      }
+    },
+    "general": {
+      "title": "Producten",
+      "from_price_html": "Vanaf {{ price }}",
+      "on_sale": "Sale",
+      "save": "Bespaar {{ saved_amount }}",
+      "regular_price": "Normale prijs",
+      "sale_price": "Aanbiedingsprijs"
+    }
+  },
+  "collections": {
+    "general": {
+      "title": "Collecties",
+      "items_with_count_one": "{{ count }} product",
+      "items_with_count_other": "{{ count }} producten"
+    }
+  },
+  "cart": {
+    "general": {
+      "title": "Winkelmandje",
+      "empty": "Je winkelmandje is leeg.",
+      "note": "Notitie voor bestelling",
+      "subtotal": "Subtotaal",
+      "checkout": "Afrekenen",
+      "update": "Bijwerken",
+      "remove": "Verwijderen",
+      "continue_shopping": "Verder winkelen",
+      "items_count_notice_one": "Je winkelmandje bevat 1 artikel",
+      "items_count_notice_other": "Je winkelmandje bevat {{ count }} artikelen",
+      "shipping_at_checkout": "Verzendkosten worden berekend bij het afrekenen"
+    }
+  },
+  "customer": {
+    "account": {
+      "title": "Mijn account",
+      "details": "Accountgegevens",
+      "view_addresses": "Bekijk adressen",
+      "return": "Terug naar accountgegevens"
+    },
+    "addresses": {
+      "title": "Mijn adressen",
+      "default": "Standaard",
+      "add_new": "Nieuw adres toevoegen",
+      "edit_address": "Adres bewerken",
+      "first_name": "Voornaam",
+      "last_name": "Achternaam",
+      "company": "Bedrijf",
+      "address1": "Adres 1",
+      "address2": "Adres 2",
+      "city": "Stad",
+      "country": "Land",
+      "province": "Provincie",
+      "zip": "Postcode",
+      "phone": "Telefoon",
+      "set_default": "Instellen als standaardadres",
+      "add": "Adres toevoegen",
+      "update": "Adres bijwerken",
+      "cancel": "Annuleren",
+      "edit": "Bewerken",
+      "delete": "Verwijderen",
+      "delete_confirm": "Weet je zeker dat je dit adres wilt verwijderen?"
+    },
+    "login": {
+      "title": "Inloggen",
+      "desc": "Als je al een account hebt, log dan in met je e-mailadres.",
+      "email": "E-mailadres",
+      "password": "Wachtwoord",
+      "sign_in": "Inloggen",
+      "forgot_password": "Wachtwoord vergeten?",
+      "guest_title": "Doorgaan als gast",
+      "guest_continue": "Doorgaan"
+    },
+    "register": {
+      "title": "Nieuw account aanmaken",
+      "first_name": "Voornaam",
+      "last_name": "Achternaam",
+      "email": "E-mailadres",
+      "password": "Wachtwoord",
+      "submit": "Account aanmaken"
+    },
+    "reset_password": {
+      "title": "Wachtwoord opnieuw instellen",
+      "subtext": "Vul je e-mailadres in. Je ontvangt een e-mail om je wachtwoord opnieuw in te stellen.",
+      "email": "E-mailadres",
+      "submit": "Verzenden",
+      "cancel": "Annuleren"
+    },
+    "order": {
+      "title": "Bestelling {{ name }}",
+      "date": "Geplaatst op {{ date }}",
+      "cancelled": "Bestelling geannuleerd op {{ date }}",
+      "cancelled_reason": "Reden: {{ reason }}",
+      "billing_address": "Factuuradres",
+      "shipping_address": "Verzendadres",
+      "payment_status": "Betaalstatus",
+      "fulfillment_status": "Verzendstatus",
+      "quantity": "Aantal",
+      "sku": "SKU",
+      "subtotal": "Subtotaal",
+      "shipping": "Verzending",
+      "tax": "BTW",
+      "total": "Totaal"
+    }
+  },
+  "blogs": {
+    "article": {
+      "view_all": "Alle artikelen bekijken",
+      "comments": {
+        "title": "Reacties",
+        "no_comments": "Er zijn nog geen reacties op dit artikel.",
+        "form_title": "Reactie plaatsen",
+        "name": "Naam",
+        "email": "E-mailadres",
+        "message": "Bericht",
+        "post": "Plaatsen",
+        "moderated": "Jouw reactie wordt beoordeeld voor publicatie."
+      }
+    },
+    "general": {
+      "title": "Blog",
+      "rss": "RSS-feed"
+    }
+  },
+  "pagination": {
+    "previous": "Vorige",
+    "next": "Volgende"
+  },
+  "search": {
+    "no_results_html": "Geen resultaten voor <em>\"{{ terms }}\"</em>.",
+    "results_with_count": {
+      "one": "{{ count }} resultaat voor \"{{ terms }}\"",
+      "other": "{{ count }} resultaten voor \"{{ terms }}\""
+    },
+    "title": "Zoeken",
+    "placeholder": "Zoeken…"
+  },
+  "404": {
+    "title": "Pagina niet gevonden",
+    "subtext": "Deze pagina bestaat niet of is verplaatst.",
+    "link": "Terug naar de startpagina"
+  }
+}

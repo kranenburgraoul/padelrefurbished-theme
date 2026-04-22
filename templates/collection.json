@@ -1,0 +1,18 @@
+{
+  "sections": {
+    "page-header": {
+      "type": "page-header",
+      "settings": {
+        "eyebrow": "Ons assortiment",
+        "subtitle": "Professioneel geïnspecteerd. Betaalbaar geprijsd."
+      }
+    },
+    "collection-grid": {
+      "type": "collection-grid",
+      "settings": {
+        "products_per_page": 12
+      }
+    }
+  },
+  "order": ["page-header", "collection-grid"]
+}

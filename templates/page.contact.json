@@ -1,0 +1,37 @@
+{
+  "sections": {
+    "page-header": {
+      "type": "page-header",
+      "settings": {
+        "eyebrow": "We horen graag van je",
+        "title": "Contact",
+        "subtitle": "Stel je vraag, we reageren binnen 24 uur."
+      }
+    },
+    "contact-form": {
+      "type": "contact-form",
+      "settings": {
+        "form_heading": "Stuur ons een bericht",
+        "button_label": "Bericht versturen",
+        "info_heading": "Contact informatie",
+        "response_time": "We reageren doorgaans binnen 24 uur op werkdagen.",
+        "faq_heading": "Veelgestelde vragen"
+      },
+      "blocks": {
+        "sub1": { "type": "subject", "settings": { "label": "Vraag over bestelling" } },
+        "sub2": { "type": "subject", "settings": { "label": "Vraag over een product" } },
+        "sub3": { "type": "subject", "settings": { "label": "Retour of ruil" } },
+        "sub4": { "type": "subject", "settings": { "label": "Samenwerking" } },
+        "sub5": { "type": "subject", "settings": { "label": "Overige" } },
+        "faq1": { "type": "faq", "settings": { "question": "Hoe lang duurt verzending?", "answer": "We verzenden binnen 1-2 werkdagen. Levering duurt daarna nog 1-2 werkdagen via PostNL." } },
+        "faq2": { "type": "faq", "settings": { "question": "Kan ik een racket retourneren?", "answer": "Ja, je hebt 14 dagen retourrecht. Neem contact op en we regelen het verder." } },
+        "faq3": { "type": "faq", "settings": { "question": "Zijn de rackets gegarandeerd speelklaar?", "answer": "Elk racket wordt professioneel geïnspecteerd en hersteld voor verzending." } },
+        "faq4": { "type": "faq", "settings": { "question": "Kan ik mijn eigen racket inleveren?", "answer": "Ja! Stuur ons een berichtje en we bespreken de mogelijkheden." } },
+        "faq5": { "type": "faq", "settings": { "question": "Welke betaalmethoden accepteren jullie?", "answer": "Ideal, creditcard, PayPal en Klarna achteraf betalen." } },
+        "faq6": { "type": "faq", "settings": { "question": "Hebben jullie een fysieke winkel?", "answer": "Nee, we zijn puur online. Zo houden we de kosten laag voor jou." } }
+      },
+      "blocks_order": ["sub1", "sub2", "sub3", "sub4", "sub5", "faq1", "faq2", "faq3", "faq4", "faq5", "faq6"]
+    }
+  },
+  "order": ["page-header", "contact-form"]
+}

@@ -1,0 +1,50 @@
+{
+  "sections": {
+    "page-header": {
+      "type": "page-header",
+      "settings": {
+        "eyebrow": "Wie zijn wij",
+        "title": "Onze bijdrage",
+        "subtitle": "Duurzaam padel toegankelijk maken voor iedereen."
+      }
+    },
+    "mission": {
+      "type": "about-mission",
+      "settings": {
+        "eyebrow": "Onze missie",
+        "heading": "Padel toegankelijk maken voor iedereen",
+        "body": "<p>PadelRefurbished is opgericht door vier studenten met een passie voor padel en duurzaamheid. We geloven dat een goed racket geen fortuin hoeft te kosten — en dat elk racket een tweede kans verdient.</p><p>Door professioneel refurbishen geven wij gebruikte rackets een nieuw leven. Zo besparen spelers geld en bespaart de planeet grondstoffen.</p>"
+      },
+      "blocks": {
+        "s1": { "type": "stat", "settings": { "number": "500+", "label": "Rackets gered" } },
+        "s2": { "type": "stat", "settings": { "number": "2x", "label": "Leven verlengd" } },
+        "s3": { "type": "stat", "settings": { "number": "98%", "label": "Tevreden klanten" } }
+      },
+      "blocks_order": ["s1", "s2", "s3"]
+    },
+    "team": {
+      "type": "about-team",
+      "settings": {
+        "heading": "Het team",
+        "subtext": "De mensen achter PadelRefurbished"
+      },
+      "blocks": {
+        "t1": { "type": "member", "settings": { "name": "Joep", "role": "Mede-oprichter", "bio": "Verantwoordelijk voor inkoop en kwaliteitscontrole." } },
+        "t2": { "type": "member", "settings": { "name": "Joey", "role": "Mede-oprichter", "bio": "Zorgt voor een vlekkeloze klantervaring en logistiek." } },
+        "t3": { "type": "member", "settings": { "name": "Raoul", "role": "Mede-oprichter", "bio": "Stuurt marketing en online aanwezigheid aan." } },
+        "t4": { "type": "member", "settings": { "name": "Mees", "role": "Mede-oprichter", "bio": "Beheert de financiën en partnerships." } }
+      },
+      "blocks_order": ["t1", "t2", "t3", "t4"]
+    },
+    "cta": {
+      "type": "cta-banner",
+      "settings": {
+        "heading": "Doe mee aan de beweging",
+        "subtext": "Kies duurzaam. Kies betaalbaar. Kies PadelRefurbished.",
+        "cta_primary_label": "Bekijk rackets",
+        "cta_secondary_label": "Neem contact op"
+      }
+    }
+  },
+  "order": ["page-header", "mission", "team", "cta"]
+}
