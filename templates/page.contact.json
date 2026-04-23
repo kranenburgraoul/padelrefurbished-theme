@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "page-header": {
@@ -25,31 +34,67 @@
         "quick_shipping": "€6,95 (gratis v.a. €100)",
         "quick_return": "14 dagen bedenktijd",
         "quick_kvk": "01166795"
-      },
-      "blocks": {
-        "sub1": { "type": "subject", "settings": { "label": "Racket advies" } },
-        "sub2": { "type": "subject", "settings": { "label": "Vraag over mijn bestelling" } },
-        "sub3": { "type": "subject", "settings": { "label": "Retour aanvragen" } },
-        "sub4": { "type": "subject", "settings": { "label": "Overig" } }
-      },
-      "blocks_order": ["sub1", "sub2", "sub3", "sub4"]
+      }
     },
     "faq": {
       "type": "contact-faq",
+      "blocks": {
+        "faq_NfCNkp": {
+          "type": "faq",
+          "settings": {
+            "question": "Wat is een refurbished racket precies?",
+            "answer": "Een refurbished racket is een gebruikt racket dat professioneel is geïnspecteerd, gereinigd en voorzien van een nieuwe grip."
+          }
+        },
+        "faq_KDjykr": {
+          "type": "faq",
+          "settings": {
+            "question": "Wat is een refurbished racket precies?",
+            "answer": "Een refurbished racket is een gebruikt racket dat professioneel is geïnspecteerd, gereinigd en voorzien van een nieuwe grip."
+          }
+        },
+        "faq_cfNkcc": {
+          "type": "faq",
+          "settings": {
+            "question": "Wat is een refurbished racket precies?",
+            "answer": "Een refurbished racket is een gebruikt racket dat professioneel is geïnspecteerd, gereinigd en voorzien van een nieuwe grip."
+          }
+        },
+        "faq_gUNUdB": {
+          "type": "faq",
+          "settings": {
+            "question": "Wat is een refurbished racket precies?",
+            "answer": "Een refurbished racket is een gebruikt racket dat professioneel is geïnspecteerd, gereinigd en voorzien van een nieuwe grip."
+          }
+        },
+        "faq_YpT6xE": {
+          "type": "faq",
+          "settings": {
+            "question": "Wat is een refurbished racket precies?",
+            "answer": "Een refurbished racket is een gebruikt racket dat professioneel is geïnspecteerd, gereinigd en voorzien van een nieuwe grip."
+          }
+        },
+        "faq_Hzeh9L": {
+          "type": "faq",
+          "settings": {
+            "question": "Wat is een refurbished racket precies?",
+            "answer": "Een refurbished racket is een gebruikt racket dat professioneel is geïnspecteerd, gereinigd en voorzien van een nieuwe grip."
+          }
+        }
+      },
+      "block_order": [
+        "faq_NfCNkp",
+        "faq_KDjykr",
+        "faq_cfNkcc",
+        "faq_gUNUdB",
+        "faq_YpT6xE",
+        "faq_Hzeh9L"
+      ],
       "settings": {
         "eyebrow": "Veelgestelde vragen",
         "heading": "Heb je een vraag?",
         "subtext": "Misschien staat je antwoord hier al."
-      },
-      "blocks": {
-        "faq1": { "type": "faq", "settings": { "question": "Wat is een refurbished racket precies?", "answer": "Een refurbished racket is een gebruikt racket dat professioneel is geïnspecteerd, gereinigd en voorzien van een nieuwe grip. Het is betaalbaar en duurzaam, maar heeft dezelfde speelkwaliteit als een nieuw racket." } },
-        "faq2": { "type": "faq", "settings": { "question": "Zijn de rackets in goede staat?", "answer": "Ja! Elk racket wordt persoonlijk geïnspecteerd. Rackets met structurele beschadigingen worden afgekeurd. Kleine cosmetische slijtage is mogelijk — dat beschrijven we eerlijk in de productomschrijving." } },
-        "faq3": { "type": "faq", "settings": { "question": "Hoelang duurt de levering?", "answer": "Wij leveren binnen 2 werkdagen na je bestelling. Bestellingen geplaatst voor 16:00 uur worden dezelfde dag verzonden. Bezorgkosten zijn €6,95, gratis bij bestellingen boven de €100." } },
-        "faq4": { "type": "faq", "settings": { "question": "Kan ik mijn racket terugsturen?", "answer": "Ja, je hebt 14 dagen bedenktijd. Als je niet tevreden bent, stuur het racket dan ongebruikt terug en we storten het bedrag terug. Neem contact op via het formulier of per e-mail." } },
-        "faq5": { "type": "faq", "settings": { "question": "Welk racket past bij mij als beginner?", "answer": "Voor beginners raden we een allround racket met een ronder frame aan — dit biedt meer speelvlak en is vergevingsgezinder. Twijfel je? Stuur ons een berichtje en we helpen je graag persoonlijk." } },
-        "faq6": { "type": "faq", "settings": { "question": "Geven jullie garantie op de rackets?", "answer": "We geven geen officiële fabrieksgarantie op refurbished producten, maar we staan 100% achter de kwaliteit die we leveren. Bij gebreken die we gemist hebben, zoeken we altijd een oplossing." } }
-      },
-      "blocks_order": ["faq1", "faq2", "faq3", "faq4", "faq5", "faq6"]
+      }
     },
     "newsletter": {
       "type": "newsletter",
@@ -62,5 +107,10 @@
       }
     }
   },
-  "order": ["page-header", "contact-form", "faq", "newsletter"]
+  "order": [
+    "page-header",
+    "contact-form",
+    "faq",
+    "newsletter"
+  ]
 }
