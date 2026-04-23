@@ -19,8 +19,8 @@
     "free_shipping_threshold": "100",
     "shipping_cost": "€6,95",
     "return_days": 14,
-    "kvk_number": "01166795",
-    "btw_number": "NL 8215 17 338 B01",
+    "kvk_number": "",
+    "btw_number": "",
     "sections": {
       "header": {
         "type": "header",
