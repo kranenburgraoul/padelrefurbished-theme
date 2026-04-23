@@ -19,6 +19,7 @@
         "cta_primary_url": "shopify://collections/all",
         "cta_secondary_label": "Ons verhaal",
         "cta_secondary_url": "shopify://pages/contact",
+        "hero_image": "shopify://shop_images/person-fishing-on-the-beach-is-silhouetted-at-sunset.jpg",
         "hero_image_alt": "PadelRefurbished rackets"
       }
     },
