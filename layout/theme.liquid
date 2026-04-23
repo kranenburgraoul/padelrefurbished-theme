@@ -41,9 +41,9 @@
       --text-muted:       #6B7280;
 
       /* Typography */
-      --font-heading: {{ heading_font.family }}, {{ heading_font.fallback_families }};
-      --font-body:    {{ body_font.family }},    {{ body_font.fallback_families }};
-      --font-display: {{ heading_font.family }}, {{ heading_font.fallback_families }};
+      --font-heading: {{ heading_font.family | default: 'Inter' }}, {{ heading_font.fallback_families | default: 'sans-serif' }};
+      --font-body:    {{ body_font.family | default: 'Inter' }},    {{ body_font.fallback_families | default: 'sans-serif' }};
+      --font-display: {{ heading_font.family | default: 'Inter' }}, {{ heading_font.fallback_families | default: 'sans-serif' }};
     }
   </style>
 
@@ -51,13 +51,13 @@
 </head>
 <body class="template-{{ template.name }}">
 
-  {%- sections 'header' -%}
+  {% section 'header' %}
 
   <main id="main-content">
     {{ content_for_layout }}
   </main>
 
-  {%- sections 'footer' -%}
+  {% section 'footer' %}
 
   <div id="cart-notification" class="cart-notification" role="status" aria-live="polite">
     <div class="cart-notification__inner">

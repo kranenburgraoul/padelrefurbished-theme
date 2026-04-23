@@ -1,3 +1,5 @@
+{% paginate collection.products by 12 %}
+
 <div class="filter-bar">
   <div class="filter-inner">
     <div class="filter-groups">
@@ -12,7 +14,7 @@
           {%- endif -%}
         {%- endfor -%}
       </div>
-      <span class="filter-label" style="margin-left:1rem;">Niveau</span>
+      <span class="filter-label" style="margin-left:1.25rem;">Niveau</span>
       <div class="filter-chips">
         <button class="filter-chip active" data-filter="all" data-filter-group="level">Alle niveaus</button>
         {%- for tag in collection.all_tags -%}
@@ -37,22 +39,23 @@
         <p style="grid-column:1/-1;text-align:center;padding:3rem;color:#6B7280;">Geen producten gevonden.</p>
       {%- endfor -%}
     </div>
+
     {%- if paginate.pages > 1 -%}
-      <div class="pagination" style="text-align:center;margin-top:3rem;">
+      <div style="text-align:center;margin-top:3rem;">
         {{ paginate | default_pagination }}
       </div>
     {%- endif -%}
   </div>
 </section>
 
+{% endpaginate %}
+
 {% schema %}
 {
   "name": "Collectie raster",
   "settings": [],
   "presets": [
-    {
-      "name": "Collectie raster"
-    }
+    { "name": "Collectie raster" }
   ]
 }
 {% endschema %}
