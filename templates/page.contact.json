@@ -20,6 +20,24 @@
     },
     "contact-form": {
       "type": "contact-form",
+      "blocks": {
+        "subject_HR8w7T": {
+          "type": "subject",
+          "settings": {
+            "label": "Vraag over bestelling"
+          }
+        },
+        "subject_QyMnQw": {
+          "type": "subject",
+          "settings": {
+            "label": "Vraag over bestelling"
+          }
+        }
+      },
+      "block_order": [
+        "subject_HR8w7T",
+        "subject_QyMnQw"
+      ],
       "settings": {
         "form_heading": "Stuur een bericht",
         "form_subtext": "Vul het formulier in en we nemen zo snel mogelijk contact met je op.",
