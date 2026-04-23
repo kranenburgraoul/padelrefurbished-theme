@@ -70,12 +70,12 @@ class CartManager {
 
 /* ── Accordion / FAQ ── */
 function initAccordions() {
-  document.querySelectorAll('.accordion-item').forEach(item => {
-    const trigger = item.querySelector('.accordion-trigger');
+  document.querySelectorAll('.acc-item, .accordion-item').forEach(item => {
+    const trigger = item.querySelector('.acc-trigger, .accordion-trigger');
     if (!trigger) return;
     trigger.addEventListener('click', () => {
       const isOpen = item.classList.contains('open');
-      document.querySelectorAll('.accordion-item.open').forEach(el => el.classList.remove('open'));
+      document.querySelectorAll('.acc-item.open, .accordion-item.open').forEach(el => el.classList.remove('open'));
       if (!isOpen) item.classList.add('open');
     });
   });

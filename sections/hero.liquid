@@ -1,57 +1,54 @@
 <section class="hero">
   <div class="hero-left">
-    <div class="hero-content">
-      <div class="hero-eyebrow">{{ section.settings.slogan | default: settings.slogan }}</div>
-      <h1 class="hero-title">{{ section.settings.headline }}</h1>
-      <p class="hero-subtitle">{{ section.settings.subtext }}</p>
-      <div class="hero-cta">
-        {%- if section.settings.cta_primary_url != blank -%}
-          <a href="{{ section.settings.cta_primary_url }}" class="btn btn-primary btn-lg">
-            {{ section.settings.cta_primary_label }}
-          </a>
+    <span class="hero-eyebrow">{{ section.settings.slogan | default: settings.slogan }}</span>
+    <h1 class="hero-headline">{{ section.settings.headline }}</h1>
+    <p class="hero-desc">{{ section.settings.subtext }}</p>
+    <div class="hero-ctas">
+      {%- if section.settings.cta_primary_url != blank -%}
+        <a href="{{ section.settings.cta_primary_url }}" class="btn btn-primary btn-lg">
+          {{ section.settings.cta_primary_label }}
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      {%- endif -%}
+      {%- if section.settings.cta_secondary_url != blank -%}
+        <a href="{{ section.settings.cta_secondary_url }}" class="btn btn-outline-white">{{ section.settings.cta_secondary_label }}</a>
+      {%- endif -%}
+    </div>
+    <div class="hero-trust">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'trust_stat' -%}
+          <div class="trust-item" {{ block.shopify_attributes }}>
+            <div class="trust-num">{{ block.settings.number }}</div>
+            <div class="trust-label">{{ block.settings.label }}</div>
+          </div>
         {%- endif -%}
-        {%- if section.settings.cta_secondary_url != blank -%}
-          <a href="{{ section.settings.cta_secondary_url }}" class="btn btn-outline btn-lg">
-            {{ section.settings.cta_secondary_label }}
-          </a>
-        {%- endif -%}
-      </div>
-      <div class="hero-trust">
-        {%- for block in section.blocks -%}
-          {%- if block.type == 'trust_item' -%}
-            <div class="trust-item" {{ block.shopify_attributes }}>
-              <span class="trust-icon">{{ block.settings.icon }}</span>
-              <span>{{ block.settings.text }}</span>
-            </div>
-          {%- endif -%}
-        {%- endfor -%}
-      </div>
+      {%- endfor -%}
     </div>
   </div>
 
   <div class="hero-right">
-    {%- if section.settings.hero_image != blank -%}
-      <img src="{{ section.settings.hero_image | image_url: width: 800 }}" alt="Hero" class="hero-image">
-    {%- else -%}
-      <div class="hero-cards">
-        {%- for block in section.blocks -%}
-          {%- if block.type == 'product_card' -%}
-            {%- assign prod = all_products[block.settings.product] -%}
-            {%- if prod != empty -%}
-              <a href="{{ prod.url }}" class="hero-product-card" {{ block.shopify_attributes }}>
-                {%- if prod.featured_image -%}
-                  <img src="{{ prod.featured_image | image_url: width: 300 }}" alt="{{ prod.title }}">
-                {%- endif -%}
-                <div class="hero-card-info">
-                  <span class="hero-card-name">{{ prod.title }}</span>
-                  <span class="hero-card-price">{{ prod.price | money }}</span>
-                </div>
-              </a>
-            {%- endif -%}
-          {%- endif -%}
-        {%- endfor -%}
-      </div>
-    {%- endif -%}
+    {%- for block in section.blocks -%}
+      {%- if block.type == 'product_card' -%}
+        {%- assign prod = all_products[block.settings.product] -%}
+        {%- if prod != empty -%}
+          <a href="{{ prod.url }}" class="hero-card" {{ block.shopify_attributes }}>
+            <div class="hero-card-img">
+              {%- if prod.featured_image -%}
+                <img src="{{ prod.featured_image | image_url: width: 300 }}" alt="{{ prod.title | escape }}" loading="lazy">
+              {%- else -%}
+                <svg viewBox="0 0 60 80" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:48px;height:60px;opacity:0.4;">
+                  <rect x="10" y="2" width="40" height="48" rx="20" fill="currentColor"/>
+                  <rect x="27" y="50" width="6" height="24" rx="3" fill="currentColor" opacity="0.5"/>
+                </svg>
+              {%- endif -%}
+            </div>
+            <div class="hero-card-brand">{{ prod.vendor }}</div>
+            <div class="hero-card-name">{{ prod.title }}</div>
+            <div class="hero-card-price">{{ prod.price | money }}</div>
+          </a>
+        {%- endif -%}
+      {%- endif -%}
+    {%- endfor -%}
   </div>
 </section>
 
@@ -68,19 +65,19 @@
       "type": "text",
       "id": "headline",
       "label": "Koptekst",
-      "default": "Jouw eerste racket. Slimmer gekozen."
+      "default": "Jouw eerste padel racket. Slim gekozen."
     },
     {
       "type": "textarea",
       "id": "subtext",
       "label": "Ondertekst",
-      "default": "Topkwaliteit refurbished padelrackets — duurzaam, betaalbaar en klaar voor de baan."
+      "default": "Professioneel gereviseerde padelrackets van topmerken — voor een fractie van de nieuwprijs. Gecheckt, gereinigd en klaar om mee te spelen."
     },
     {
       "type": "text",
       "id": "cta_primary_label",
       "label": "Primaire knop tekst",
-      "default": "Bekijk rackets"
+      "default": "Bekijk alle rackets"
     },
     {
       "type": "url",
@@ -97,36 +94,31 @@
       "type": "url",
       "id": "cta_secondary_url",
       "label": "Secundaire knop link"
-    },
-    {
-      "type": "image_picker",
-      "id": "hero_image",
-      "label": "Hero afbeelding (optioneel)"
     }
   ],
   "blocks": [
     {
-      "type": "trust_item",
-      "name": "Vertrouwensitem",
+      "type": "trust_stat",
+      "name": "Vertrouwensgetal",
       "limit": 4,
       "settings": [
         {
           "type": "text",
-          "id": "icon",
-          "label": "Emoji icoon",
-          "default": "✓"
+          "id": "number",
+          "label": "Getal",
+          "default": "60+"
         },
         {
           "type": "text",
-          "id": "text",
-          "label": "Tekst",
-          "default": "Gratis verzending"
+          "id": "label",
+          "label": "Label",
+          "default": "Rackets verkocht"
         }
       ]
     },
     {
       "type": "product_card",
-      "name": "Product kaart",
+      "name": "Product kaart (hero)",
       "limit": 4,
       "settings": [
         {
@@ -141,9 +133,9 @@
     {
       "name": "Hero",
       "blocks": [
-        { "type": "trust_item", "settings": { "icon": "🚚", "text": "Gratis verzending v.a. €100" } },
-        { "type": "trust_item", "settings": { "icon": "↩", "text": "14 dagen retour" } },
-        { "type": "trust_item", "settings": { "icon": "♻", "text": "Duurzaam gecertificeerd" } }
+        { "type": "trust_stat", "settings": { "number": "60+", "label": "Rackets verkocht" } },
+        { "type": "trust_stat", "settings": { "number": "3", "label": "Topmerken" } },
+        { "type": "trust_stat", "settings": { "number": "≤50%", "label": "Goedkoper dan nieuw" } }
       ]
     }
   ]

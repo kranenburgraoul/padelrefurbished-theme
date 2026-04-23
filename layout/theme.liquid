@@ -18,22 +18,32 @@
     {{ body_font    | font_face: font_display: 'swap' }}
 
     :root {
-      --primary:       {{ settings.primary_color }};
-      --accent:        {{ settings.accent_color }};
-      --bg:            {{ settings.bg_color }};
-      --text:          {{ settings.text_color }};
+      --primary:          {{ settings.primary_color }};
+      --accent:           {{ settings.accent_color }};
+      --bg:               {{ settings.bg_color }};
+      --text:             {{ settings.text_color }};
 
-      /* Derived shades (lightened / darkened via opacity layers) */
-      --primary-pale:  color-mix(in srgb, {{ settings.primary_color }} 10%, white);
-      --primary-light: color-mix(in srgb, {{ settings.primary_color }} 20%, white);
-      --primary-dark:  color-mix(in srgb, {{ settings.primary_color }} 80%, black);
-      --accent-pale:   color-mix(in srgb, {{ settings.accent_color }} 10%, white);
-      --accent-light:  color-mix(in srgb, {{ settings.accent_color }} 20%, white);
-      --accent-dark:   color-mix(in srgb, {{ settings.accent_color }} 80%, black);
+      /* Primary shades */
+      --primary-pale:     color-mix(in srgb, {{ settings.primary_color }} 8%,  white);
+      --primary-lighter:  color-mix(in srgb, {{ settings.primary_color }} 15%, white);
+      --primary-light:    color-mix(in srgb, {{ settings.primary_color }} 30%, white);
+      --primary-dark:     color-mix(in srgb, {{ settings.primary_color }} 75%, black);
+      --primary-darker:   color-mix(in srgb, {{ settings.primary_color }} 55%, black);
+      --primary-darkest:  color-mix(in srgb, {{ settings.primary_color }} 35%, black);
 
-      --font-heading:  {{ heading_font.family }}, {{ heading_font.fallback_families }};
-      --font-body:     {{ body_font.family }},    {{ body_font.fallback_families }};
-      --font-weight-heading: {{ heading_font.weight }};
+      /* Accent shades */
+      --accent-pale:      color-mix(in srgb, {{ settings.accent_color }} 10%, white);
+      --accent-light:     color-mix(in srgb, {{ settings.accent_color }} 30%, white);
+      --accent-dark:      color-mix(in srgb, {{ settings.accent_color }} 70%, black);
+
+      /* Neutral */
+      --border:           #E5E7EB;
+      --text-muted:       #6B7280;
+
+      /* Typography */
+      --font-heading: {{ heading_font.family }}, {{ heading_font.fallback_families }};
+      --font-body:    {{ body_font.family }},    {{ body_font.fallback_families }};
+      --font-display: {{ heading_font.family }}, {{ heading_font.fallback_families }};
     }
   </style>
 

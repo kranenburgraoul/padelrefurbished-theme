@@ -1,21 +1,16 @@
-<section class="process-section section">
+<section class="process-section section-py">
   <div class="container">
-    <div class="section-header" data-reveal>
+    <div class="process-header">
+      <div class="section-label">{{ section.settings.eyebrow }}</div>
       <h2 class="section-title">{{ section.settings.heading }}</h2>
       <p class="section-subtitle">{{ section.settings.subtext }}</p>
     </div>
-
     <div class="process-steps">
       {%- for block in section.blocks -%}
-        <div class="process-step" {{ block.shopify_attributes }} data-reveal>
-          <div class="process-step__number">{{ forloop.index }}</div>
-          <div class="process-step__content">
-            <h3>{{ block.settings.title }}</h3>
-            <p>{{ block.settings.text }}</p>
-          </div>
-          {%- unless forloop.last -%}
-            <div class="process-step__connector"></div>
-          {%- endunless -%}
+        <div class="process-step" {{ block.shopify_attributes }}>
+          <div class="step-num">{{ forloop.index }}</div>
+          <h3 class="step-title">{{ block.settings.title }}</h3>
+          <p class="step-text">{{ block.settings.text }}</p>
         </div>
       {%- endfor -%}
     </div>
@@ -28,15 +23,21 @@
   "settings": [
     {
       "type": "text",
+      "id": "eyebrow",
+      "label": "Label boven titel",
+      "default": "Hoe het werkt"
+    },
+    {
+      "type": "text",
       "id": "heading",
       "label": "Koptekst",
-      "default": "Hoe het werkt"
+      "default": "Ons refurbishment proces"
     },
     {
       "type": "text",
       "id": "subtext",
       "label": "Ondertekst",
-      "default": "Van inspectie tot jouw voordeur"
+      "default": "Elk racket doorloopt een zorgvuldig kwaliteitsproces voordat het bij jou arriveert."
     }
   ],
   "blocks": [
@@ -54,7 +55,7 @@
           "type": "textarea",
           "id": "text",
           "label": "Tekst",
-          "default": "Elk ingekomen racket wordt grondig geïnspecteerd."
+          "default": "We beoordelen elk racket op beschadigingen, structuur en algehele speelkwaliteit."
         }
       ]
     }
@@ -63,11 +64,9 @@
     {
       "name": "Werkwijze",
       "blocks": [
-        { "type": "step", "settings": { "title": "Inspectie", "text": "Elk ingekomen racket wordt grondig geïnspecteerd op slijtage en schade." } },
-        { "type": "step", "settings": { "title": "Reiniging", "text": "Professionele reiniging van frame, handvat en beschermfolie." } },
-        { "type": "step", "settings": { "title": "Herstel", "text": "Kleine beschadigingen worden hersteld, grip vervangen indien nodig." } },
-        { "type": "step", "settings": { "title": "Kwaliteitscontrole", "text": "Laatste check: gewicht, balans en speelklaarheid worden gevalideerd." } },
-        { "type": "step", "settings": { "title": "Verzending", "text": "Veilig verpakt en binnen 2-3 werkdagen bij jou thuis." } }
+        { "type": "step", "settings": { "title": "Inspectie", "text": "We beoordelen elk racket op beschadigingen, structuur en algehele speelkwaliteit." } },
+        { "type": "step", "settings": { "title": "Reiniging & Grip", "text": "Het racket wordt grondig gereinigd en voorzien van een gloednieuwe grip." } },
+        { "type": "step", "settings": { "title": "Klaar om te spelen", "text": "Getest, goedgekeurd en zorgvuldig verpakt. Jouw racket is klaar voor het veld." } }
       ]
     }
   ]

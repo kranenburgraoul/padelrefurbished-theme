@@ -1,9 +1,12 @@
 <div class="stats-bar">
-  <div class="container stats-inner">
+  <div class="stats-inner">
     {%- for block in section.blocks -%}
       <div class="stat-item" {{ block.shopify_attributes }}>
-        <span class="stat-number">{{ block.settings.number }}</span>
-        <span class="stat-label">{{ block.settings.label }}</span>
+        <div class="stat-icon">{{ block.settings.icon }}</div>
+        <div>
+          <strong class="stat-strong">{{ block.settings.strong }}</strong>
+          <span class="stat-small">{{ block.settings.small }}</span>
+        </div>
       </div>
     {%- endfor -%}
   </div>
@@ -19,15 +22,21 @@
       "settings": [
         {
           "type": "text",
-          "id": "number",
-          "label": "Getal / waarde",
-          "default": "500+"
+          "id": "icon",
+          "label": "Emoji icoon",
+          "default": "✅"
         },
         {
           "type": "text",
-          "id": "label",
-          "label": "Label",
-          "default": "Verkochte rackets"
+          "id": "strong",
+          "label": "Vetgedrukte tekst",
+          "default": "100% Gecheckt"
+        },
+        {
+          "type": "text",
+          "id": "small",
+          "label": "Klein tekst",
+          "default": "Elk racket persoonlijk geïnspecteerd"
         }
       ]
     }
@@ -36,10 +45,10 @@
     {
       "name": "Statistieken balk",
       "blocks": [
-        { "type": "stat", "settings": { "number": "500+", "label": "Verkochte rackets" } },
-        { "type": "stat", "settings": { "number": "98%", "label": "Tevreden klanten" } },
-        { "type": "stat", "settings": { "number": "€0", "label": "Toeslag duurzaamheid" } },
-        { "type": "stat", "settings": { "number": "2x", "label": "Leven verlengd" } }
+        { "type": "stat", "settings": { "icon": "✅", "strong": "100% Gecheckt", "small": "Elk racket persoonlijk geïnspecteerd" } },
+        { "type": "stat", "settings": { "icon": "🚀", "strong": "Binnen 2 werkdagen", "small": "Snelle levering door heel Nederland" } },
+        { "type": "stat", "settings": { "icon": "🛡️", "strong": "14 dagen retour", "small": "Niet tevreden? Geld terug, geen vragen" } },
+        { "type": "stat", "settings": { "icon": "♻️", "strong": "Duurzaam", "small": "Minder afval, meer padel" } }
       ]
     }
   ]
