@@ -303,13 +303,13 @@ button { font-family: var(--font-body); cursor: pointer; }
 /* ==================  HERO  ================== */
 
 .hero {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
   min-height: 90vh;
   overflow: hidden;
 }
 
 .hero-left {
+  flex: 1;
   background: var(--primary-dark);
   padding: 5rem 4rem 5rem 5.5rem;
   display: flex;
@@ -396,12 +396,10 @@ button { font-family: var(--font-body); cursor: pointer; }
 .trust-label { font-size: 0.8rem; color: rgba(255,255,255,0.5); }
 
 .hero-right {
-  background: var(--primary-pale);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  padding: 3rem;
-  align-content: center;
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  min-height: 500px;
 }
 
 .hero-card {
@@ -1231,9 +1229,9 @@ button { font-family: var(--font-body); cursor: pointer; }
 /* ==================  RESPONSIVE  ================== */
 
 @media (max-width: 1024px) {
-  .hero { grid-template-columns: 1fr; }
+  .hero { flex-direction: column; }
   .hero-right { display: none; }
-  .hero-left { padding: 4rem 2rem; }
+  .hero-left { padding: 4rem 2rem; width: 100%; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .impact-grid { grid-template-columns: repeat(2, 1fr); }
   .team-grid { grid-template-columns: repeat(2, 1fr); }
