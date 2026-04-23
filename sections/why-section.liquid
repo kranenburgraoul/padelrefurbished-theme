@@ -8,7 +8,7 @@
     <div class="why-grid">
       {%- for block in section.blocks -%}
         <div class="why-card" {{ block.shopify_attributes }}>
-          <div class="why-icon">{{ block.settings.icon }}</div>
+          <div class="why-icon" style="width:50px;height:50px;border-radius:13px;background:#DCE9FD;display:flex;align-items:center;justify-content:center;font-size:1.35rem;margin-bottom:1.25rem;">{{ block.settings.icon }}</div>
           <h3 class="why-title">{{ block.settings.title }}</h3>
           <p class="why-text">{{ block.settings.text }}</p>
         </div>

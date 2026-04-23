@@ -11,20 +11,139 @@
     </div>
 
     <div class="products-grid">
-      {%- if section.settings.collection != blank -%}
-        {%- assign col = collections[section.settings.collection] -%}
-        {%- for product in col.products limit: section.settings.products_count -%}
-          {%- render 'product-card', product: product -%}
-        {%- endfor -%}
-      {%- else -%}
-        {%- for block in section.blocks -%}
-          {%- if block.type == 'product' -%}
-            {%- assign product = all_products[block.settings.product] -%}
-            {%- if product != empty -%}
-              {%- render 'product-card', product: product -%}
+      {%- liquid
+        assign has_products = false
+        if section.settings.collection != blank
+          assign col = collections[section.settings.collection]
+          if col.products_count > 0
+            assign has_products = true
+          endif
+        endif
+        for block in section.blocks
+          if block.type == 'product'
+            assign p = all_products[block.settings.product]
+            if p != empty
+              assign has_products = true
+            endif
+          endif
+        endfor
+      -%}
+
+      {%- if has_products -%}
+        {%- if section.settings.collection != blank -%}
+          {%- assign col = collections[section.settings.collection] -%}
+          {%- for product in col.products limit: section.settings.products_count -%}
+            {%- render 'product-card', product: product -%}
+          {%- endfor -%}
+        {%- else -%}
+          {%- for block in section.blocks -%}
+            {%- if block.type == 'product' -%}
+              {%- assign product = all_products[block.settings.product] -%}
+              {%- if product != empty -%}
+                {%- render 'product-card', product: product -%}
+              {%- endif -%}
             {%- endif -%}
-          {%- endif -%}
-        {%- endfor -%}
+          {%- endfor -%}
+        {%- endif -%}
+      {%- else -%}
+        <!-- Placeholder kaarten (vervang door echte producten in Shopify admin) -->
+        <div class="product-card">
+          <div class="product-img">
+            <span class="product-badge badge-available">Beschikbaar</span>
+            <svg viewBox="0 0 60 80" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:72px;height:90px;opacity:0.5;color:#2E69DD;">
+              <rect x="10" y="2" width="40" height="48" rx="20" fill="#1240A0" opacity="0.6"/>
+              <line x1="15" y1="14" x2="45" y2="14" stroke="#3D78EC" stroke-width="1.5" opacity="0.4"/>
+              <line x1="15" y1="22" x2="45" y2="22" stroke="#3D78EC" stroke-width="1.5" opacity="0.4"/>
+              <line x1="15" y1="30" x2="45" y2="30" stroke="#3D78EC" stroke-width="1.5" opacity="0.4"/>
+              <line x1="15" y1="38" x2="45" y2="38" stroke="#3D78EC" stroke-width="1.5" opacity="0.4"/>
+              <line x1="24" y1="5" x2="24" y2="46" stroke="#3D78EC" stroke-width="1.5" opacity="0.4"/>
+              <line x1="32" y1="3" x2="32" y2="48" stroke="#3D78EC" stroke-width="1.5" opacity="0.4"/>
+              <rect x="27" y="50" width="6" height="24" rx="3" fill="#0F2D87" opacity="0.5"/>
+              <rect x="19" y="72" width="22" height="5" rx="2.5" fill="#0F2D87" opacity="0.4"/>
+            </svg>
+          </div>
+          <div class="product-body">
+            <div class="product-brand">Siux</div>
+            <div class="product-name">Pegasus Revolution 2</div>
+            <div class="product-tags"><span class="product-tag">Starter</span><span class="product-tag">Allround</span></div>
+            <div class="product-footer">
+              <div class="product-price-wrap"><span class="product-price">€60</span><span class="product-price-original">€149</span></div>
+              <button class="add-to-cart-btn">+ Voeg toe</button>
+            </div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-img">
+            <span class="product-badge badge-available">Beschikbaar</span>
+            <svg viewBox="0 0 60 80" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:72px;height:90px;opacity:0.5;">
+              <rect x="10" y="2" width="40" height="48" rx="20" fill="#2E69DD" opacity="0.6"/>
+              <line x1="15" y1="14" x2="45" y2="14" stroke="#5489EF" stroke-width="1.5" opacity="0.4"/>
+              <line x1="15" y1="22" x2="45" y2="22" stroke="#5489EF" stroke-width="1.5" opacity="0.4"/>
+              <line x1="15" y1="30" x2="45" y2="30" stroke="#5489EF" stroke-width="1.5" opacity="0.4"/>
+              <line x1="15" y1="38" x2="45" y2="38" stroke="#5489EF" stroke-width="1.5" opacity="0.4"/>
+              <line x1="32" y1="3" x2="32" y2="48" stroke="#5489EF" stroke-width="1.5" opacity="0.4"/>
+              <rect x="27" y="50" width="6" height="24" rx="3" fill="#0F2D87" opacity="0.5"/>
+              <rect x="19" y="72" width="22" height="5" rx="2.5" fill="#0F2D87" opacity="0.4"/>
+            </svg>
+          </div>
+          <div class="product-body">
+            <div class="product-brand">HEAD</div>
+            <div class="product-name">Graphene 360+ Alpha Elite</div>
+            <div class="product-tags"><span class="product-tag">Starter</span><span class="product-tag">Control</span></div>
+            <div class="product-footer">
+              <div class="product-price-wrap"><span class="product-price">€50</span><span class="product-price-original">€129</span></div>
+              <button class="add-to-cart-btn">+ Voeg toe</button>
+            </div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-img">
+            <span class="product-badge badge-available">Beschikbaar</span>
+            <svg viewBox="0 0 60 80" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:72px;height:90px;opacity:0.5;">
+              <rect x="10" y="2" width="40" height="48" rx="20" fill="#3D78EC" opacity="0.6"/>
+              <line x1="15" y1="14" x2="45" y2="14" stroke="#6B9EF2" stroke-width="1.5" opacity="0.4"/>
+              <line x1="15" y1="22" x2="45" y2="22" stroke="#6B9EF2" stroke-width="1.5" opacity="0.4"/>
+              <line x1="15" y1="30" x2="45" y2="30" stroke="#6B9EF2" stroke-width="1.5" opacity="0.4"/>
+              <line x1="15" y1="38" x2="45" y2="38" stroke="#6B9EF2" stroke-width="1.5" opacity="0.4"/>
+              <line x1="32" y1="3" x2="32" y2="48" stroke="#6B9EF2" stroke-width="1.5" opacity="0.4"/>
+              <rect x="27" y="50" width="6" height="24" rx="3" fill="#0F2D87" opacity="0.5"/>
+              <rect x="19" y="72" width="22" height="5" rx="2.5" fill="#0F2D87" opacity="0.4"/>
+            </svg>
+          </div>
+          <div class="product-body">
+            <div class="product-brand">HEAD</div>
+            <div class="product-name">Speed Elite</div>
+            <div class="product-tags"><span class="product-tag">Gevorderd</span><span class="product-tag">Power</span></div>
+            <div class="product-footer">
+              <div class="product-price-wrap"><span class="product-price">€90</span><span class="product-price-original">€199</span></div>
+              <button class="add-to-cart-btn">+ Voeg toe</button>
+            </div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-img">
+            <span class="product-badge badge-available">Beschikbaar</span>
+            <svg viewBox="0 0 60 80" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:72px;height:90px;opacity:0.5;">
+              <rect x="10" y="2" width="40" height="48" rx="20" fill="#5489EF" opacity="0.5"/>
+              <line x1="15" y1="14" x2="45" y2="14" stroke="#9DBDF7" stroke-width="1.5" opacity="0.4"/>
+              <line x1="15" y1="22" x2="45" y2="22" stroke="#9DBDF7" stroke-width="1.5" opacity="0.4"/>
+              <line x1="15" y1="30" x2="45" y2="30" stroke="#9DBDF7" stroke-width="1.5" opacity="0.4"/>
+              <line x1="15" y1="38" x2="45" y2="38" stroke="#9DBDF7" stroke-width="1.5" opacity="0.4"/>
+              <line x1="32" y1="3" x2="32" y2="48" stroke="#9DBDF7" stroke-width="1.5" opacity="0.4"/>
+              <rect x="27" y="50" width="6" height="24" rx="3" fill="#0F2D87" opacity="0.5"/>
+              <rect x="19" y="72" width="22" height="5" rx="2.5" fill="#0F2D87" opacity="0.4"/>
+            </svg>
+          </div>
+          <div class="product-body">
+            <div class="product-brand">HEAD</div>
+            <div class="product-name">Zephyr</div>
+            <div class="product-tags"><span class="product-tag">Starter</span><span class="product-tag">Licht gewicht</span></div>
+            <div class="product-footer">
+              <div class="product-price-wrap"><span class="product-price">€75</span><span class="product-price-original">€169</span></div>
+              <button class="add-to-cart-btn">+ Voeg toe</button>
+            </div>
+          </div>
+        </div>
       {%- endif -%}
     </div>
   </div>
@@ -49,7 +168,7 @@
     {
       "type": "collection",
       "id": "collection",
-      "label": "Collectie (automatisch invullen)"
+      "label": "Collectie (koppel hier je rackets)"
     },
     {
       "type": "range",

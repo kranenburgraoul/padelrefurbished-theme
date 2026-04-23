@@ -1,4 +1,4 @@
-<section class="process-section section-py">
+<section class="process-section">
   <div class="container">
     <div class="process-header">
       <div class="section-label">{{ section.settings.eyebrow }}</div>
@@ -8,7 +8,7 @@
     <div class="process-steps">
       {%- for block in section.blocks -%}
         <div class="process-step" {{ block.shopify_attributes }}>
-          <div class="step-num">{{ forloop.index }}</div>
+          <div class="step-num" style="width:54px;height:54px;border-radius:50%;background:#2E69DD;color:white;font-size:1.2rem;font-weight:800;display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;position:relative;z-index:1;">{{ forloop.index }}</div>
           <h3 class="step-title">{{ block.settings.title }}</h3>
           <p class="step-text">{{ block.settings.text }}</p>
         </div>
