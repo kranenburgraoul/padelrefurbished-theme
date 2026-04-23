@@ -27,7 +27,7 @@ button { font-family: var(--font-body); cursor: pointer; }
 
 /* ==================  NAVBAR  ================== */
 
-:root { --header-h: 62px; }
+:root { --header-h: 72px; }
 
 .site-header {
   position: sticky;
@@ -37,17 +37,13 @@ button { font-family: var(--font-body); cursor: pointer; }
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--border);
-  height: var(--header-h);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
 .navbar-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.9rem 1.5rem;
+  padding: 1.1rem 1.5rem;
   max-width: 1200px;
   margin: 0 auto;
   gap: 1.5rem;
