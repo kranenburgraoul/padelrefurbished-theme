@@ -29,7 +29,101 @@
       "settings": {
         "products_per_page": 12
       }
+    },
+    "stats": {
+      "type": "stats-bar",
+      "blocks": {
+        "stat1": {
+          "type": "stat",
+          "settings": {
+            "icon": "✅",
+            "strong": "Elk racket geïnspecteerd",
+            "small": "Persoonlijk gecheckt en goedgekeurd"
+          }
+        },
+        "stat2": {
+          "type": "stat",
+          "settings": {
+            "icon": "🎾",
+            "strong": "Nieuwe grip",
+            "small": "Op elk racket standaard meegeleverd"
+          }
+        },
+        "stat3": {
+          "type": "stat",
+          "settings": {
+            "icon": "🛡️",
+            "strong": "14 dagen retour",
+            "small": "Niet tevreden? Geld terug, geen vragen"
+          }
+        },
+        "stat4": {
+          "type": "stat",
+          "settings": {
+            "icon": "🚀",
+            "strong": "Binnen 2 werkdagen",
+            "small": "Snelle levering door heel Nederland"
+          }
+        }
+      },
+      "blocks_order": ["stat1", "stat2", "stat3", "stat4"]
+    },
+    "process": {
+      "type": "process-section",
+      "settings": {
+        "eyebrow": "Ons transparante proces",
+        "heading": "Hoe wij elk racket klaarmaken",
+        "subtext": "Wij zijn eerlijk over de staat van elk racket. Dit is precies wat er gebeurt voordat het jou bereikt."
+      },
+      "blocks": {
+        "step1": {
+          "type": "step",
+          "settings": {
+            "title": "Initiële inspectie op beschadigingen",
+            "text": "We beoordelen elk racket op scheuren, deuken, losse besnaring en structurele integriteit. Rackets die niet aan onze minimumstandaard voldoen worden afgekeurd."
+          }
+        },
+        "step2": {
+          "type": "step",
+          "settings": {
+            "title": "Grondige reiniging",
+            "text": "Het frame en het speelvlak worden grondig schoongemaakt. Oude stickers, vuil en zweet worden verwijderd zodat het racket er fris uitziet."
+          }
+        },
+        "step3": {
+          "type": "step",
+          "settings": {
+            "title": "Nieuwe grip en overgrip",
+            "text": "Elk racket krijgt een gloednieuwe grip. Je hoeft niets extra's te kopen — je kunt direct gaan spelen."
+          }
+        },
+        "step4": {
+          "type": "step",
+          "settings": {
+            "title": "Kwaliteitstest",
+            "text": "We testen het racket op speelkwaliteit en balans. Alleen rackets die onze kwaliteitscheck doorstaan, komen in onze webshop."
+          }
+        },
+        "step5": {
+          "type": "step",
+          "settings": {
+            "title": "Klaar voor verzending",
+            "text": "Het racket wordt zorgvuldig verpakt en voorzien van een eerlijke productbeschrijving. Binnen 2 werkdagen bij jou thuis."
+          }
+        }
+      },
+      "blocks_order": ["step1", "step2", "step3", "step4", "step5"]
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "settings": {
+        "eyebrow": "Nooit meer missen",
+        "heading": "Gratis grip bij aanmelding",
+        "subtext": "Wees de eerste bij nieuwe rackets en exclusieve deals.",
+        "placeholder": "jouw@email.nl",
+        "button_label": "Aanmelden →"
+      }
     }
   },
-  "order": ["page-header", "collection-grid"]
+  "order": ["page-header", "collection-grid", "stats", "process", "newsletter"]
 }

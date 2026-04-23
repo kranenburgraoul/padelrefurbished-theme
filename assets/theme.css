@@ -27,12 +27,16 @@ button { font-family: var(--font-body); cursor: pointer; }
 
 /* ==================  NAVBAR  ================== */
 
-:root { --header-h: 72px; }
+:root { --header-h: 80px; }
 
-.site-header {
+/* Sticky must be on the section wrapper — .site-header's parent is too short */
+#shopify-section-header {
   position: sticky;
   top: 0;
   z-index: 200;
+}
+
+.site-header {
   background: rgba(255,255,255,0.97);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
@@ -43,7 +47,7 @@ button { font-family: var(--font-body); cursor: pointer; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.1rem 1.5rem;
+  padding: 1.35rem 1.5rem;
   max-width: 1200px;
   margin: 0 auto;
   gap: 1.5rem;
@@ -856,6 +860,8 @@ button { font-family: var(--font-body); cursor: pointer; }
 .filter-chip.active { border-color: var(--primary); color: var(--primary); background: var(--primary-pale); font-weight: 600; }
 
 .filter-count { font-size: 0.825rem; color: #6B7280; flex-shrink: 0; }
+
+.catalog-section { padding: 2.5rem 0 5rem; }
 
 .catalog-grid {
   display: grid;
