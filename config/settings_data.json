@@ -14,12 +14,28 @@
     "bg_color": "#FFFFFF",
     "text_color": "#0F172A",
     "slogan": "Slim Starten, Sterk Spelen",
+    "heading_font": "inter_n7",
+    "body_font": "inter_n4",
     "free_shipping_threshold": "100",
     "shipping_cost": "€6,95",
     "return_days": 14,
     "kvk_number": "01166795",
     "btw_number": "NL 8215 17 338 B01",
-    "heading_font": "inter_n7",
-    "body_font": "inter_n4"
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {
+          "logo": "shopify://shop_images/padel-refurbished-tiktok-profiel.png",
+          "menu": "main-menu"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {
+          "description": "Wij maken padel toegankelijk en duurzaam. Professioneel gereviseerde rackets voor elke speler — opgericht door studenten van Hogeschool Leiden."
+        }
+      }
+    },
+    "content_for_index": []
   }
 }

@@ -29,6 +29,17 @@
     },
     "featured": {
       "type": "featured-products",
+      "blocks": {
+        "product_kpMfwP": {
+          "type": "product",
+          "settings": {
+            "product": "head-coello-team-2025-padelracket"
+          }
+        }
+      },
+      "block_order": [
+        "product_kpMfwP"
+      ],
       "settings": {
         "eyebrow": "Aanbevolen",
         "heading": "Populaire rackets",
