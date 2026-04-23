@@ -58,15 +58,36 @@
     "featured": {
       "type": "featured-products",
       "blocks": {
-        "product_kpMfwP": {
+        "product_VMy7LW": {
           "type": "product",
           "settings": {
-            "product": "head-coello-team-2025-padelracket"
+            "product": "head-graphene-360-alpha-elite"
+          }
+        },
+        "product_HDCQdF": {
+          "type": "product",
+          "settings": {
+            "product": "head-speed-elite-padelracket"
+          }
+        },
+        "product_zJ9aCV": {
+          "type": "product",
+          "settings": {
+            "product": "head-flash-pro-2021-padelracket"
+          }
+        },
+        "product_XXxrCW": {
+          "type": "product",
+          "settings": {
+            "product": "head-extreme-pro-2023-padelracket"
           }
         }
       },
       "block_order": [
-        "product_kpMfwP"
+        "product_VMy7LW",
+        "product_HDCQdF",
+        "product_zJ9aCV",
+        "product_XXxrCW"
       ],
       "settings": {
         "eyebrow": "Aanbevolen",
