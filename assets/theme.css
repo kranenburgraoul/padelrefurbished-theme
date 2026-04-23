@@ -893,7 +893,7 @@ button { font-family: var(--font-body); cursor: pointer; }
   overflow: hidden;
   margin-bottom: 1rem;
 }
-.gallery-main img { width: 100%; height: 100%; object-fit: contain; padding: 1rem; }
+.gallery-main img { width: 100%; height: 100%; object-fit: contain; padding: 1rem; transition: opacity 0.15s ease; }
 .gallery-main .no-image { width: 160px; height: 210px; opacity: 0.35; color: var(--primary); }
 
 .gallery-badge {

@@ -113,14 +113,31 @@ function initFilters() {
 function initGallery() {
   const main = document.querySelector('.gallery-main img');
   if (!main) return;
-  document.querySelectorAll('.gallery-thumb').forEach(thumb => {
+
+  const thumbs = document.querySelectorAll('.gallery-thumb');
+
+  // Preload all large images immediately so clicks are instant
+  thumbs.forEach(thumb => {
+    const src = thumb.dataset.src;
+    if (src && src !== main.src) {
+      const preload = new Image();
+      preload.src = src;
+    }
+  });
+
+  thumbs.forEach(thumb => {
     thumb.addEventListener('click', () => {
       const src = thumb.dataset.src || thumb.querySelector('img')?.src;
-      if (src) {
+      if (!src || src === main.src) return;
+      main.style.opacity = '0';
+      const img = new Image();
+      img.onload = () => {
         main.src = src;
-        document.querySelectorAll('.gallery-thumb').forEach(t => t.classList.remove('active'));
-        thumb.classList.add('active');
-      }
+        main.style.opacity = '1';
+      };
+      img.src = src;
+      thumbs.forEach(t => t.classList.remove('active'));
+      thumb.classList.add('active');
     });
   });
 }
