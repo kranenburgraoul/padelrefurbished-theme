@@ -1,37 +1,41 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero": {
       "type": "hero",
       "settings": {
+        "slogan": "",
         "headline": "Jouw eerste padel racket. Slim gekozen.",
         "subtext": "Professioneel gereviseerde padelrackets van topmerken — voor een fractie van de nieuwprijs. Gecheckt, gereinigd en klaar om mee te spelen.",
         "cta_primary_label": "Bekijk alle rackets",
-        "cta_secondary_label": "Ons verhaal"
-      },
-      "blocks": {
-        "trust-1": { "type": "trust_stat", "settings": { "number": "60+", "label": "Rackets verkocht" } },
-        "trust-2": { "type": "trust_stat", "settings": { "number": "3", "label": "Topmerken" } },
-        "trust-3": { "type": "trust_stat", "settings": { "number": "≤50%", "label": "Goedkoper dan nieuw" } }
-      },
-      "blocks_order": ["trust-1", "trust-2", "trust-3"]
+        "cta_primary_url": "shopify://collections/all",
+        "cta_secondary_label": "Ons verhaal",
+        "cta_secondary_url": "shopify://pages/contact",
+        "hero_image": "shopify://shop_images/WhatsApp_Image_2026-04-23_at_07.42.10.jpg",
+        "hero_image_alt": "PadelRefurbished rackets"
+      }
     },
     "stats": {
       "type": "stats-bar",
-      "blocks": {
-        "s1": { "type": "stat", "settings": { "icon": "✅", "strong": "100% Gecheckt", "small": "Elk racket persoonlijk geïnspecteerd" } },
-        "s2": { "type": "stat", "settings": { "icon": "🚀", "strong": "Binnen 2 werkdagen", "small": "Snelle levering door heel Nederland" } },
-        "s3": { "type": "stat", "settings": { "icon": "🛡️", "strong": "14 dagen retour", "small": "Niet tevreden? Geld terug, geen vragen" } },
-        "s4": { "type": "stat", "settings": { "icon": "♻️", "strong": "Duurzaam", "small": "Minder afval, meer padel" } }
-      },
-      "blocks_order": ["s1", "s2", "s3", "s4"]
+      "settings": {}
     },
     "featured": {
       "type": "featured-products",
       "settings": {
         "eyebrow": "Aanbevolen",
         "heading": "Populaire rackets",
+        "collection": "",
         "products_count": 4,
-        "cta_label": "Alle rackets →"
+        "cta_label": "Alle rackets →",
+        "cta_url": ""
       }
     },
     "why": {
@@ -40,16 +44,7 @@
         "eyebrow": "Waarom kiezen voor ons?",
         "heading": "Refurbished, de slimme keuze",
         "subtext": "Wij maken padel toegankelijk voor iedereen — zonder in te boeten op kwaliteit of eerlijkheid."
-      },
-      "blocks": {
-        "w1": { "type": "card", "settings": { "icon": "💰", "title": "Tot 60% goedkoper", "text": "Betaal een eerlijke prijs voor een professioneel gereviseerd racket. Kwaliteit van topmerken, zonder de topprijs." } },
-        "w2": { "type": "card", "settings": { "icon": "♻️", "title": "Duurzaam & bewust", "text": "Door refurbishing geven we elk racket een tweede leven. Minder afval, minder CO₂-uitstoot, meer sport voor iedereen." } },
-        "w3": { "type": "card", "settings": { "icon": "🔍", "title": "100% Transparant", "text": "Elk racket wordt persoonlijk gecheckt en eerlijk beschreven. Geen verrassingen — je weet precies wat je koopt." } },
-        "w4": { "type": "card", "settings": { "icon": "🚀", "title": "Snel geleverd", "text": "Je racket is binnen 2 werkdagen bij jou thuis. Gratis verzending vanaf €100, anders €6,95." } },
-        "w5": { "type": "card", "settings": { "icon": "🛡️", "title": "14 dagen retour", "text": "Niet tevreden? Geen probleem. Stuur het racket binnen 14 dagen retour en we lossen het op." } },
-        "w6": { "type": "card", "settings": { "icon": "🎾", "title": "Klaar om te spelen", "text": "Nieuwe grip, schoon racket. Je hoeft niets extra's te doen — pak hem uit en speel direct." } }
-      },
-      "blocks_order": ["w1", "w2", "w3", "w4", "w5", "w6"]
+      }
     },
     "process": {
       "type": "process-section",
@@ -57,13 +52,7 @@
         "eyebrow": "Hoe het werkt",
         "heading": "Ons refurbishment proces",
         "subtext": "Elk racket doorloopt een zorgvuldig kwaliteitsproces voordat het bij jou arriveert."
-      },
-      "blocks": {
-        "p1": { "type": "step", "settings": { "title": "Inspectie", "text": "We beoordelen elk racket op beschadigingen, structuur en algehele speelkwaliteit." } },
-        "p2": { "type": "step", "settings": { "title": "Reiniging & Grip", "text": "Het racket wordt grondig gereinigd en voorzien van een gloednieuwe grip." } },
-        "p3": { "type": "step", "settings": { "title": "Klaar om te spelen", "text": "Getest, goedgekeurd en zorgvuldig verpakt. Jouw racket is klaar voor het veld." } }
-      },
-      "blocks_order": ["p1", "p2", "p3"]
+      }
     },
     "cta": {
       "type": "cta-banner",
@@ -71,7 +60,9 @@
         "heading": "Klaar om te beginnen met padelen?",
         "subtext": "Kies jouw refurbished racket en start vandaag nog.",
         "cta_primary_label": "Bekijk alle rackets",
-        "cta_secondary_label": "Hulp nodig? Vraag het ons"
+        "cta_primary_url": "",
+        "cta_secondary_label": "Hulp nodig? Vraag het ons",
+        "cta_secondary_url": ""
       }
     },
     "newsletter": {
@@ -85,5 +76,13 @@
       }
     }
   },
-  "order": ["hero", "stats", "featured", "why", "process", "cta", "newsletter"]
+  "order": [
+    "hero",
+    "stats",
+    "featured",
+    "why",
+    "process",
+    "cta",
+    "newsletter"
+  ]
 }
