@@ -5,22 +5,38 @@
       <p class="section-subtitle">{{ section.settings.subtext }}</p>
     </div>
     <div class="team-grid">
-      {%- for block in section.blocks -%}
-        <div class="team-card" {{ block.shopify_attributes }} data-reveal>
-          {%- if block.settings.image != blank -%}
-            <div class="team-card__photo">
-              <img src="{{ block.settings.image | image_url: width: 400 }}" alt="{{ block.settings.name | escape }}" loading="lazy">
+      {%- if section.blocks.size > 0 -%}
+        {%- for block in section.blocks -%}
+          <div class="team-card" {{ block.shopify_attributes }}>
+            {%- if block.settings.image != blank -%}
+              <div class="team-card__photo">
+                <img src="{{ block.settings.image | image_url: width: 400 }}" alt="{{ block.settings.name | escape }}" loading="lazy">
+              </div>
+            {%- else -%}
+              <div class="team-card__avatar">{{ block.settings.name | slice: 0 }}</div>
+            {%- endif -%}
+            <div class="team-card__body">
+              <h3>{{ block.settings.name }}</h3>
+              <span class="team-card__role">{{ block.settings.role }}</span>
+              <p>{{ block.settings.bio }}</p>
             </div>
-          {%- else -%}
-            <div class="team-card__avatar">{{ block.settings.name | slice: 0 }}</div>
-          {%- endif -%}
-          <div class="team-card__body">
-            <h3>{{ block.settings.name }}</h3>
-            <span class="team-card__role">{{ block.settings.role }}</span>
-            <p>{{ block.settings.bio }}</p>
           </div>
-        </div>
-      {%- endfor -%}
+        {%- endfor -%}
+      {%- else -%}
+        {%- assign default_members = "Joep,Joey,Raoul,Mees" | split: "," -%}
+        {%- assign default_roles = "Inkoop & kwaliteit,Klantervaring & logistiek,Marketing & online,Financiën & partnerships" | split: "," -%}
+        {%- assign default_bios = "Verantwoordelijk voor inkoop en kwaliteitscontrole.,Zorgt voor een vlekkeloze klantervaring en logistiek.,Stuurt marketing en online aanwezigheid aan.,Beheert de financiën en partnerships." | split: "," -%}
+        {%- for name in default_members -%}
+          <div class="team-card">
+            <div class="team-card__avatar" style="background:#DCE9FD;color:#2E69DD;font-weight:700;font-size:2.5rem;">{{ name | slice: 0 }}</div>
+            <div class="team-card__body">
+              <h3>{{ name }}</h3>
+              <span class="team-card__role" style="color:#2E69DD;">Mede-oprichter</span>
+              <p>{{ default_roles[forloop.index0] }}</p>
+            </div>
+          </div>
+        {%- endfor -%}
+      {%- endif -%}
     </div>
   </div>
 </section>

@@ -1,24 +1,46 @@
 <section class="about-mission section">
   <div class="container">
-    <div class="about-mission__inner" data-reveal>
+    <div class="about-mission__inner">
       {%- if section.settings.image != blank -%}
         <div class="about-mission__image">
           <img src="{{ section.settings.image | image_url: width: 800 }}" alt="{{ section.settings.heading | escape }}" loading="lazy">
         </div>
       {%- endif -%}
       <div class="about-mission__text">
-        <div class="section-eyebrow">{{ section.settings.eyebrow }}</div>
-        <h2 class="section-title">{{ section.settings.heading }}</h2>
-        <div class="about-mission__body">{{ section.settings.body }}</div>
+        <div class="section-eyebrow">{{ section.settings.eyebrow | default: 'Onze missie' }}</div>
+        <h2 class="section-title">{{ section.settings.heading | default: 'Padel toegankelijk maken voor iedereen' }}</h2>
+        <div class="about-mission__body">
+          {%- if section.settings.body != blank -%}
+            {{ section.settings.body }}
+          {%- else -%}
+            <p>PadelRefurbished is opgericht door vier studenten met een passie voor padel en duurzaamheid. We geloven dat een goed racket geen fortuin hoeft te kosten — en dat elk racket een tweede kans verdient.</p>
+            <p>Door professioneel refurbishen geven wij gebruikte rackets een nieuw leven. Zo besparen spelers geld en bespaart de planeet grondstoffen.</p>
+          {%- endif -%}
+        </div>
         <div class="impact-numbers">
-          {%- for block in section.blocks -%}
-            {%- if block.type == 'stat' -%}
-              <div class="impact-stat" {{ block.shopify_attributes }}>
-                <div class="impact-number">{{ block.settings.number }}</div>
-                <div class="impact-label">{{ block.settings.label }}</div>
-              </div>
-            {%- endif -%}
-          {%- endfor -%}
+          {%- if section.blocks.size > 0 -%}
+            {%- for block in section.blocks -%}
+              {%- if block.type == 'stat' -%}
+                <div class="impact-stat" {{ block.shopify_attributes }}>
+                  <div class="impact-number">{{ block.settings.number }}</div>
+                  <div class="impact-label">{{ block.settings.label }}</div>
+                </div>
+              {%- endif -%}
+            {%- endfor -%}
+          {%- else -%}
+            <div class="impact-stat">
+              <div class="impact-number" style="font-size:2rem;font-weight:800;color:#2E69DD;">500+</div>
+              <div class="impact-label">Rackets gered</div>
+            </div>
+            <div class="impact-stat">
+              <div class="impact-number" style="font-size:2rem;font-weight:800;color:#2E69DD;">2x</div>
+              <div class="impact-label">Leven verlengd</div>
+            </div>
+            <div class="impact-stat">
+              <div class="impact-number" style="font-size:2rem;font-weight:800;color:#2E69DD;">98%</div>
+              <div class="impact-label">Tevreden klanten</div>
+            </div>
+          {%- endif -%}
         </div>
       </div>
     </div>

@@ -1212,6 +1212,8 @@ button { font-family: var(--font-body); cursor: pointer; }
 
 /* ==================  ABOUT MISSION  ================== */
 
+.about-mission { padding: 5rem 0; }
+.about-team { padding: 5rem 0; background: var(--primary-pale, #EEF4FF); }
 .about-mission__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
 .about-mission__image img { border-radius: 1.5rem; width: 100%; object-fit: cover; }
 .about-mission__body { margin: 1.25rem 0 2rem; line-height: 1.8; opacity: 0.85; }
