@@ -115,7 +115,7 @@ function initGallery() {
   if (!main) return;
   document.querySelectorAll('.gallery-thumb').forEach(thumb => {
     thumb.addEventListener('click', () => {
-      const src = thumb.querySelector('img')?.src || thumb.dataset.src;
+      const src = thumb.dataset.src || thumb.querySelector('img')?.src;
       if (src) {
         main.src = src;
         document.querySelectorAll('.gallery-thumb').forEach(t => t.classList.remove('active'));
