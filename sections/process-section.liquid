@@ -6,13 +6,31 @@
       <p class="section-subtitle">{{ section.settings.subtext }}</p>
     </div>
     <div class="process-steps">
-      {%- for block in section.blocks -%}
-        <div class="process-step" {{ block.shopify_attributes }}>
-          <div class="step-num" style="width:54px;height:54px;border-radius:50%;background:#2E69DD;color:white;font-size:1.2rem;font-weight:800;display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;position:relative;z-index:1;">{{ forloop.index }}</div>
-          <h3 class="step-title">{{ block.settings.title }}</h3>
-          <p class="step-text">{{ block.settings.text }}</p>
+      {%- if section.blocks.size > 0 -%}
+        {%- for block in section.blocks -%}
+          <div class="process-step" {{ block.shopify_attributes }}>
+            <div class="step-num" style="width:54px;height:54px;border-radius:50%;background:#2E69DD;color:white;font-size:1.2rem;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;position:relative;z-index:1;">{{ forloop.index }}</div>
+            <h3 class="step-title">{{ block.settings.title }}</h3>
+            <p class="step-text">{{ block.settings.text }}</p>
+          </div>
+        {%- endfor -%}
+      {%- else -%}
+        <div class="process-step">
+          <div class="step-num" style="width:54px;height:54px;border-radius:50%;background:#2E69DD;color:white;font-size:1.2rem;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;position:relative;z-index:1;">1</div>
+          <h3 class="step-title">Inspectie</h3>
+          <p class="step-text">We beoordelen elk racket op beschadigingen, structuur en algehele speelkwaliteit.</p>
         </div>
-      {%- endfor -%}
+        <div class="process-step">
+          <div class="step-num" style="width:54px;height:54px;border-radius:50%;background:#2E69DD;color:white;font-size:1.2rem;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;position:relative;z-index:1;">2</div>
+          <h3 class="step-title">Reiniging & Grip</h3>
+          <p class="step-text">Het racket wordt grondig gereinigd en voorzien van een gloednieuwe grip.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num" style="width:54px;height:54px;border-radius:50%;background:#2E69DD;color:white;font-size:1.2rem;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;position:relative;z-index:1;">3</div>
+          <h3 class="step-title">Klaar om te spelen</h3>
+          <p class="step-text">Getest, goedgekeurd en zorgvuldig verpakt. Jouw racket is klaar voor het veld.</p>
+        </div>
+      {%- endif -%}
     </div>
   </div>
 </section>

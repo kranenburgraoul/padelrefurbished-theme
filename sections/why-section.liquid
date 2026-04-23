@@ -6,13 +6,46 @@
       <p class="section-subtitle">{{ section.settings.subtext }}</p>
     </div>
     <div class="why-grid">
-      {%- for block in section.blocks -%}
-        <div class="why-card" {{ block.shopify_attributes }}>
-          <div class="why-icon" style="width:50px;height:50px;border-radius:13px;background:#DCE9FD;display:flex;align-items:center;justify-content:center;font-size:1.35rem;margin-bottom:1.25rem;">{{ block.settings.icon }}</div>
-          <h3 class="why-title">{{ block.settings.title }}</h3>
-          <p class="why-text">{{ block.settings.text }}</p>
+      {%- if section.blocks.size > 0 -%}
+        {%- for block in section.blocks -%}
+          <div class="why-card" {{ block.shopify_attributes }}>
+            <div class="why-icon" style="width:50px;height:50px;border-radius:13px;background:#DCE9FD;display:flex;align-items:center;justify-content:center;font-size:1.35rem;margin-bottom:1.25rem;">{{ block.settings.icon }}</div>
+            <h3 class="why-title">{{ block.settings.title }}</h3>
+            <p class="why-text">{{ block.settings.text }}</p>
+          </div>
+        {%- endfor -%}
+      {%- else -%}
+        <div class="why-card">
+          <div class="why-icon" style="width:50px;height:50px;border-radius:13px;background:#DCE9FD;display:flex;align-items:center;justify-content:center;font-size:1.35rem;margin-bottom:1.25rem;">💰</div>
+          <h3 class="why-title">Tot 60% goedkoper</h3>
+          <p class="why-text">Betaal een eerlijke prijs voor een professioneel gereviseerd racket. Kwaliteit van topmerken, zonder de topprijs.</p>
         </div>
-      {%- endfor -%}
+        <div class="why-card">
+          <div class="why-icon" style="width:50px;height:50px;border-radius:13px;background:#DCE9FD;display:flex;align-items:center;justify-content:center;font-size:1.35rem;margin-bottom:1.25rem;">♻️</div>
+          <h3 class="why-title">Duurzaam & bewust</h3>
+          <p class="why-text">Door refurbishing geven we elk racket een tweede leven. Minder afval, minder CO₂-uitstoot, meer sport voor iedereen.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon" style="width:50px;height:50px;border-radius:13px;background:#DCE9FD;display:flex;align-items:center;justify-content:center;font-size:1.35rem;margin-bottom:1.25rem;">🔍</div>
+          <h3 class="why-title">100% Transparant</h3>
+          <p class="why-text">Elk racket wordt persoonlijk gecheckt en eerlijk beschreven. Geen verrassingen — je weet precies wat je koopt.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon" style="width:50px;height:50px;border-radius:13px;background:#DCE9FD;display:flex;align-items:center;justify-content:center;font-size:1.35rem;margin-bottom:1.25rem;">🚀</div>
+          <h3 class="why-title">Snel geleverd</h3>
+          <p class="why-text">Je racket is binnen 2 werkdagen bij jou thuis. Gratis verzending vanaf €100, anders €6,95.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon" style="width:50px;height:50px;border-radius:13px;background:#DCE9FD;display:flex;align-items:center;justify-content:center;font-size:1.35rem;margin-bottom:1.25rem;">🛡️</div>
+          <h3 class="why-title">14 dagen retour</h3>
+          <p class="why-text">Niet tevreden? Geen probleem. Stuur het racket binnen 14 dagen retour en we lossen het op.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon" style="width:50px;height:50px;border-radius:13px;background:#DCE9FD;display:flex;align-items:center;justify-content:center;font-size:1.35rem;margin-bottom:1.25rem;">🎾</div>
+          <h3 class="why-title">Klaar om te spelen</h3>
+          <p class="why-text">Nieuwe grip, schoon racket. Je hoeft niets extra's te doen — pak hem uit en speel direct.</p>
+        </div>
+      {%- endif -%}
     </div>
   </div>
 </section>
