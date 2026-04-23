@@ -56,6 +56,33 @@
 
       <hr class="divider">
 
+      {%- assign mf_kleur  = product.metafields.custom.kleur.value -%}
+      {%- assign mf_vorm   = product.metafields.custom.vorm.value -%}
+      {%- assign mf_balans = product.metafields.custom.balans.value -%}
+      {%- if mf_kleur != blank or mf_vorm != blank or mf_balans != blank -%}
+        <div class="product-specs">
+          {%- if mf_kleur != blank -%}
+            <div class="spec-item">
+              <span class="spec-label">Kleur</span>
+              <span class="spec-value">{{ mf_kleur }}</span>
+            </div>
+          {%- endif -%}
+          {%- if mf_vorm != blank -%}
+            <div class="spec-item">
+              <span class="spec-label">Vorm</span>
+              <span class="spec-value">{{ mf_vorm }}</span>
+            </div>
+          {%- endif -%}
+          {%- if mf_balans != blank -%}
+            <div class="spec-item">
+              <span class="spec-label">Balans</span>
+              <span class="spec-value">{{ mf_balans }}</span>
+            </div>
+          {%- endif -%}
+        </div>
+        <hr class="divider">
+      {%- endif -%}
+
       {%- unless product.has_only_default_variant -%}
         {%- for option in product.options_with_values -%}
           <div class="grip-section">

@@ -952,6 +952,34 @@ button { font-family: var(--font-body); cursor: pointer; }
 
 .divider { border: none; border-top: 1px solid var(--border); margin: 1.75rem 0; }
 
+.product-specs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 0.25rem;
+}
+.spec-item {
+  background: var(--primary-pale);
+  border: 1px solid var(--primary-lighter);
+  border-radius: 12px;
+  padding: 0.85rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.spec-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--primary);
+}
+.spec-value {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
 .spec-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.65rem; margin-bottom: 1.75rem; }
 .spec-chip { background: var(--primary-pale); border: 1px solid var(--primary-lighter); border-radius: 10px; padding: 0.75rem 1rem; text-align: center; }
 .spec-chip-label { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--primary); margin-bottom: 0.25rem; }
