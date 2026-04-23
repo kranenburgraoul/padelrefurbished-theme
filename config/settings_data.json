@@ -65,6 +65,32 @@
           "copyright_name": "PadelRefurbished",
           "kvk_text": "KVK: 01166795 · BTW: NL 8215 17 338 B01"
         }
+      },
+      "announcement-bar": {
+        "type": "announcement-bar",
+        "blocks": {
+          "message_MFrra4": {
+            "type": "message",
+            "settings": {
+              "message": "🚚 Gratis verzending vanaf €100"
+            }
+          },
+          "message_8G4rnf": {
+            "type": "message",
+            "settings": {
+              "message": "⚡ Voor 16:00 besteld, vandaag verzonden"
+            }
+          }
+        },
+        "block_order": [
+          "message_MFrra4",
+          "message_8G4rnf"
+        ],
+        "settings": {
+          "bg_color": "#0f2d87",
+          "text_color": "#ffffff",
+          "interval": 4
+        }
       }
     },
     "content_for_index": []
