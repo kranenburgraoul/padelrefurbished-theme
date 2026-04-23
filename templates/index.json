@@ -11,6 +11,34 @@
   "sections": {
     "hero": {
       "type": "hero",
+      "blocks": {
+        "trust_stat_FKBcnc": {
+          "type": "trust_stat",
+          "settings": {
+            "number": "60+",
+            "label": "Rackets verkocht"
+          }
+        },
+        "trust_stat_intdYT": {
+          "type": "trust_stat",
+          "settings": {
+            "number": "60+",
+            "label": "Rackets verkocht"
+          }
+        },
+        "trust_stat_Aejk8E": {
+          "type": "trust_stat",
+          "settings": {
+            "number": "60+",
+            "label": "Rackets verkocht"
+          }
+        }
+      },
+      "block_order": [
+        "trust_stat_FKBcnc",
+        "trust_stat_intdYT",
+        "trust_stat_Aejk8E"
+      ],
       "settings": {
         "slogan": "",
         "headline": "Jouw eerste padel racket. Slim gekozen.",
