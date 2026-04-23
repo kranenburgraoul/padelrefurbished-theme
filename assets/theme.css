@@ -676,6 +676,7 @@ button { font-family: var(--font-body); cursor: pointer; }
   padding: 4rem 0 2rem;
   margin-top: 5rem;
 }
+.template-index .site-footer { margin-top: 0; }
 
 .footer-grid {
   display: grid;
