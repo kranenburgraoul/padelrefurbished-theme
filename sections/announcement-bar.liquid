@@ -1,0 +1,169 @@
+<div
+  class="announcement-bar"
+  id="announcement-bar"
+  data-interval="{{ section.settings.interval | times: 1000 }}"
+  style="background:{{ section.settings.bg_color }};color:{{ section.settings.text_color }};">
+
+  <div class="announcement-bar__track">
+    {%- for block in section.blocks -%}
+      {%- if block.type == 'message' -%}
+        <div
+          class="announcement-bar__msg{% if forloop.first %} is-active{% endif %}"
+          {{ block.shopify_attributes }}>
+          {{ block.settings.message }}
+        </div>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+
+  <button class="announcement-bar__close" aria-label="Sluiten" onclick="
+    document.getElementById('announcement-bar').style.display='none';
+    sessionStorage.setItem('announcementClosed','1');
+  ">&#x2715;</button>
+</div>
+
+<style>
+  .announcement-bar {
+    width: 100%;
+    padding: 0.55rem 3rem;
+    text-align: center;
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    position: relative;
+    z-index: 201;
+  }
+
+  .announcement-bar__track {
+    position: relative;
+    height: 1.3em;
+    overflow: hidden;
+  }
+
+  .announcement-bar__msg {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.45s ease, transform 0.45s ease;
+    pointer-events: none;
+    white-space: nowrap;
+  }
+
+  .announcement-bar__msg.is-active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .announcement-bar__msg.is-leaving {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  .announcement-bar__close {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: 0.9rem;
+    cursor: pointer;
+    opacity: 0.6;
+    line-height: 1;
+    padding: 0.25rem;
+    transition: opacity 0.2s;
+  }
+  .announcement-bar__close:hover { opacity: 1; }
+</style>
+
+<script>
+  (function () {
+    if (sessionStorage.getItem('announcementClosed') === '1') {
+      var bar = document.getElementById('announcement-bar');
+      if (bar) bar.style.display = 'none';
+      return;
+    }
+
+    var bar     = document.getElementById('announcement-bar');
+    var msgs    = bar ? bar.querySelectorAll('.announcement-bar__msg') : [];
+    var interval = parseInt(bar && bar.dataset.interval, 10) || 4000;
+
+    if (msgs.length <= 1) return;
+
+    var current = 0;
+
+    setInterval(function () {
+      var leaving = msgs[current];
+      current = (current + 1) % msgs.length;
+      var entering = msgs[current];
+
+      leaving.classList.add('is-leaving');
+      leaving.classList.remove('is-active');
+
+      setTimeout(function () {
+        leaving.classList.remove('is-leaving');
+        entering.classList.add('is-active');
+      }, 450);
+    }, interval);
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Aankondigingsbalk",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Achtergrondkleur",
+      "default": "#0F2D87"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Tekstkleur",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "range",
+      "id": "interval",
+      "label": "Wisseltijd (seconden)",
+      "min": 2,
+      "max": 8,
+      "step": 1,
+      "default": 4
+    }
+  ],
+  "blocks": [
+    {
+      "type": "message",
+      "name": "Bericht",
+      "limit": 5,
+      "settings": [
+        {
+          "type": "text",
+          "id": "message",
+          "label": "Bericht",
+          "default": "Gratis verzending vanaf €100"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Aankondigingsbalk",
+      "blocks": [
+        { "type": "message", "settings": { "message": "🚚 Gratis verzending vanaf €100" } },
+        { "type": "message", "settings": { "message": "⚡ Voor 16:00 besteld, vandaag verzonden" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
