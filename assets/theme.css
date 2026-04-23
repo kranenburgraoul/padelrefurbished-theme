@@ -85,6 +85,30 @@ button { font-family: var(--font-body); cursor: pointer; }
 
 .navbar-actions { display: flex; align-items: center; gap: 0.75rem; flex-shrink: 0; }
 
+.mobile-nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 38px;
+  height: 38px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+.mobile-nav-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
 .shipping-badge {
   font-size: 0.78rem;
   color: var(--primary);
@@ -1316,8 +1340,49 @@ button { font-family: var(--font-body); cursor: pointer; }
 }
 
 @media (max-width: 768px) {
-  .navbar-nav { display: none; }
+  /* --- Header & nav --- */
+  .site-header { position: relative; }
+  .mobile-nav-toggle { display: flex; }
+  .cart-btn__text { display: none; }
   .shipping-badge { display: none; }
+
+  .navbar-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.09);
+    flex-direction: column;
+    padding: 0.5rem 1rem 1rem;
+    gap: 0.1rem;
+    z-index: 199;
+    list-style: none;
+  }
+  .navbar-nav.open { display: flex; }
+  .navbar-nav li { width: 100%; }
+  .navbar-nav a { display: block; padding: 0.65rem 0.9rem; border-radius: 8px; font-size: 1rem; }
+
+  /* --- Products slider --- */
+  .products-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 1rem;
+    padding-bottom: 1rem;
+    scrollbar-width: none;
+  }
+  .products-grid::-webkit-scrollbar { display: none; }
+  .products-grid .product-card {
+    flex: 0 0 calc(100% - 2rem);
+    scroll-snap-align: start;
+    min-width: 0;
+  }
+
+  /* --- Other --- */
   .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
   .stats-inner { flex-wrap: wrap; }
   .stat-item { width: 50%; border-bottom: 1px solid var(--border); }
