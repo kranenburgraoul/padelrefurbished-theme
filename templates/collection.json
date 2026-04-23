@@ -1,34 +1,46 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "page-header": {
       "type": "page-header",
+      "blocks": {
+        "pill1": {
+          "type": "pill",
+          "settings": {
+            "label": "✅ Gecheckt & gereinigd"
+          }
+        },
+        "pill2": {
+          "type": "pill",
+          "settings": {
+            "label": "♻️ Allemaal refurbished"
+          }
+        },
+        "pill3": {
+          "type": "pill",
+          "settings": {
+            "label": "🚀 Binnen 2 werkdagen geleverd"
+          }
+        }
+      },
       "settings": {
         "title": "Rackets",
         "subtitle": "Professioneel gereviseerde padelrackets van topmerken. Elk racket persoonlijk gecheckt, gereinigd en klaar voor gebruik.",
         "show_breadcrumb": true,
         "show_pills": true
-      },
-      "blocks": {
-        "pill1": {
-          "type": "pill",
-          "settings": { "label": "✅ Gecheckt & gereinigd" }
-        },
-        "pill2": {
-          "type": "pill",
-          "settings": { "label": "♻️ Allemaal refurbished" }
-        },
-        "pill3": {
-          "type": "pill",
-          "settings": { "label": "🚀 Binnen 2 werkdagen geleverd" }
-        }
-      },
-      "blocks_order": ["pill1", "pill2", "pill3"]
+      }
     },
     "collection-grid": {
       "type": "collection-grid",
-      "settings": {
-        "products_per_page": 12
-      }
+      "settings": {}
     },
     "stats": {
       "type": "stats-bar",
@@ -66,15 +78,10 @@
           }
         }
       },
-      "blocks_order": ["stat1", "stat2", "stat3", "stat4"]
+      "settings": {}
     },
     "process": {
       "type": "process-section",
-      "settings": {
-        "eyebrow": "Ons transparante proces",
-        "heading": "Hoe wij elk racket klaarmaken",
-        "subtext": "Wij zijn eerlijk over de staat van elk racket. Dit is precies wat er gebeurt voordat het jou bereikt."
-      },
       "blocks": {
         "step1": {
           "type": "step",
@@ -112,7 +119,11 @@
           }
         }
       },
-      "blocks_order": ["step1", "step2", "step3", "step4", "step5"]
+      "settings": {
+        "eyebrow": "Ons transparante proces",
+        "heading": "Hoe wij elk racket klaarmaken",
+        "subtext": "Wij zijn eerlijk over de staat van elk racket. Dit is precies wat er gebeurt voordat het jou bereikt."
+      }
     },
     "newsletter": {
       "type": "newsletter",
@@ -125,5 +136,11 @@
       }
     }
   },
-  "order": ["page-header", "collection-grid", "stats", "process", "newsletter"]
+  "order": [
+    "page-header",
+    "collection-grid",
+    "stats",
+    "process",
+    "newsletter"
+  ]
 }

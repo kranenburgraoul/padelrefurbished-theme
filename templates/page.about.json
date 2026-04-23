@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "page-header": {
@@ -14,28 +23,55 @@
       "settings": {
         "eyebrow": "Onze missie",
         "heading": "Padel toegankelijk maken voor iedereen",
-        "body": "<p>PadelRefurbished is opgericht door vier studenten met een passie voor padel en duurzaamheid. We geloven dat een goed racket geen fortuin hoeft te kosten — en dat elk racket een tweede kans verdient.<\/p><p>Door professioneel refurbishen geven wij gebruikte rackets een nieuw leven. Zo besparen spelers geld en bespaart de planeet grondstoffen.<\/p>"
-      },
-      "blocks": {
-        "s1": { "type": "stat", "settings": { "number": "500+", "label": "Rackets gered" } },
-        "s2": { "type": "stat", "settings": { "number": "2x", "label": "Leven verlengd" } },
-        "s3": { "type": "stat", "settings": { "number": "98%", "label": "Tevreden klanten" } }
-      },
-      "blocks_order": ["s1", "s2", "s3"]
+        "body": "<p>PadelRefurbished is opgericht door vier studenten met een passie voor padel en duurzaamheid. We geloven dat een goed racket geen fortuin hoeft te kosten — en dat elk racket een tweede kans verdient.</p><p>Door professioneel refurbishen geven wij gebruikte rackets een nieuw leven. Zo besparen spelers geld en bespaart de planeet grondstoffen.</p>"
+      }
     },
     "team": {
       "type": "about-team",
+      "blocks": {
+        "member_LhDcmt": {
+          "type": "member",
+          "settings": {
+            "name": "Raoul Kranenburg",
+            "role": "Mede-oprichter",
+            "bio": ""
+          }
+        },
+        "member_kfGbrn": {
+          "type": "member",
+          "settings": {
+            "name": "Joep Klein",
+            "role": "Mede-oprichter",
+            "bio": ""
+          }
+        },
+        "member_WhTN96": {
+          "type": "member",
+          "settings": {
+            "name": "Mees Hooijmans",
+            "role": "Mede-oprichter",
+            "bio": ""
+          }
+        },
+        "member_4t8bhB": {
+          "type": "member",
+          "settings": {
+            "name": "Joep Klein",
+            "role": "Mede-oprichter",
+            "bio": ""
+          }
+        }
+      },
+      "block_order": [
+        "member_LhDcmt",
+        "member_kfGbrn",
+        "member_WhTN96",
+        "member_4t8bhB"
+      ],
       "settings": {
         "heading": "Het team",
         "subtext": "De mensen achter PadelRefurbished"
-      },
-      "blocks": {
-        "t1": { "type": "member", "settings": { "name": "Joep", "role": "Mede-oprichter", "bio": "Verantwoordelijk voor inkoop en kwaliteitscontrole." } },
-        "t2": { "type": "member", "settings": { "name": "Joey", "role": "Mede-oprichter", "bio": "Zorgt voor een vlekkeloze klantervaring en logistiek." } },
-        "t3": { "type": "member", "settings": { "name": "Raoul", "role": "Mede-oprichter", "bio": "Stuurt marketing en online aanwezigheid aan." } },
-        "t4": { "type": "member", "settings": { "name": "Mees", "role": "Mede-oprichter", "bio": "Beheert de financiën en partnerships." } }
-      },
-      "blocks_order": ["t1", "t2", "t3", "t4"]
+      }
     },
     "cta": {
       "type": "cta-banner",
@@ -59,5 +95,11 @@
       }
     }
   },
-  "order": ["page-header", "mission", "team", "cta", "newsletter"]
+  "order": [
+    "page-header",
+    "mission",
+    "team",
+    "cta",
+    "newsletter"
+  ]
 }
