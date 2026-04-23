@@ -4,6 +4,76 @@
       "type": "product-main",
       "settings": {}
     },
+    "stats": {
+      "type": "stats-bar",
+      "blocks": {
+        "stat1": {
+          "type": "stat",
+          "settings": {
+            "icon": "✅",
+            "strong": "100% Gecheckt",
+            "small": "Elk racket persoonlijk geïnspecteerd"
+          }
+        },
+        "stat2": {
+          "type": "stat",
+          "settings": {
+            "icon": "🚀",
+            "strong": "Binnen 2 werkdagen",
+            "small": "Snelle levering door heel Nederland"
+          }
+        },
+        "stat3": {
+          "type": "stat",
+          "settings": {
+            "icon": "🛡️",
+            "strong": "14 dagen retour",
+            "small": "Niet tevreden? Geld terug, geen vragen"
+          }
+        },
+        "stat4": {
+          "type": "stat",
+          "settings": {
+            "icon": "♻️",
+            "strong": "Duurzaam",
+            "small": "Minder afval, meer padel"
+          }
+        }
+      },
+      "blocks_order": ["stat1", "stat2", "stat3", "stat4"]
+    },
+    "process": {
+      "type": "process-section",
+      "settings": {
+        "eyebrow": "Hoe het werkt",
+        "heading": "Ons transparante proces",
+        "subtext": "Elk racket doorloopt een zorgvuldig kwaliteitsproces voordat het bij jou arriveert."
+      },
+      "blocks": {
+        "step1": {
+          "type": "step",
+          "settings": {
+            "title": "Inspectie",
+            "text": "We beoordelen elk racket op beschadigingen, structuur en algehele speelkwaliteit."
+          }
+        },
+        "step2": {
+          "type": "step",
+          "settings": {
+            "title": "Reiniging & Grip",
+            "text": "Het racket wordt grondig gereinigd en voorzien van een gloednieuwe grip."
+          }
+        },
+        "step3": {
+          "type": "step",
+          "settings": {
+            "title": "Klaar om te spelen",
+            "text": "Getest, goedgekeurd en zorgvuldig verpakt. Jouw racket is klaar voor het veld."
+          }
+        }
+      },
+      "blocks_order": ["step1", "step2", "step3"]
+    },
     "related": {
       "type": "related-products",
       "settings": {
@@ -11,5 +81,5 @@
       }
     }
   },
-  "order": ["product-main", "related"]
+  "order": ["product-main", "stats", "process", "related"]
 }
