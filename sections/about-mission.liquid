@@ -1,11 +1,13 @@
 <section class="about-mission section">
   <div class="container">
     <div class="about-mission__inner">
-      {%- if section.settings.image != blank -%}
-        <div class="about-mission__image">
+      <div class="about-mission__image">
+        {%- if section.settings.image != blank -%}
           <img src="{{ section.settings.image | image_url: width: 800 }}" alt="{{ section.settings.heading | escape }}" loading="lazy">
-        </div>
-      {%- endif -%}
+        {%- else -%}
+          <span class="about-mission__placeholder">PR</span>
+        {%- endif -%}
+      </div>
       <div class="about-mission__text">
         <div class="section-eyebrow">{{ section.settings.eyebrow | default: 'Onze missie' }}</div>
         <h2 class="section-title">{{ section.settings.heading | default: 'Padel toegankelijk maken voor iedereen' }}</h2>

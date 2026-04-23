@@ -3,9 +3,10 @@
     "page-header": {
       "type": "page-header",
       "settings": {
-        "eyebrow": "Wie zijn wij",
         "title": "Onze bijdrage",
-        "subtitle": "Duurzaam padel toegankelijk maken voor iedereen."
+        "subtitle": "Duurzaam padel toegankelijk maken voor iedereen.",
+        "show_breadcrumb": true,
+        "show_pills": false
       }
     },
     "mission": {
@@ -13,7 +14,7 @@
       "settings": {
         "eyebrow": "Onze missie",
         "heading": "Padel toegankelijk maken voor iedereen",
-        "body": "<p>PadelRefurbished is opgericht door vier studenten met een passie voor padel en duurzaamheid. We geloven dat een goed racket geen fortuin hoeft te kosten — en dat elk racket een tweede kans verdient.</p><p>Door professioneel refurbishen geven wij gebruikte rackets een nieuw leven. Zo besparen spelers geld en bespaart de planeet grondstoffen.</p>"
+        "body": "<p>PadelRefurbished is opgericht door vier studenten met een passie voor padel en duurzaamheid. We geloven dat een goed racket geen fortuin hoeft te kosten — en dat elk racket een tweede kans verdient.<\/p><p>Door professioneel refurbishen geven wij gebruikte rackets een nieuw leven. Zo besparen spelers geld en bespaart de planeet grondstoffen.<\/p>"
       },
       "blocks": {
         "s1": { "type": "stat", "settings": { "number": "500+", "label": "Rackets gered" } },
@@ -42,9 +43,21 @@
         "heading": "Doe mee aan de beweging",
         "subtext": "Kies duurzaam. Kies betaalbaar. Kies PadelRefurbished.",
         "cta_primary_label": "Bekijk rackets",
-        "cta_secondary_label": "Neem contact op"
+        "cta_primary_url": "/collections/all",
+        "cta_secondary_label": "Neem contact op",
+        "cta_secondary_url": "/pages/contact"
+      }
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "settings": {
+        "eyebrow": "Nieuwsbrief",
+        "heading": "Gratis grip bij aanmelding",
+        "subtext": "Ontvang updates over nieuwe rackets en onze missie.",
+        "placeholder": "jouw@email.nl",
+        "button_label": "Aanmelden →"
       }
     }
   },
-  "order": ["page-header", "mission", "team", "cta"]
+  "order": ["page-header", "mission", "team", "cta", "newsletter"]
 }
