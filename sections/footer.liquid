@@ -1,40 +1,57 @@
 <footer class="site-footer">
   <div class="container">
     <div class="footer-grid">
-      <div>
-        <a href="{{ routes.root_url }}" class="footer-logo-link">Padel<span>Refurbished</span></a>
-        <div class="footer-slogan">{{ settings.slogan }}</div>
-        <p class="footer-desc">{{ section.settings.description }}</p>
-        <div class="footer-socials">
-          {%- if settings.instagram_url != blank -%}
-            <a href="{{ settings.instagram_url }}" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram">IG</a>
-          {%- endif -%}
-          {%- if settings.facebook_url != blank -%}
-            <a href="{{ settings.facebook_url }}" target="_blank" rel="noopener" class="social-icon" aria-label="Facebook">FB</a>
-          {%- endif -%}
-          {%- if settings.linkedin_url != blank -%}
-            <a href="{{ settings.linkedin_url }}" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn">in</a>
-          {%- endif -%}
-        </div>
-      </div>
-
       {%- for block in section.blocks -%}
-        {%- if block.type == 'menu_column' -%}
+
+        {%- if block.type == 'brand' -%}
+          <div class="footer-brand-col" {{ block.shopify_attributes }}>
+            <a href="{{ routes.root_url }}" class="footer-logo-link">
+              {{ block.settings.logo_text | default: shop.name }}
+            </a>
+            {%- if block.settings.slogan != blank -%}
+              <div class="footer-slogan">{{ block.settings.slogan }}</div>
+            {%- endif -%}
+            {%- if block.settings.description != blank -%}
+              <p class="footer-desc">{{ block.settings.description }}</p>
+            {%- endif -%}
+            {%- if block.settings.show_socials -%}
+              <div class="footer-socials">
+                {%- if settings.instagram_url != blank -%}
+                  <a href="{{ settings.instagram_url }}" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram">IG</a>
+                {%- endif -%}
+                {%- if settings.facebook_url != blank -%}
+                  <a href="{{ settings.facebook_url }}" target="_blank" rel="noopener" class="social-icon" aria-label="Facebook">FB</a>
+                {%- endif -%}
+                {%- if settings.linkedin_url != blank -%}
+                  <a href="{{ settings.linkedin_url }}" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn">in</a>
+                {%- endif -%}
+              </div>
+            {%- endif -%}
+          </div>
+
+        {%- elsif block.type == 'menu_column' -%}
           <div {{ block.shopify_attributes }}>
-            <div class="footer-col-title">{{ block.settings.heading }}</div>
-            <ul class="footer-links">
-              {%- for link in linklists[block.settings.menu].links -%}
-                <li><a href="{{ link.url }}">{{ link.title }}</a></li>
-              {%- endfor -%}
-            </ul>
+            {%- if block.settings.heading != blank -%}
+              <div class="footer-col-title">{{ block.settings.heading }}</div>
+            {%- endif -%}
+            {%- if block.settings.menu != blank -%}
+              <ul class="footer-links">
+                {%- for link in linklists[block.settings.menu].links -%}
+                  <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+                {%- endfor -%}
+              </ul>
+            {%- endif -%}
           </div>
         {%- endif -%}
+
       {%- endfor -%}
     </div>
 
     <div class="footer-bottom">
-      <p>&copy; {{ 'now' | date: '%Y' }} PadelRefurbished. Alle rechten voorbehouden.</p>
-      <p class="footer-kvk">KVK: {{ settings.kvk_number }} &nbsp;·&nbsp; BTW: {{ settings.btw_number }}</p>
+      <p>&copy; {{ 'now' | date: '%Y' }} {{ section.settings.copyright_name | default: shop.name }}. Alle rechten voorbehouden.</p>
+      {%- if section.settings.kvk_text != blank -%}
+        <p class="footer-kvk">{{ section.settings.kvk_text }}</p>
+      {%- endif -%}
     </div>
   </div>
 </footer>
@@ -44,16 +61,54 @@
   "name": "Footer",
   "settings": [
     {
-      "type": "textarea",
-      "id": "description",
-      "label": "Beschrijving",
-      "default": "Wij maken padel toegankelijk en duurzaam. Professioneel gereviseerde rackets voor elke speler — opgericht door studenten van Hogeschool Leiden."
+      "type": "text",
+      "id": "copyright_name",
+      "label": "Naam in copyright",
+      "default": "PadelRefurbished"
+    },
+    {
+      "type": "text",
+      "id": "kvk_text",
+      "label": "KVK / BTW tekst",
+      "default": "KVK: 01166795 · BTW: NL 8215 17 338 B01"
     }
   ],
   "blocks": [
     {
+      "type": "brand",
+      "name": "Merkkolom",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "logo_text",
+          "label": "Logo tekst",
+          "default": "PadelRefurbished"
+        },
+        {
+          "type": "text",
+          "id": "slogan",
+          "label": "Slogan",
+          "default": "Slim Starten, Sterk Spelen"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Beschrijving",
+          "default": "Wij maken padel toegankelijk en duurzaam. Professioneel gereviseerde rackets voor elke speler — opgericht door studenten van Hogeschool Leiden."
+        },
+        {
+          "type": "checkbox",
+          "id": "show_socials",
+          "label": "Toon sociale media iconen",
+          "default": true
+        }
+      ]
+    },
+    {
       "type": "menu_column",
       "name": "Menukolom",
+      "limit": 3,
       "settings": [
         {
           "type": "text",
@@ -72,8 +127,29 @@
     {
       "name": "Footer",
       "blocks": [
-        { "type": "menu_column", "settings": { "heading": "Navigatie" } },
-        { "type": "menu_column", "settings": { "heading": "Informatie" } }
+        {
+          "type": "brand",
+          "settings": {
+            "logo_text": "PadelRefurbished",
+            "slogan": "Slim Starten, Sterk Spelen",
+            "description": "Wij maken padel toegankelijk en duurzaam. Professioneel gereviseerde rackets voor elke speler — opgericht door studenten van Hogeschool Leiden.",
+            "show_socials": true
+          }
+        },
+        {
+          "type": "menu_column",
+          "settings": {
+            "heading": "Navigatie",
+            "menu": "main-menu"
+          }
+        },
+        {
+          "type": "menu_column",
+          "settings": {
+            "heading": "Informatie",
+            "menu": "footer-menu"
+          }
+        }
       ]
     }
   ]
