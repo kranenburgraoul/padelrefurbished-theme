@@ -3,35 +3,64 @@
     "page-header": {
       "type": "page-header",
       "settings": {
-        "eyebrow": "We horen graag van je",
-        "title": "Contact",
-        "subtitle": "Stel je vraag, we reageren binnen 24 uur."
+        "title": "Hoe kunnen we je helpen?",
+        "subtitle": "Vraag over een racket, je bestelling of iets anders? Wij zijn er voor je. Je krijgt doorgaans binnen 24 uur antwoord.",
+        "show_breadcrumb": true,
+        "show_pills": false
       }
     },
     "contact-form": {
       "type": "contact-form",
       "settings": {
-        "form_heading": "Stuur ons een bericht",
-        "button_label": "Bericht versturen",
-        "info_heading": "Contact informatie",
-        "response_time": "We reageren doorgaans binnen 24 uur op werkdagen.",
-        "faq_heading": "Veelgestelde vragen"
+        "form_heading": "Stuur een bericht",
+        "form_subtext": "Vul het formulier in en we nemen zo snel mogelijk contact met je op.",
+        "button_label": "Verstuur bericht →",
+        "response_text": "We reageren doorgaans binnen 24 uur",
+        "info_heading": "Direct contact",
+        "email": "info@padelrefurbished.nl",
+        "phone": "+31 6 13609094",
+        "hours": "Ma–Vr, 09:00–18:00",
+        "quick_heading": "Snelle info",
+        "quick_delivery": "Binnen 2 werkdagen",
+        "quick_shipping": "€6,95 (gratis v.a. €100)",
+        "quick_return": "14 dagen bedenktijd",
+        "quick_kvk": "01166795"
       },
       "blocks": {
-        "sub1": { "type": "subject", "settings": { "label": "Vraag over bestelling" } },
-        "sub2": { "type": "subject", "settings": { "label": "Vraag over een product" } },
-        "sub3": { "type": "subject", "settings": { "label": "Retour of ruil" } },
-        "sub4": { "type": "subject", "settings": { "label": "Samenwerking" } },
-        "sub5": { "type": "subject", "settings": { "label": "Overige" } },
-        "faq1": { "type": "faq", "settings": { "question": "Hoe lang duurt verzending?", "answer": "We verzenden binnen 1-2 werkdagen. Levering duurt daarna nog 1-2 werkdagen via PostNL." } },
-        "faq2": { "type": "faq", "settings": { "question": "Kan ik een racket retourneren?", "answer": "Ja, je hebt 14 dagen retourrecht. Neem contact op en we regelen het verder." } },
-        "faq3": { "type": "faq", "settings": { "question": "Zijn de rackets gegarandeerd speelklaar?", "answer": "Elk racket wordt professioneel geïnspecteerd en hersteld voor verzending." } },
-        "faq4": { "type": "faq", "settings": { "question": "Kan ik mijn eigen racket inleveren?", "answer": "Ja! Stuur ons een berichtje en we bespreken de mogelijkheden." } },
-        "faq5": { "type": "faq", "settings": { "question": "Welke betaalmethoden accepteren jullie?", "answer": "Ideal, creditcard, PayPal en Klarna achteraf betalen." } },
-        "faq6": { "type": "faq", "settings": { "question": "Hebben jullie een fysieke winkel?", "answer": "Nee, we zijn puur online. Zo houden we de kosten laag voor jou." } }
+        "sub1": { "type": "subject", "settings": { "label": "Racket advies" } },
+        "sub2": { "type": "subject", "settings": { "label": "Vraag over mijn bestelling" } },
+        "sub3": { "type": "subject", "settings": { "label": "Retour aanvragen" } },
+        "sub4": { "type": "subject", "settings": { "label": "Overig" } }
       },
-      "blocks_order": ["sub1", "sub2", "sub3", "sub4", "sub5", "faq1", "faq2", "faq3", "faq4", "faq5", "faq6"]
+      "blocks_order": ["sub1", "sub2", "sub3", "sub4"]
+    },
+    "faq": {
+      "type": "contact-faq",
+      "settings": {
+        "eyebrow": "Veelgestelde vragen",
+        "heading": "Heb je een vraag?",
+        "subtext": "Misschien staat je antwoord hier al."
+      },
+      "blocks": {
+        "faq1": { "type": "faq", "settings": { "question": "Wat is een refurbished racket precies?", "answer": "Een refurbished racket is een gebruikt racket dat professioneel is geïnspecteerd, gereinigd en voorzien van een nieuwe grip. Het is betaalbaar en duurzaam, maar heeft dezelfde speelkwaliteit als een nieuw racket." } },
+        "faq2": { "type": "faq", "settings": { "question": "Zijn de rackets in goede staat?", "answer": "Ja! Elk racket wordt persoonlijk geïnspecteerd. Rackets met structurele beschadigingen worden afgekeurd. Kleine cosmetische slijtage is mogelijk — dat beschrijven we eerlijk in de productomschrijving." } },
+        "faq3": { "type": "faq", "settings": { "question": "Hoelang duurt de levering?", "answer": "Wij leveren binnen 2 werkdagen na je bestelling. Bestellingen geplaatst voor 16:00 uur worden dezelfde dag verzonden. Bezorgkosten zijn €6,95, gratis bij bestellingen boven de €100." } },
+        "faq4": { "type": "faq", "settings": { "question": "Kan ik mijn racket terugsturen?", "answer": "Ja, je hebt 14 dagen bedenktijd. Als je niet tevreden bent, stuur het racket dan ongebruikt terug en we storten het bedrag terug. Neem contact op via het formulier of per e-mail." } },
+        "faq5": { "type": "faq", "settings": { "question": "Welk racket past bij mij als beginner?", "answer": "Voor beginners raden we een allround racket met een ronder frame aan — dit biedt meer speelvlak en is vergevingsgezinder. Twijfel je? Stuur ons een berichtje en we helpen je graag persoonlijk." } },
+        "faq6": { "type": "faq", "settings": { "question": "Geven jullie garantie op de rackets?", "answer": "We geven geen officiële fabrieksgarantie op refurbished producten, maar we staan 100% achter de kwaliteit die we leveren. Bij gebreken die we gemist hebben, zoeken we altijd een oplossing." } }
+      },
+      "blocks_order": ["faq1", "faq2", "faq3", "faq4", "faq5", "faq6"]
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "settings": {
+        "eyebrow": "Nieuwsbrief",
+        "heading": "Gratis grip bij aanmelding",
+        "subtext": "Ontvang updates over nieuwe rackets en exclusieve aanbiedingen.",
+        "placeholder": "jouw@email.nl",
+        "button_label": "Aanmelden →"
+      }
     }
   },
-  "order": ["page-header", "contact-form"]
+  "order": ["page-header", "contact-form", "faq", "newsletter"]
 }

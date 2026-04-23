@@ -1,6 +1,7 @@
-<section class="contact-section section-py">
+<section class="contact-body section-py">
   <div class="container">
     <div class="contact-grid">
+
       <!-- Form -->
       <div class="contact-form-wrap">
         <h2>{{ section.settings.form_heading }}</h2>
@@ -8,73 +9,114 @@
 
         {%- form 'contact', id: 'contact-form' -%}
           {%- if form.posted_successfully? -%}
-            <div style="background:var(--primary-pale);border:1px solid var(--primary-light);border-radius:12px;padding:1.5rem;display:flex;align-items:center;gap:0.75rem;color:var(--primary);font-weight:600;margin-bottom:2rem;">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              Bedankt! We nemen zo snel mogelijk contact met je op.
+            <div class="contact-success">
+              <strong>✅ Bericht verstuurd!</strong><br>
+              <span>We nemen binnen 24 uur contact met je op.</span>
             </div>
           {%- else -%}
             <div class="form-row">
               <div class="form-group">
-                <label class="form-label" for="contact_name">Naam</label>
+                <label class="form-label" for="contact_name">Naam *</label>
                 <input type="text" id="contact_name" name="contact[name]" class="form-input" required placeholder="Jouw naam">
               </div>
               <div class="form-group">
-                <label class="form-label" for="contact_email">E-mail</label>
+                <label class="form-label" for="contact_email">E-mailadres *</label>
                 <input type="email" id="contact_email" name="contact[email]" class="form-input" required placeholder="jouw@email.nl">
               </div>
             </div>
             <div class="form-group">
               <label class="form-label" for="contact_subject">Onderwerp</label>
               <select id="contact_subject" name="contact[subject]" class="form-select">
+                <option value="">Selecteer een onderwerp</option>
                 {%- for block in section.blocks -%}
                   {%- if block.type == 'subject' -%}
-                    <option>{{ block.settings.label }}</option>
+                    <option value="{{ block.settings.label | handleize }}">{{ block.settings.label }}</option>
                   {%- endif -%}
                 {%- endfor -%}
               </select>
             </div>
             <div class="form-group">
-              <label class="form-label" for="contact_message">Bericht</label>
-              <textarea id="contact_message" name="contact[body]" class="form-textarea" rows="6" required placeholder="Schrijf hier je bericht…"></textarea>
+              <label class="form-label" for="contact_message">Bericht *</label>
+              <textarea id="contact_message" name="contact[body]" class="form-textarea" required placeholder="Vertel ons hoe we je kunnen helpen..."></textarea>
             </div>
-            <button type="submit" class="btn btn-primary btn-lg">{{ section.settings.button_label }}</button>
+            <button type="submit" class="form-submit">{{ section.settings.button_label }}</button>
           {%- endif -%}
         {%- endform -%}
       </div>
 
       <!-- Sidebar -->
       <div class="contact-sidebar">
-        <div class="contact-info-card" style="background:var(--primary-pale);border-radius:16px;padding:2rem;margin-bottom:2rem;">
-          <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:1.25rem;">{{ section.settings.info_heading }}</h3>
-          {%- if section.settings.email != blank -%}
-            <div style="display:flex;align-items:center;gap:0.65rem;margin-bottom:0.75rem;font-size:0.9rem;">
-              <span style="font-size:1.1rem;">📧</span>
-              <a href="mailto:{{ section.settings.email }}" style="color:var(--primary);font-weight:500;">{{ section.settings.email }}</a>
+
+        <div class="response-badge">
+          <div class="response-dot"></div>
+          {{ section.settings.response_text }}
+        </div>
+
+        <div class="contact-info-card">
+          <div class="contact-info-title">{{ section.settings.info_heading }}</div>
+          <div class="contact-info-items">
+            {%- if section.settings.email != blank -%}
+              <div class="contact-info-item">
+                <div class="ci-icon">📧</div>
+                <div>
+                  <div class="ci-label">E-mail</div>
+                  <div class="ci-value"><a href="mailto:{{ section.settings.email }}">{{ section.settings.email }}</a></div>
+                </div>
+              </div>
+            {%- endif -%}
+            {%- if section.settings.phone != blank -%}
+              <div class="contact-info-item">
+                <div class="ci-icon">📞</div>
+                <div>
+                  <div class="ci-label">Telefoon / WhatsApp</div>
+                  <div class="ci-value"><a href="tel:{{ section.settings.phone | remove: ' ' | remove: '-' }}">{{ section.settings.phone }}</a></div>
+                </div>
+              </div>
+            {%- endif -%}
+            {%- if section.settings.hours != blank -%}
+              <div class="contact-info-item">
+                <div class="ci-icon">⏰</div>
+                <div>
+                  <div class="ci-label">Bereikbaarheid</div>
+                  <div class="ci-value">{{ section.settings.hours }}</div>
+                </div>
+              </div>
+            {%- endif -%}
+          </div>
+
+          {%- if settings.instagram_url != blank or settings.facebook_url != blank -%}
+            <div class="social-contact">
+              <div class="social-contact-label">Volg ons</div>
+              <div class="social-contact-icons">
+                {%- if settings.instagram_url != blank -%}
+                  <a href="{{ settings.instagram_url }}" class="social-icon" aria-label="Instagram">IG</a>
+                {%- endif -%}
+                {%- if settings.facebook_url != blank -%}
+                  <a href="{{ settings.facebook_url }}" class="social-icon" aria-label="Facebook">FB</a>
+                {%- endif -%}
+              </div>
             </div>
-          {%- endif -%}
-          {%- if section.settings.response_time != blank -%}
-            <p style="font-size:0.85rem;color:#6B7280;margin-top:1rem;">{{ section.settings.response_time }}</p>
           {%- endif -%}
         </div>
 
-        {%- if section.settings.faq_heading != blank -%}
-          <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:1.25rem;">{{ section.settings.faq_heading }}</h3>
-          <div class="product-accordion">
-            {%- for block in section.blocks -%}
-              {%- if block.type == 'faq' -%}
-                <div class="acc-item" {{ block.shopify_attributes }}>
-                  <div class="acc-trigger accordion-trigger">
-                    {{ block.settings.question }}
-                    <svg class="acc-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-                  </div>
-                  <div class="acc-body accordion-content">
-                    <div class="acc-content">{{ block.settings.answer }}</div>
-                  </div>
-                </div>
-              {%- endif -%}
-            {%- endfor -%}
+        <div class="contact-info-card quick-info-card">
+          <div class="contact-info-title">{{ section.settings.quick_heading }}</div>
+          <div class="quick-info-items">
+            {%- if section.settings.quick_delivery != blank -%}
+              <div class="quick-info-item">🚀 <strong>Levertijd:</strong> {{ section.settings.quick_delivery }}</div>
+            {%- endif -%}
+            {%- if section.settings.quick_shipping != blank -%}
+              <div class="quick-info-item">📦 <strong>Verzendkosten:</strong> {{ section.settings.quick_shipping }}</div>
+            {%- endif -%}
+            {%- if section.settings.quick_return != blank -%}
+              <div class="quick-info-item">🔄 <strong>Retour:</strong> {{ section.settings.quick_return }}</div>
+            {%- endif -%}
+            {%- if section.settings.quick_kvk != blank -%}
+              <div class="quick-info-item">🏢 <strong>KVK:</strong> {{ section.settings.quick_kvk }}</div>
+            {%- endif -%}
           </div>
-        {%- endif -%}
+        </div>
+
       </div>
     </div>
   </div>
@@ -84,13 +126,21 @@
 {
   "name": "Contactformulier",
   "settings": [
-    { "type": "text", "id": "form_heading", "label": "Formulier koptekst", "default": "Stuur ons een bericht" },
-    { "type": "text", "id": "form_subtext", "label": "Formulier ondertekst", "default": "Heb je een vraag of wil je iets weten? We helpen je graag." },
-    { "type": "text", "id": "button_label", "label": "Verzendknop tekst", "default": "Bericht versturen" },
-    { "type": "text", "id": "info_heading", "label": "Info koptekst", "default": "Contact informatie" },
-    { "type": "text", "id": "email", "label": "E-mailadres" },
-    { "type": "text", "id": "response_time", "label": "Reactietijd tekst", "default": "We reageren doorgaans binnen 24 uur op werkdagen." },
-    { "type": "text", "id": "faq_heading", "label": "FAQ koptekst", "default": "Veelgestelde vragen" }
+    { "type": "text", "id": "form_heading", "label": "Formulier koptekst", "default": "Stuur een bericht" },
+    { "type": "text", "id": "form_subtext", "label": "Formulier ondertekst", "default": "Vul het formulier in en we nemen zo snel mogelijk contact met je op." },
+    { "type": "text", "id": "button_label", "label": "Verzendknop tekst", "default": "Verstuur bericht →" },
+    { "type": "text", "id": "response_text", "label": "Reactietijd tekst", "default": "We reageren doorgaans binnen 24 uur" },
+    { "type": "header", "content": "Direct contact" },
+    { "type": "text", "id": "info_heading", "label": "Koptekst kaart", "default": "Direct contact" },
+    { "type": "text", "id": "email", "label": "E-mailadres", "default": "info@padelrefurbished.nl" },
+    { "type": "text", "id": "phone", "label": "Telefoonnummer", "default": "+31 6 13609094" },
+    { "type": "text", "id": "hours", "label": "Bereikbaarheid", "default": "Ma–Vr, 09:00–18:00" },
+    { "type": "header", "content": "Snelle info" },
+    { "type": "text", "id": "quick_heading", "label": "Koptekst kaart", "default": "Snelle info" },
+    { "type": "text", "id": "quick_delivery", "label": "Levertijd", "default": "Binnen 2 werkdagen" },
+    { "type": "text", "id": "quick_shipping", "label": "Verzendkosten", "default": "€6,95 (gratis v.a. €100)" },
+    { "type": "text", "id": "quick_return", "label": "Retourperiode", "default": "14 dagen bedenktijd" },
+    { "type": "text", "id": "quick_kvk", "label": "KVK nummer", "default": "01166795" }
   ],
   "blocks": [
     {
@@ -99,31 +149,16 @@
       "settings": [
         { "type": "text", "id": "label", "label": "Onderwerp", "default": "Vraag over bestelling" }
       ]
-    },
-    {
-      "type": "faq",
-      "name": "FAQ vraag",
-      "settings": [
-        { "type": "text", "id": "question", "label": "Vraag", "default": "Hoe lang duurt verzending?" },
-        { "type": "textarea", "id": "answer", "label": "Antwoord", "default": "We verzenden binnen 1-2 werkdagen." }
-      ]
     }
   ],
   "presets": [
     {
       "name": "Contactformulier",
       "blocks": [
-        { "type": "subject", "settings": { "label": "Vraag over bestelling" } },
-        { "type": "subject", "settings": { "label": "Vraag over een product" } },
-        { "type": "subject", "settings": { "label": "Retour of ruil" } },
-        { "type": "subject", "settings": { "label": "Samenwerking" } },
-        { "type": "subject", "settings": { "label": "Overige" } },
-        { "type": "faq", "settings": { "question": "Hoe lang duurt verzending?", "answer": "We verzenden binnen 1-2 werkdagen. Levering duurt daarna nog 1-2 werkdagen via PostNL." } },
-        { "type": "faq", "settings": { "question": "Kan ik een racket retourneren?", "answer": "Ja, je hebt 14 dagen retourrecht. Neem contact op en we regelen het verder." } },
-        { "type": "faq", "settings": { "question": "Zijn de rackets gegarandeerd speelklaar?", "answer": "Elk racket wordt professioneel geïnspecteerd en hersteld voor verzending." } },
-        { "type": "faq", "settings": { "question": "Kan ik mijn eigen racket inleveren?", "answer": "Ja! Stuur ons een berichtje en we bespreken de mogelijkheden." } },
-        { "type": "faq", "settings": { "question": "Welke betaalmethoden accepteren jullie?", "answer": "iDEAL, creditcard, PayPal en Klarna achteraf betalen." } },
-        { "type": "faq", "settings": { "question": "Hebben jullie een fysieke winkel?", "answer": "Nee, we zijn puur online. Zo houden we de kosten laag voor jou." } }
+        { "type": "subject", "settings": { "label": "Racket advies" } },
+        { "type": "subject", "settings": { "label": "Vraag over mijn bestelling" } },
+        { "type": "subject", "settings": { "label": "Retour aanvragen" } },
+        { "type": "subject", "settings": { "label": "Overig" } }
       ]
     }
   ]

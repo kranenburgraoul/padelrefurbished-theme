@@ -203,10 +203,23 @@ function initCartNotificationClose() {
   }
 }
 
+/* ── FAQ accordion ── */
+function initFaq() {
+  document.querySelectorAll('[data-faq-trigger]').forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      const item = trigger.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+}
+
 /* ── Init all ── */
 document.addEventListener('DOMContentLoaded', () => {
   new CartManager();
   initAccordions();
+  initFaq();
   initFilters();
   initGallery();
   initVariants();
