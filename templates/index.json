@@ -45,7 +45,7 @@
         "subtext": "Professioneel gereviseerde padelrackets van topmerken — voor een fractie van de nieuwprijs. Gecheckt, gereinigd en klaar om mee te spelen.",
         "cta_primary_label": "Bekijk alle rackets",
         "cta_primary_url": "shopify://collections/all",
-        "cta_secondary_label": "Ons verhaal",
+        "cta_secondary_label": "Contact",
         "cta_secondary_url": "shopify://pages/contact",
         "hero_image": "shopify://shop_images/WhatsApp_Image_2026-04-23_at_07.42.10.jpg",
         "hero_image_alt": "PadelRefurbished rackets"
@@ -79,6 +79,64 @@
     },
     "why": {
       "type": "why-section",
+      "blocks": {
+        "card_URGiKa": {
+          "type": "card",
+          "settings": {
+            "icon": "💰",
+            "title": "Tot 65% goedkoper",
+            "text": "Betaal een eerlijke prijs voor een professioneel gereviseerd racket. Kwaliteit van topmerken, zonder de topprijs."
+          }
+        },
+        "card_ccMngB": {
+          "type": "card",
+          "settings": {
+            "icon": "♻️",
+            "title": "Duurzaam",
+            "text": "Elk racket krijgt een tweede leven."
+          }
+        },
+        "card_h8CDnb": {
+          "type": "card",
+          "settings": {
+            "icon": "♻️",
+            "title": "Duurzaam",
+            "text": "Elk racket krijgt een tweede leven."
+          }
+        },
+        "card_NzUdQe": {
+          "type": "card",
+          "settings": {
+            "icon": "♻️",
+            "title": "Duurzaam",
+            "text": "Elk racket krijgt een tweede leven."
+          }
+        },
+        "card_EMCJBG": {
+          "type": "card",
+          "settings": {
+            "icon": "♻️",
+            "title": "Duurzaam",
+            "text": "Elk racket krijgt een tweede leven."
+          }
+        },
+        "card_ihdTCU": {
+          "type": "card",
+          "settings": {
+            "icon": "♻️",
+            "title": "Duurzaam",
+            "text": "Elk racket krijgt een tweede leven."
+          }
+        }
+      },
+      "block_order": [
+        "card_URGiKa",
+        "card_ccMngB",
+        "card_h8CDnb",
+        "card_NzUdQe",
+        "card_EMCJBG",
+        "card_ihdTCU"
+      ],
       "settings": {
         "eyebrow": "Waarom kiezen voor ons?",
         "heading": "Refurbished, de slimme keuze",
