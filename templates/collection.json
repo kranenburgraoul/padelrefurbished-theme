@@ -3,9 +3,26 @@
     "page-header": {
       "type": "page-header",
       "settings": {
-        "eyebrow": "Ons assortiment",
-        "subtitle": "Professioneel geïnspecteerd. Betaalbaar geprijsd."
-      }
+        "title": "Rackets",
+        "subtitle": "Professioneel gereviseerde padelrackets van topmerken. Elk racket persoonlijk gecheckt, gereinigd en klaar voor gebruik.",
+        "show_breadcrumb": true,
+        "show_pills": true
+      },
+      "blocks": {
+        "pill1": {
+          "type": "pill",
+          "settings": { "label": "✅ Gecheckt & gereinigd" }
+        },
+        "pill2": {
+          "type": "pill",
+          "settings": { "label": "♻️ Allemaal refurbished" }
+        },
+        "pill3": {
+          "type": "pill",
+          "settings": { "label": "🚀 Binnen 2 werkdagen geleverd" }
+        }
+      },
+      "blocks_order": ["pill1", "pill2", "pill3"]
     },
     "collection-grid": {
       "type": "collection-grid",

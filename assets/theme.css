@@ -27,6 +27,8 @@ button { font-family: var(--font-body); cursor: pointer; }
 
 /* ==================  NAVBAR  ================== */
 
+:root { --header-h: 62px; }
+
 .site-header {
   position: sticky;
   top: 0;
@@ -35,6 +37,10 @@ button { font-family: var(--font-body); cursor: pointer; }
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--border);
+  height: var(--header-h);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .navbar-inner {
@@ -817,7 +823,7 @@ button { font-family: var(--font-body); cursor: pointer; }
   background: white;
   border-bottom: 1px solid var(--border);
   position: sticky;
-  top: 57px;
+  top: var(--header-h);
   z-index: 100;
 }
 
