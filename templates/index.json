@@ -54,17 +54,6 @@
         "subtext": "Elk racket doorloopt een zorgvuldig kwaliteitsproces voordat het bij jou arriveert."
       }
     },
-    "cta": {
-      "type": "cta-banner",
-      "settings": {
-        "heading": "Klaar om te beginnen met padelen?",
-        "subtext": "Kies jouw refurbished racket en start vandaag nog.",
-        "cta_primary_label": "Bekijk alle rackets",
-        "cta_primary_url": "",
-        "cta_secondary_label": "Hulp nodig? Vraag het ons",
-        "cta_secondary_url": ""
-      }
-    },
     "newsletter": {
       "type": "newsletter",
       "settings": {
@@ -82,7 +71,6 @@
     "featured",
     "why",
     "process",
-    "cta",
     "newsletter"
   ]
 }
