@@ -31,8 +31,39 @@
       },
       "footer": {
         "type": "footer",
+        "blocks": {
+          "brand_ATkHaB": {
+            "type": "brand",
+            "settings": {
+              "logo_text": "PadelRefurbished",
+              "slogan": "Slim Starten, Sterk Spelen",
+              "description": "Wij maken padel toegankelijk en duurzaam. Professioneel gereviseerde rackets voor elke speler — opgericht door studenten van Hogeschool Leiden.",
+              "show_socials": true
+            }
+          },
+          "menu_column_iUCzR7": {
+            "type": "menu_column",
+            "settings": {
+              "heading": "Navigatie",
+              "menu": "main-menu"
+            }
+          },
+          "menu_column_6kLBwy": {
+            "type": "menu_column",
+            "settings": {
+              "heading": "Informatie",
+              "menu": "footer"
+            }
+          }
+        },
+        "block_order": [
+          "brand_ATkHaB",
+          "menu_column_iUCzR7",
+          "menu_column_6kLBwy"
+        ],
         "settings": {
-          "description": "Wij maken padel toegankelijk en duurzaam. Professioneel gereviseerde rackets voor elke speler — opgericht door studenten van Hogeschool Leiden."
+          "copyright_name": "PadelRefurbished",
+          "kvk_text": "KVK: 01166795 · BTW: NL 8215 17 338 B01"
         }
       }
     },
