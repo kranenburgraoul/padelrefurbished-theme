@@ -15,7 +15,7 @@
       <div class="gallery-main">
         <span class="gallery-badge">{{ product.metafields.custom.condition | default: 'Refurbished' }}</span>
         {%- if product.featured_image -%}
-          <img id="gallery-main-img" src="{{ product.featured_image | image_url: width: 800 }}" alt="{{ product.title | escape }}">
+          <img id="gallery-main-img" src="{{ product.featured_image | image_url: width: 1600 }}" alt="{{ product.title | escape }}">
         {%- else -%}
           <svg class="no-image" viewBox="0 0 60 80" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="10" y="2" width="40" height="48" rx="20" fill="currentColor" opacity="0.3"/>
@@ -29,7 +29,7 @@
       {%- if product.images.size > 1 -%}
         <div class="gallery-thumbs">
           {%- for img in product.images limit: 4 -%}
-            <div class="gallery-thumb {% if forloop.first %}active{% endif %}" data-src="{{ img | image_url: width: 800 }}">
+            <div class="gallery-thumb {% if forloop.first %}active{% endif %}" data-src="{{ img | image_url: width: 1600 }}">
               <img src="{{ img | image_url: width: 120 }}" alt="{{ product.title | escape }} {{ forloop.index }}" loading="lazy">
             </div>
           {%- endfor -%}

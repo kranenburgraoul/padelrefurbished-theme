@@ -16,7 +16,7 @@
     "slogan": "Slim Starten, Sterk Spelen",
     "heading_font": "inter_n7",
     "body_font": "inter_n4",
-    "free_shipping_threshold": "",
+    "free_shipping_threshold": "100",
     "shipping_cost": "€6,95",
     "return_days": 14,
     "kvk_number": "",
