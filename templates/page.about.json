@@ -20,6 +20,34 @@
     },
     "mission": {
       "type": "about-mission",
+      "blocks": {
+        "stat_FxUQB4": {
+          "type": "stat",
+          "settings": {
+            "number": "2e leven",
+            "label": "Meer waarde, minder verspilling"
+          }
+        },
+        "stat_3nxQAU": {
+          "type": "stat",
+          "settings": {
+            "number": "1 doel",
+            "label": "Padel duurzamer maken"
+          }
+        },
+        "stat_HibTKg": {
+          "type": "stat",
+          "settings": {
+            "number": "100% inzet",
+            "label": "Voor hergebruik en kwaliteit"
+          }
+        }
+      },
+      "block_order": [
+        "stat_FxUQB4",
+        "stat_3nxQAU",
+        "stat_HibTKg"
+      ],
       "settings": {
         "eyebrow": "Onze missie",
         "heading": "Padel toegankelijk maken voor iedereen",
@@ -69,6 +97,7 @@
         "member_WhTN96",
         "member_4t8bhB"
       ],
+      "disabled": true,
       "settings": {
         "heading": "Het team",
         "subtext": "De mensen achter PadelRefurbished"
