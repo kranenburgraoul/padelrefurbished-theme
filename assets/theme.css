@@ -904,6 +904,39 @@ button { font-family: var(--font-body); cursor: pointer; }
 
 .catalog-section { padding: 2.5rem 0 5rem; }
 
+/* Pagination */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+}
+.pagination a,
+.pagination span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.5rem;
+  height: 2.5rem;
+  padding: 0 0.75rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  border: 1.5px solid #E5E7EB;
+  color: var(--text);
+  background: #fff;
+}
+.pagination a:hover { border-color: var(--primary); color: var(--primary); background: var(--primary-pale); }
+.pagination .current,
+.pagination span.current { background: var(--primary); color: #fff; border-color: var(--primary); font-weight: 700; }
+.pagination .prev,
+.pagination .next { padding: 0 1rem; font-weight: 600; }
+.pagination .deco { border: none; background: transparent; color: #9CA3AF; min-width: 1rem; padding: 0; }
+
 .catalog-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

@@ -6,9 +6,9 @@
       <span class="filter-label">Merk</span>
       <div class="filter-chips">
         <button class="filter-chip active" data-filter="all" data-filter-group="brand">Alle merken</button>
-        {%- for vendor in collection.all_vendors -%}
-          <button class="filter-chip" data-filter="{{ vendor | handleize }}" data-filter-group="brand">
-            {{ vendor }}
+        {%- for tag in collection.all_tags -%}
+          <button class="filter-chip" data-filter="{{ tag | handleize }}" data-filter-group="brand">
+            {{ tag }}
           </button>
         {%- endfor -%}
       </div>
@@ -35,9 +35,7 @@
     </div>
 
     {%- if paginate.pages > 1 -%}
-      <div style="text-align:center;margin-top:3rem;">
-        {{ paginate | default_pagination }}
-      </div>
+      {{ paginate | default_pagination }}
     {%- endif -%}
   </div>
 </section>

@@ -95,6 +95,18 @@
     ]
   },
   {
+    "name": "Collectie filter",
+    "settings": [
+      {
+        "type": "text",
+        "id": "brands",
+        "label": "Merken voor filter (komma-gescheiden)",
+        "info": "Vul de merknamen in zoals ze als tag op je producten staan, gescheiden door komma's. Voorbeeld: HEAD, Siux, Bullpadel",
+        "placeholder": "HEAD, Siux, Bullpadel"
+      }
+    ]
+  },
+  {
     "name": "Bedrijfsgegevens",
     "settings": [
       {

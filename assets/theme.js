@@ -84,7 +84,7 @@ function initAccordions() {
 /* ── Product filters ── */
 function initFilters() {
   const chips = document.querySelectorAll('.filter-chip');
-  const cards = document.querySelectorAll('.product-card[data-brand]');
+  const cards = document.querySelectorAll('.product-card[data-tags]');
   if (!chips.length) return;
 
   let activeBrand = 'all';
@@ -92,7 +92,8 @@ function initFilters() {
   function applyFilters() {
     let visible = 0;
     cards.forEach(card => {
-      const match = activeBrand === 'all' || card.dataset.brand === activeBrand;
+      const cardTags = (card.dataset.tags || '').split(',');
+      const match = activeBrand === 'all' || cardTags.includes(activeBrand);
       card.style.display = match ? '' : 'none';
       if (match) visible++;
     });
