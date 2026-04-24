@@ -9,7 +9,6 @@
  */
 {
   "current": {
-    "brands": "HEAD, Siux, Bullpadel, Adidas, Babolat, Artengo, Dunlop, Wilson",
     "primary_color": "#2E69DD",
     "accent_color": "#7B9E87",
     "bg_color": "#FFFFFF",
@@ -22,6 +21,7 @@
     "return_days": 14,
     "instagram_url": "https://www.instagram.com/padelrefurbished?igsh=MTg3b2lveWtiZG9kcw%3D%3D&utm_source=qr",
     "linkedin_url": "https://www.linkedin.com/company/padel-refurbished/",
+    "brands": "HEAD, Siux, Bullpadel, Adidas, Babolat, Artengo, Dunlop, Wilson",
     "kvk_number": "",
     "btw_number": "",
     "sections": {
@@ -65,8 +65,8 @@
           "menu_column_6kLBwy"
         ],
         "settings": {
-          "copyright_name": "PadelRefurbished",
-          "kvk_text": "KVK: 01166795 · BTW: NL 8215 17 338 B01"
+          "copyright_name": "Padel Refurbished",
+          "kvk_text": ""
         }
       },
       "announcement-bar": {
