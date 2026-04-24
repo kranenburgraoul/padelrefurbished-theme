@@ -29,9 +29,10 @@
     {%- if mf_score > 0 -%}
       <div class="pc-score">
         {%- for i in (1..5) -%}
+          {%- assign i_half = i | minus: 0.5 -%}
           {%- if mf_score >= i -%}
             <span class="pc-ball pc-ball--on"></span>
-          {%- elsif mf_score >= i | minus: 0.5 -%}
+          {%- elsif mf_score >= i_half -%}
             <span class="pc-ball pc-ball--half"></span>
           {%- else -%}
             <span class="pc-ball"></span>

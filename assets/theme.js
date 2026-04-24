@@ -83,19 +83,27 @@ function initAccordions() {
 
 /* ── Product filters ── */
 function initFilters() {
-  const chips = document.querySelectorAll('.filter-chip');
+  const chips = document.querySelectorAll('.filter-chip[data-filter-group="brand"]');
   const cards = document.querySelectorAll('.product-card[data-tags]');
-  if (!chips.length) return;
+  const slider = document.getElementById('score-slider');
+  const sliderVal = document.getElementById('score-slider-val');
 
   let activeBrand = 'all';
-  let activeScore = 'all';
+  let minScore = 0;
+
+  function updateSliderFill() {
+    if (!slider) return;
+    const pct = (parseInt(slider.value) / 5) * 100;
+    slider.style.background = `linear-gradient(90deg, var(--primary) ${pct}%, #E5E7EB ${pct}%)`;
+  }
 
   function applyFilters() {
     let visible = 0;
     cards.forEach(card => {
       const cardTags = (card.dataset.tags || '').split(',');
       const brandMatch = activeBrand === 'all' || cardTags.includes(activeBrand);
-      const scoreMatch = activeScore === 'all' || card.dataset.score === activeScore;
+      const score = parseInt(card.dataset.score) || 0;
+      const scoreMatch = minScore === 0 || score >= minScore;
       const match = brandMatch && scoreMatch;
       card.style.display = match ? '' : 'none';
       if (match) visible++;
@@ -106,14 +114,22 @@ function initFilters() {
 
   chips.forEach(chip => {
     chip.addEventListener('click', () => {
-      const group = chip.dataset.filterGroup;
-      if (group === 'brand') activeBrand = chip.dataset.filter;
-      if (group === 'score') activeScore = chip.dataset.filter;
-      document.querySelectorAll(`.filter-chip[data-filter-group="${group}"]`).forEach(c => c.classList.remove('active'));
+      activeBrand = chip.dataset.filter;
+      chips.forEach(c => c.classList.remove('active'));
       chip.classList.add('active');
       applyFilters();
     });
   });
+
+  if (slider) {
+    slider.addEventListener('input', () => {
+      minScore = parseInt(slider.value);
+      if (sliderVal) sliderVal.textContent = minScore === 0 ? 'Alle conditie' : 'Minimaal ' + minScore + '/5';
+      updateSliderFill();
+      applyFilters();
+    });
+    updateSliderFill();
+  }
 }
 
 /* ── Product gallery ── */

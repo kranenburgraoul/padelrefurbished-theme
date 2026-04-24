@@ -24,24 +24,12 @@
       </div>
     </div>
     <div class="filter-bottom">
-      <span class="filter-label">Conditie</span>
-      <div class="filter-chips">
-        <button class="filter-chip active" data-filter="all" data-filter-group="score">Alle</button>
-        <button class="filter-chip" data-filter="5" data-filter-group="score">
-          <span class="fc-dots"><b></b><b></b><b></b><b></b><b></b></span>5/5
-        </button>
-        <button class="filter-chip" data-filter="4" data-filter-group="score">
-          <span class="fc-dots"><b></b><b></b><b></b><b></b><b class="fc-dot--off"></b></span>4/5
-        </button>
-        <button class="filter-chip" data-filter="3" data-filter-group="score">
-          <span class="fc-dots"><b></b><b></b><b></b><b class="fc-dot--off"></b><b class="fc-dot--off"></b></span>3/5
-        </button>
-        <button class="filter-chip" data-filter="2" data-filter-group="score">
-          <span class="fc-dots"><b></b><b></b><b class="fc-dot--off"></b><b class="fc-dot--off"></b><b class="fc-dot--off"></b></span>2/5
-        </button>
-        <button class="filter-chip" data-filter="1" data-filter-group="score">
-          <span class="fc-dots"><b></b><b class="fc-dot--off"></b><b class="fc-dot--off"></b><b class="fc-dot--off"></b><b class="fc-dot--off"></b></span>1/5
-        </button>
+      <span class="filter-label">Minimale conditie</span>
+      <div class="score-slider-wrap">
+        <span class="score-slider-edge">Alle</span>
+        <input type="range" class="score-slider" id="score-slider" min="0" max="5" step="1" value="0" aria-label="Minimale conditiescore">
+        <span class="score-slider-edge">5/5</span>
+        <span class="score-slider-val" id="score-slider-val">Alle conditie</span>
       </div>
     </div>
   </div>
