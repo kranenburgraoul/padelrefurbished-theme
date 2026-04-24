@@ -1396,6 +1396,7 @@ span.conditie-ball--empty { background: var(--primary-lighter); border: 1.5px so
 
 .about-mission { padding: 5rem 0; }
 .about-team { padding: 5rem 0; background: var(--primary-pale, #EEF4FF); }
+.about-team .section-header { margin-bottom: 2.5rem; }
 .about-mission__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
 .about-mission__image {
   background: linear-gradient(145deg, var(--primary-pale) 0%, var(--primary-lighter) 100%);
