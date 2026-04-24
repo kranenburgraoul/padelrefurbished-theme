@@ -15,22 +15,22 @@
         "trust_stat_FKBcnc": {
           "type": "trust_stat",
           "settings": {
-            "number": "60+",
-            "label": "Rackets verkocht"
+            "number": "100%",
+            "label": "Gecontroleerd"
           }
         },
         "trust_stat_intdYT": {
           "type": "trust_stat",
           "settings": {
-            "number": "60+",
-            "label": "Rackets verkocht"
+            "number": "Tot 65%",
+            "label": "Goedkoper"
           }
         },
         "trust_stat_Aejk8E": {
           "type": "trust_stat",
           "settings": {
-            "number": "60+",
-            "label": "Rackets verkocht"
+            "number": "5+",
+            "label": "Topmerken"
           }
         }
       },
