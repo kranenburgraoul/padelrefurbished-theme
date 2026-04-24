@@ -84,26 +84,27 @@ function initAccordions() {
 /* ── Product filters ── */
 function initFilters() {
   const chips = document.querySelectorAll('.filter-chip');
-  const cards = document.querySelectorAll('.product-card[data-brand], .product-card[data-level]');
+  const cards = document.querySelectorAll('.product-card[data-brand]');
   if (!chips.length) return;
 
-  let activeFilters = { brand: 'all', level: 'all' };
+  let activeBrand = 'all';
 
   function applyFilters() {
+    let visible = 0;
     cards.forEach(card => {
-      const brandMatch = activeFilters.brand === 'all' || card.dataset.brand === activeFilters.brand;
-      const levelMatch = activeFilters.level === 'all' || card.dataset.level === activeFilters.level;
-      card.style.display = brandMatch && levelMatch ? '' : 'none';
+      const match = activeBrand === 'all' || card.dataset.brand === activeBrand;
+      card.style.display = match ? '' : 'none';
+      if (match) visible++;
     });
+    const countEl = document.getElementById('filter-count');
+    if (countEl) countEl.textContent = visible + ' racket' + (visible !== 1 ? 's' : '');
   }
 
   chips.forEach(chip => {
     chip.addEventListener('click', () => {
-      const group = chip.dataset.filterGroup;
-      const val = chip.dataset.filter;
-      document.querySelectorAll(`.filter-chip[data-filter-group="${group}"]`).forEach(c => c.classList.remove('active'));
+      activeBrand = chip.dataset.filter;
+      chips.forEach(c => c.classList.remove('active'));
       chip.classList.add('active');
-      activeFilters[group] = val;
       applyFilters();
     });
   });

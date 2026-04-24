@@ -885,7 +885,22 @@ button { font-family: var(--font-body); cursor: pointer; }
 .filter-chip:hover  { border-color: var(--primary-light); color: var(--primary); background: var(--primary-pale); }
 .filter-chip.active { border-color: var(--primary); color: var(--primary); background: var(--primary-pale); font-weight: 600; }
 
-.filter-count { font-size: 0.825rem; color: #6B7280; flex-shrink: 0; }
+.filter-right { display: flex; align-items: center; gap: 1rem; flex-shrink: 0; }
+.filter-count { font-size: 0.825rem; color: #6B7280; }
+.sort-select {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #374151;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  padding: 0.35rem 0.75rem;
+  background: white;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+.sort-select:focus { border-color: var(--primary); }
 
 .catalog-section { padding: 2.5rem 0 5rem; }
 

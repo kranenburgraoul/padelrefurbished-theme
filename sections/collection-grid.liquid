@@ -6,27 +6,21 @@
       <span class="filter-label">Merk</span>
       <div class="filter-chips">
         <button class="filter-chip active" data-filter="all" data-filter-group="brand">Alle merken</button>
-        {%- for tag in collection.all_tags -%}
-          {%- if tag contains 'merk:' -%}
-            <button class="filter-chip" data-filter="{{ tag | remove: 'merk:' | handleize }}" data-filter-group="brand">
-              {{ tag | remove: 'merk:' }}
-            </button>
-          {%- endif -%}
-        {%- endfor -%}
-      </div>
-      <span class="filter-label" style="margin-left:1.25rem;">Niveau</span>
-      <div class="filter-chips">
-        <button class="filter-chip active" data-filter="all" data-filter-group="level">Alle niveaus</button>
-        {%- for tag in collection.all_tags -%}
-          {%- if tag contains 'niveau:' -%}
-            <button class="filter-chip" data-filter="{{ tag | remove: 'niveau:' | handleize }}" data-filter-group="level">
-              {{ tag | remove: 'niveau:' }}
-            </button>
-          {%- endif -%}
+        {%- for vendor in collection.all_vendors -%}
+          <button class="filter-chip" data-filter="{{ vendor | handleize }}" data-filter-group="brand">
+            {{ vendor }}
+          </button>
         {%- endfor -%}
       </div>
     </div>
-    <span class="filter-count">{{ collection.products_count }} rackets</span>
+    <div class="filter-right">
+      <span class="filter-count" id="filter-count">{{ collection.products_count }} rackets</span>
+      <select class="sort-select" onchange="window.location.href=this.value" aria-label="Sorteren">
+        <option value="{{ collection.url }}"{% if collection.sort_by == blank or collection.sort_by == 'manual' %} selected{% endif %}>Aanbevolen</option>
+        <option value="{{ collection.url }}?sort_by=price-ascending"{% if collection.sort_by == 'price-ascending' %} selected{% endif %}>Prijs: laag → hoog</option>
+        <option value="{{ collection.url }}?sort_by=price-descending"{% if collection.sort_by == 'price-descending' %} selected{% endif %}>Prijs: hoog → laag</option>
+      </select>
+    </div>
   </div>
 </div>
 
