@@ -261,6 +261,13 @@ button { font-family: var(--font-body); cursor: pointer; }
   text-decoration: none;
 }
 
+/* Mini score op productkaart */
+.pc-score { display: flex; align-items: center; gap: 3px; margin: 4px 0 8px; }
+.pc-ball { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #E5E7EB; }
+.pc-ball--on { background: var(--primary); }
+.pc-ball--half { background: linear-gradient(90deg, var(--primary) 50%, #E5E7EB 50%); }
+.pc-score-label { font-size: 0.72rem; color: #6B7280; margin-left: 5px; font-weight: 600; }
+
 .product-tags { display: flex; gap: 0.35rem; flex-wrap: wrap; margin-bottom: 1rem; }
 
 .product-tag {
@@ -855,18 +862,37 @@ button { font-family: var(--font-body); cursor: pointer; }
 
 .filter-inner {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem 1.5rem;
+  flex-direction: column;
   max-width: 1200px;
   margin: 0 auto;
+}
+
+.filter-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 1.5rem;
   gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.filter-bottom {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.65rem 1.5rem;
+  border-top: 1px solid var(--border);
   flex-wrap: wrap;
 }
 
 .filter-groups { display: flex; gap: 1.25rem; align-items: center; flex-wrap: wrap; }
 
-.filter-label { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #6B7280; }
+.filter-label { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #6B7280; white-space: nowrap; }
+
+/* Score dots inside filter chip */
+.fc-dots { display: inline-flex; gap: 2px; align-items: center; margin-right: 5px; }
+.fc-dots b { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--primary); font-style: normal; }
+.fc-dot--off { background: #D1D5DB !important; }
 
 .filter-chips { display: flex; gap: 0.4rem; flex-wrap: wrap; }
 

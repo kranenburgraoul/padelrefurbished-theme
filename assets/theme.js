@@ -88,12 +88,15 @@ function initFilters() {
   if (!chips.length) return;
 
   let activeBrand = 'all';
+  let activeScore = 'all';
 
   function applyFilters() {
     let visible = 0;
     cards.forEach(card => {
       const cardTags = (card.dataset.tags || '').split(',');
-      const match = activeBrand === 'all' || cardTags.includes(activeBrand);
+      const brandMatch = activeBrand === 'all' || cardTags.includes(activeBrand);
+      const scoreMatch = activeScore === 'all' || card.dataset.score === activeScore;
+      const match = brandMatch && scoreMatch;
       card.style.display = match ? '' : 'none';
       if (match) visible++;
     });
@@ -103,8 +106,10 @@ function initFilters() {
 
   chips.forEach(chip => {
     chip.addEventListener('click', () => {
-      activeBrand = chip.dataset.filter;
-      chips.forEach(c => c.classList.remove('active'));
+      const group = chip.dataset.filterGroup;
+      if (group === 'brand') activeBrand = chip.dataset.filter;
+      if (group === 'score') activeScore = chip.dataset.filter;
+      document.querySelectorAll(`.filter-chip[data-filter-group="${group}"]`).forEach(c => c.classList.remove('active'));
       chip.classList.add('active');
       applyFilters();
     });

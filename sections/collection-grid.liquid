@@ -2,24 +2,47 @@
 
 <div class="filter-bar">
   <div class="filter-inner">
-    <div class="filter-groups">
-      <span class="filter-label">Merk</span>
-      <div class="filter-chips">
-        <button class="filter-chip active" data-filter="all" data-filter-group="brand">Alle merken</button>
-        {%- for tag in collection.all_tags -%}
-          <button class="filter-chip" data-filter="{{ tag | handleize }}" data-filter-group="brand">
-            {{ tag }}
-          </button>
-        {%- endfor -%}
+    <div class="filter-top">
+      <div class="filter-groups">
+        <span class="filter-label">Merk</span>
+        <div class="filter-chips">
+          <button class="filter-chip active" data-filter="all" data-filter-group="brand">Alle merken</button>
+          {%- for tag in collection.all_tags -%}
+            <button class="filter-chip" data-filter="{{ tag | handleize }}" data-filter-group="brand">
+              {{ tag }}
+            </button>
+          {%- endfor -%}
+        </div>
+      </div>
+      <div class="filter-right">
+        <span class="filter-count" id="filter-count">{{ collection.products_count }} rackets</span>
+        <select class="sort-select" onchange="window.location.href=this.value" aria-label="Sorteren">
+          <option value="{{ collection.url }}"{% if collection.sort_by == blank or collection.sort_by == 'manual' %} selected{% endif %}>Aanbevolen</option>
+          <option value="{{ collection.url }}?sort_by=price-ascending"{% if collection.sort_by == 'price-ascending' %} selected{% endif %}>Prijs: laag → hoog</option>
+          <option value="{{ collection.url }}?sort_by=price-descending"{% if collection.sort_by == 'price-descending' %} selected{% endif %}>Prijs: hoog → laag</option>
+        </select>
       </div>
     </div>
-    <div class="filter-right">
-      <span class="filter-count" id="filter-count">{{ collection.products_count }} rackets</span>
-      <select class="sort-select" onchange="window.location.href=this.value" aria-label="Sorteren">
-        <option value="{{ collection.url }}"{% if collection.sort_by == blank or collection.sort_by == 'manual' %} selected{% endif %}>Aanbevolen</option>
-        <option value="{{ collection.url }}?sort_by=price-ascending"{% if collection.sort_by == 'price-ascending' %} selected{% endif %}>Prijs: laag → hoog</option>
-        <option value="{{ collection.url }}?sort_by=price-descending"{% if collection.sort_by == 'price-descending' %} selected{% endif %}>Prijs: hoog → laag</option>
-      </select>
+    <div class="filter-bottom">
+      <span class="filter-label">Conditie</span>
+      <div class="filter-chips">
+        <button class="filter-chip active" data-filter="all" data-filter-group="score">Alle</button>
+        <button class="filter-chip" data-filter="5" data-filter-group="score">
+          <span class="fc-dots"><b></b><b></b><b></b><b></b><b></b></span>5/5
+        </button>
+        <button class="filter-chip" data-filter="4" data-filter-group="score">
+          <span class="fc-dots"><b></b><b></b><b></b><b></b><b class="fc-dot--off"></b></span>4/5
+        </button>
+        <button class="filter-chip" data-filter="3" data-filter-group="score">
+          <span class="fc-dots"><b></b><b></b><b></b><b class="fc-dot--off"></b><b class="fc-dot--off"></b></span>3/5
+        </button>
+        <button class="filter-chip" data-filter="2" data-filter-group="score">
+          <span class="fc-dots"><b></b><b></b><b class="fc-dot--off"></b><b class="fc-dot--off"></b><b class="fc-dot--off"></b></span>2/5
+        </button>
+        <button class="filter-chip" data-filter="1" data-filter-group="score">
+          <span class="fc-dots"><b></b><b class="fc-dot--off"></b><b class="fc-dot--off"></b><b class="fc-dot--off"></b><b class="fc-dot--off"></b></span>1/5
+        </button>
+      </div>
     </div>
   </div>
 </div>
