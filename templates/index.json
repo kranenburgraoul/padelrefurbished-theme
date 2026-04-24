@@ -95,7 +95,7 @@
         "collection": "",
         "products_count": 4,
         "cta_label": "Alle rackets →",
-        "cta_url": ""
+        "cta_url": "shopify://collections/all"
       }
     },
     "why": {
