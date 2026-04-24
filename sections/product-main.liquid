@@ -54,6 +54,47 @@
       </div>
       <p class="price-note">Inclusief BTW · {{ settings.free_shipping_threshold | prepend: 'Gratis verzending v.a. €' }}</p>
 
+      {%- assign mf_score = product.metafields.custom.conditie_score.value | plus: 0 -%}
+      {%- if mf_score > 0 -%}
+        <div class="conditie-block">
+          <div class="conditie-balls">
+            {%- for i in (1..5) -%}
+              {%- assign threshold_half = i | minus: 0.5 -%}
+              {%- if mf_score >= i -%}
+                {%- if section.settings.ball_full != blank -%}
+                  <img src="{{ section.settings.ball_full | image_url: width: 80 }}" alt="vol" class="conditie-ball">
+                {%- else -%}
+                  <span class="conditie-ball conditie-ball--full"></span>
+                {%- endif -%}
+              {%- elsif mf_score >= threshold_half -%}
+                {%- if section.settings.ball_half != blank -%}
+                  <img src="{{ section.settings.ball_half | image_url: width: 80 }}" alt="half" class="conditie-ball">
+                {%- else -%}
+                  <span class="conditie-ball conditie-ball--half"></span>
+                {%- endif -%}
+              {%- else -%}
+                {%- if section.settings.ball_empty != blank -%}
+                  <img src="{{ section.settings.ball_empty | image_url: width: 80 }}" alt="leeg" class="conditie-ball">
+                {%- else -%}
+                  <span class="conditie-ball conditie-ball--empty"></span>
+                {%- endif -%}
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
+          <div class="conditie-info">
+            <span class="conditie-score-label">Conditiescore <strong>{{ mf_score }}/5</strong></span>
+            {%- assign mf_conditie_tekst = product.metafields.custom.conditie_tekst.value -%}
+            {%- if mf_conditie_tekst != blank -%}
+              <span class="conditie-tekst">{{ mf_conditie_tekst }}</span>
+            {%- endif -%}
+            {%- assign mf_conditie_uitleg = product.metafields.custom.conditie_uitleg.value -%}
+            {%- if mf_conditie_uitleg != blank -%}
+              <span class="conditie-uitleg">{{ mf_conditie_uitleg }}</span>
+            {%- endif -%}
+          </div>
+        </div>
+      {%- endif -%}
+
       <hr class="divider">
 
       {%- assign mf_kleur  = product.metafields.custom.kleur.value -%}
@@ -154,7 +195,27 @@
 {% schema %}
 {
   "name": "Product detail",
-  "settings": [],
+  "settings": [
+    {
+      "type": "header",
+      "content": "Conditiebeoordeling — tennisballen"
+    },
+    {
+      "type": "image_picker",
+      "id": "ball_full",
+      "label": "Volle tennisbal (afbeelding)"
+    },
+    {
+      "type": "image_picker",
+      "id": "ball_half",
+      "label": "Halve tennisbal (afbeelding)"
+    },
+    {
+      "type": "image_picker",
+      "id": "ball_empty",
+      "label": "Lege tennisbal (afbeelding)"
+    }
+  ],
   "presets": [
     { "name": "Product detail" }
   ]

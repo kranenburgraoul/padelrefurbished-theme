@@ -982,7 +982,36 @@ button { font-family: var(--font-body); cursor: pointer; }
 .price-now { font-size: 2.5rem; font-weight: 800; color: var(--primary-dark); line-height: 1; }
 .price-was { font-size: 1.05rem; color: #9CA3AF; text-decoration: line-through; }
 .price-save { font-size: 0.825rem; font-weight: 700; color: white; background: var(--primary); padding: 0.2rem 0.55rem; border-radius: 6px; }
-.price-note { font-size: 0.825rem; color: #6B7280; margin-bottom: 1.75rem; }
+.price-note { font-size: 0.825rem; color: #6B7280; margin-bottom: 1.25rem; }
+
+/* ── Conditiebeoordeling ── */
+.conditie-block {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  padding: 1rem 1.25rem;
+  background: var(--primary-pale);
+  border: 1px solid var(--primary-lighter);
+  border-radius: 14px;
+  margin-bottom: 1.25rem;
+}
+.conditie-balls { display: flex; gap: 0.3rem; align-items: center; }
+.conditie-ball { width: 34px; height: 34px; object-fit: contain; display: block; }
+
+/* Fallback ballen (CSS) als er geen foto's zijn geüpload */
+span.conditie-ball {
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+span.conditie-ball--full  { background: var(--primary); }
+span.conditie-ball--half  { background: linear-gradient(90deg, var(--primary) 50%, var(--primary-lighter) 50%); }
+span.conditie-ball--empty { background: var(--primary-lighter); border: 1.5px solid var(--primary-light); }
+
+.conditie-info { display: flex; flex-direction: column; gap: 0.2rem; }
+.conditie-score-label { font-size: 0.875rem; font-weight: 600; color: var(--text); }
+.conditie-score-label strong { color: var(--primary); }
+.conditie-tekst { font-size: 0.825rem; color: #6B7280; }
+.conditie-uitleg { font-size: 0.775rem; color: #9CA3AF; font-style: italic; }
 
 .divider { border: none; border-top: 1px solid var(--border); margin: 1.75rem 0; }
 
