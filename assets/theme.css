@@ -1300,6 +1300,8 @@ span.conditie-ball--empty { background: var(--primary-lighter); border: 1.5px so
 .social-contact { margin-top: 1.5rem; }
 .social-contact-label { font-size: 0.75rem; color: #6B7280; margin-bottom: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; }
 .social-contact-icons { display: flex; gap: 0.6rem; }
+.social-icon--light { background: #F3F4F6; color: #374151; }
+.social-icon--light:hover { background: var(--primary); color: white; }
 
 .quick-info-card { background: var(--primary-pale) !important; border-color: var(--primary-lighter) !important; }
 .quick-info-items { display: flex; flex-direction: column; gap: 0.65rem; font-size: 0.875rem; color: #6B7280; }
