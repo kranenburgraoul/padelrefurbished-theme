@@ -17,13 +17,22 @@
             {%- if block.settings.show_socials -%}
               <div class="footer-socials">
                 {%- if settings.instagram_url != blank -%}
-                  <a href="{{ settings.instagram_url }}" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram">IG</a>
-                {%- endif -%}
-                {%- if settings.facebook_url != blank -%}
-                  <a href="{{ settings.facebook_url }}" target="_blank" rel="noopener" class="social-icon" aria-label="Facebook">FB</a>
+                  <a href="{{ settings.instagram_url }}" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                      <circle cx="12" cy="12" r="4"/>
+                      <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+                    </svg>
+                  </a>
                 {%- endif -%}
                 {%- if settings.linkedin_url != blank -%}
-                  <a href="{{ settings.linkedin_url }}" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn">in</a>
+                  <a href="{{ settings.linkedin_url }}" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                      <rect x="2" y="9" width="4" height="12"/>
+                      <circle cx="4" cy="4" r="2"/>
+                    </svg>
+                  </a>
                 {%- endif -%}
               </div>
             {%- endif -%}
