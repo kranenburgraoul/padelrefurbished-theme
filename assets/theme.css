@@ -194,8 +194,15 @@ button { font-family: var(--font-body); cursor: pointer; }
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
   text-decoration: none;
   color: inherit;
+  position: relative;
 }
 .product-card:hover { transform: translateY(-5px); box-shadow: 0 12px 40px rgba(0,0,0,0.12); border-color: var(--primary-light); }
+.product-card-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+.add-to-cart-btn { position: relative; z-index: 2; }
 
 .product-img {
   aspect-ratio: 5/6;

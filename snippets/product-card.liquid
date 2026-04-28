@@ -3,6 +3,7 @@
 {%- assign score_int = mf_score | floor -%}
 {%- capture tags_handleized -%}{%- for tag in product.tags -%}{{ tag | handleize }}{%- unless forloop.last -%},{%- endunless -%}{%- endfor -%}{%- endcapture -%}
 <div class="product-card" data-tags="{{ tags_handleized }}" data-score="{{ score_int }}" data-level="{{ product.metafields.custom.level | handleize | default: 'beginner' }}">
+  <a href="{{ product.url }}" class="product-card-overlay" aria-label="{{ product.title | escape }}"></a>
   <a href="{{ product.url }}" class="product-img">
     {%- if product.available -%}
       <span class="product-badge badge-available">Beschikbaar</span>
