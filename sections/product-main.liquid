@@ -97,10 +97,11 @@
 
       <hr class="divider">
 
-      {%- assign mf_kleur  = product.metafields.custom.kleur.value -%}
-      {%- assign mf_vorm   = product.metafields.custom.vorm.value -%}
-      {%- assign mf_balans = product.metafields.custom.balans.value -%}
-      {%- if mf_kleur != blank or mf_vorm != blank or mf_balans != blank -%}
+      {%- assign mf_kleur      = product.metafields.custom.kleur.value -%}
+      {%- assign mf_vorm       = product.metafields.custom.vorm.value -%}
+      {%- assign mf_balans     = product.metafields.custom.balans.value -%}
+      {%- assign mf_nieuwprijs = product.metafields.custom.nieuwprijs.value -%}
+      {%- if mf_kleur != blank or mf_vorm != blank or mf_balans != blank or mf_nieuwprijs != blank -%}
         <div class="product-specs">
           {%- if mf_kleur != blank -%}
             <div class="spec-item">
@@ -118,6 +119,12 @@
             <div class="spec-item">
               <span class="spec-label">Balans</span>
               <span class="spec-value">{{ mf_balans }}</span>
+            </div>
+          {%- endif -%}
+          {%- if mf_nieuwprijs != blank -%}
+            <div class="spec-item">
+              <span class="spec-label">Nieuwprijs</span>
+              <span class="spec-value">{{ mf_nieuwprijs }}</span>
             </div>
           {%- endif -%}
         </div>
