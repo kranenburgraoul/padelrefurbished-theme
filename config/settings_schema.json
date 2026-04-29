@@ -64,7 +64,7 @@
         "type": "text",
         "id": "shipping_cost",
         "label": "Standaard verzendkosten",
-        "default": "€6,95"
+        "default": "€7,45"
       },
       {
         "type": "number",
