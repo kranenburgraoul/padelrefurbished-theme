@@ -1177,14 +1177,14 @@ span.conditie-ball--empty { background: var(--primary-lighter); border: 1.5px so
   gap: 0.3rem;
 }
 .spec-label {
-  font-size: 0.68rem;
+  font-size: 0.8rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--primary);
 }
 .spec-value {
-  font-size: 0.95rem;
+  font-size: 0.8rem;
   font-weight: 600;
   color: var(--text);
 }
