@@ -124,7 +124,7 @@
           {%- if mf_nieuwprijs != blank -%}
             <div class="spec-item">
               <span class="spec-label">Nieuwprijs</span>
-              <span class="spec-value">{{ mf_nieuwprijs }}</span>
+              <span class="spec-value">{{ mf_nieuwprijs | money }}</span>
             </div>
           {%- endif -%}
         </div>
