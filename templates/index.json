@@ -58,6 +58,12 @@
     "featured": {
       "type": "featured-products",
       "blocks": {
+        "product_wt4XLc": {
+          "type": "product",
+          "settings": {
+            "product": "head-zephyr-padelracket"
+          }
+        },
         "product_VMy7LW": {
           "type": "product",
           "settings": {
@@ -70,12 +76,6 @@
             "product": "head-speed-elite-padelracket"
           }
         },
-        "product_zJ9aCV": {
-          "type": "product",
-          "settings": {
-            "product": "head-flash-pro-2021-padelracket"
-          }
-        },
         "product_XXxrCW": {
           "type": "product",
           "settings": {
@@ -84,9 +84,9 @@
         }
       },
       "block_order": [
+        "product_wt4XLc",
         "product_VMy7LW",
         "product_HDCQdF",
-        "product_zJ9aCV",
         "product_XXxrCW"
       ],
       "settings": {
