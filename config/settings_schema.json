@@ -1,5 +1,16 @@
 [
   {
+    "name": "Favicon",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": "Favicon",
+        "info": "Aanbevolen formaat: 32×32 px of 64×64 px (PNG of ICO)"
+      }
+    ]
+  },
+  {
     "name": "Huisstijl",
     "settings": [
       {
