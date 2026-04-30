@@ -12,7 +12,7 @@
     "product-main": {
       "type": "product-main",
       "settings": {
-        "ball_full": "shopify://shop_images/Logo_wm_2.png",
+        "ball_full": "shopify://shop_images/volle-padelbal.png",
         "ball_half": "shopify://shop_images/halve-padelbal.png",
         "ball_empty": "shopify://shop_images/lege-padelbal-met-rand.png"
       }
