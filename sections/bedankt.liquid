@@ -1,0 +1,219 @@
+<div class="bedankt-page">
+  <div class="container">
+
+    <div class="bedankt-hero">
+      <div class="bedankt-icon">
+        <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12"/>
+        </svg>
+      </div>
+      <h1 class="bedankt-title">{{ section.settings.title }}</h1>
+      <p class="bedankt-sub">{{ section.settings.subtitle }}</p>
+    </div>
+
+    <div class="bedankt-steps">
+      <div class="bedankt-step">
+        <div class="bedankt-step-num">1</div>
+        <div class="bedankt-step-text">
+          <strong>Bevestiging ontvangen</strong>
+          <span>Je ontvangt een bevestigingsmail met je ordergegevens.</span>
+        </div>
+      </div>
+      <div class="bedankt-step-divider"></div>
+      <div class="bedankt-step">
+        <div class="bedankt-step-num">2</div>
+        <div class="bedankt-step-text">
+          <strong>Racket wordt verpakt</strong>
+          <span>Ons team bereidt je racket zorgvuldig voor op verzending.</span>
+        </div>
+      </div>
+      <div class="bedankt-step-divider"></div>
+      <div class="bedankt-step">
+        <div class="bedankt-step-num">3</div>
+        <div class="bedankt-step-text">
+          <strong>Onderweg naar jou</strong>
+          <span>Je racket is binnen 2 werkdagen bij je thuis bezorgd.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="bedankt-cta">
+      <a href="{{ routes.collections_url }}" class="bedankt-btn-primary">Bekijk meer rackets</a>
+      <a href="{{ routes.root_url }}" class="bedankt-btn-ghost">Terug naar home</a>
+    </div>
+
+  </div>
+</div>
+
+<style>
+  .bedankt-page {
+    padding: 5rem 0 6rem;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+  }
+  .bedankt-page .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+  }
+  .bedankt-hero {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  .bedankt-icon {
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    background: color-mix(in srgb, var(--primary) 10%, white);
+    border: 2px solid color-mix(in srgb, var(--primary) 25%, white);
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+  }
+  .bedankt-title {
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    font-weight: 800;
+    color: var(--text);
+    letter-spacing: -0.04em;
+    line-height: 1.1;
+  }
+  .bedankt-sub {
+    font-size: 1rem;
+    color: var(--text-muted);
+    max-width: 420px;
+    line-height: 1.6;
+  }
+  .bedankt-steps {
+    display: flex;
+    align-items: flex-start;
+    gap: 0;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2rem 2.5rem;
+    max-width: 680px;
+    width: 100%;
+  }
+  .bedankt-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.75rem;
+    flex: 1;
+  }
+  .bedankt-step-num {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: white;
+    font-size: 1rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .bedankt-step-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  .bedankt-step-text strong {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text);
+  }
+  .bedankt-step-text span {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+  }
+  .bedankt-step-divider {
+    width: 2rem;
+    height: 2px;
+    background: var(--border);
+    margin-top: 1.2rem;
+    flex-shrink: 0;
+  }
+  .bedankt-cta {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .bedankt-btn-primary {
+    background: var(--primary);
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 700;
+    padding: 0.8rem 1.75rem;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .bedankt-btn-primary:hover { background: var(--primary-dark); }
+  .bedankt-btn-ghost {
+    background: white;
+    color: var(--text);
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 0.8rem 1.75rem;
+    border-radius: 10px;
+    border: 1.5px solid var(--border);
+    text-decoration: none;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .bedankt-btn-ghost:hover { border-color: var(--primary); color: var(--primary); }
+
+  @media (max-width: 600px) {
+    .bedankt-steps {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 1.5rem;
+      gap: 1.25rem;
+    }
+    .bedankt-step {
+      flex-direction: row;
+      text-align: left;
+      align-items: flex-start;
+    }
+    .bedankt-step-divider {
+      width: 2px;
+      height: 1.5rem;
+      margin-top: 0;
+      margin-left: 1.15rem;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Bedanktpagina",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titel",
+      "default": "Bedankt voor je bestelling!"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitel",
+      "default": "Je racket is in goede handen. We gaan er meteen mee aan de slag zodat hij zo snel mogelijk bij jou is."
+    }
+  ],
+  "presets": [
+    { "name": "Bedanktpagina" }
+  ]
+}
+{% endschema %}

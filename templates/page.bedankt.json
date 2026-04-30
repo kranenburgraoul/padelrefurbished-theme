@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "bedankt": {
+      "type": "bedankt",
+      "settings": {
+        "title": "Bedankt voor je bestelling!",
+        "subtitle": "Je racket is in goede handen. We gaan er meteen mee aan de slag zodat hij zo snel mogelijk bij jou is."
+      }
+    }
+  },
+  "order": ["bedankt"]
+}
