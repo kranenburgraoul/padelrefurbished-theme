@@ -1611,3 +1611,6 @@ span.conditie-ball--empty { background: var(--primary-lighter); border: 1.5px so
 
   .conditie-block { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
 }
+
+/* ── Gerelateerde producten ── */
+.related-products .section-header { margin-bottom: 2rem; }
