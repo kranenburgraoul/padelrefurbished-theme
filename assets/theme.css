@@ -1580,4 +1580,6 @@ span.conditie-ball--empty { background: var(--primary-lighter); border: 1.5px so
   .impact-numbers { flex-wrap: wrap; gap: 1.5rem; }
   .cart-item { grid-template-columns: 64px 1fr; }
   .cart-item__price { grid-column: 2; }
+
+  .conditie-block { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
 }
