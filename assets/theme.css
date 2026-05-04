@@ -1159,6 +1159,34 @@ span.conditie-ball--empty { background: var(--primary-lighter); border: 1.5px so
 .conditie-tekst { font-size: 0.75rem; color: #6B7280; }
 .conditie-uitleg { font-size: 0.7rem; color: #9CA3AF; font-style: italic; }
 
+/* ── Betaalmethodes ── */
+.payment-methods {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 0.85rem;
+  margin-bottom: 0.25rem;
+  flex-wrap: wrap;
+}
+.payment-methods__label {
+  font-size: 0.7rem;
+  color: #9CA3AF;
+  white-space: nowrap;
+}
+.payment-methods__icons {
+  display: flex;
+  gap: 0.3rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.pay-icon svg {
+  height: 22px;
+  width: auto;
+  display: block;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
 .divider { border: none; border-top: 1px solid var(--border); margin: 1.75rem 0; }
 
 .product-specs {
