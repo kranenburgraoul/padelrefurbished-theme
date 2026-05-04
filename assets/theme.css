@@ -273,6 +273,7 @@ button { font-family: var(--font-body); cursor: pointer; }
 .pc-ball { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #E5E7EB; }
 .pc-ball--on { background: var(--primary); }
 .pc-ball--half { background: linear-gradient(90deg, var(--primary) 50%, #E5E7EB 50%); }
+.pc-ball-img { width: 18px; height: 18px; object-fit: contain; display: block; }
 .pc-score-label { font-size: 0.72rem; color: #6B7280; margin-left: 5px; font-weight: 600; }
 
 .product-tags { display: flex; gap: 0.35rem; flex-wrap: wrap; margin-bottom: 1rem; }

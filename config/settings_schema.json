@@ -106,6 +106,30 @@
     ]
   },
   {
+    "name": "Conditieballen",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Upload de balletjes-afbeeldingen die je gebruikt voor de conditiescore. Ze verschijnen op de productpagina én op de productkaarten."
+      },
+      {
+        "type": "image_picker",
+        "id": "ball_full",
+        "label": "Volle bal"
+      },
+      {
+        "type": "image_picker",
+        "id": "ball_half",
+        "label": "Halve bal"
+      },
+      {
+        "type": "image_picker",
+        "id": "ball_empty",
+        "label": "Lege bal"
+      }
+    ]
+  },
+  {
     "name": "Collectie filter",
     "settings": [
       {
