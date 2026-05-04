@@ -170,61 +170,12 @@
       <div class="payment-methods">
         <span class="payment-methods__label">Veilig betalen met</span>
         <div class="payment-methods__icons">
-
-          <!-- iDEAL -->
-          <span class="pay-icon" title="iDEAL">
-            <svg viewBox="0 0 54 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="54" height="32" rx="5" fill="white" stroke="#E5E7EB" stroke-width="1.5"/>
-              <text x="27" y="22" text-anchor="middle" font-family="Arial Black,Arial,sans-serif" font-size="13" font-weight="900" fill="#CC0066" font-style="italic" letter-spacing="0.5">iDEAL</text>
-            </svg>
-          </span>
-
-          <!-- Visa -->
-          <span class="pay-icon" title="Visa">
-            <svg viewBox="0 0 50 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="50" height="32" rx="5" fill="white" stroke="#E5E7EB" stroke-width="1.5"/>
-              <text x="25" y="23" text-anchor="middle" font-family="Arial,sans-serif" font-size="15" font-weight="900" fill="#1A1F71" font-style="italic" letter-spacing="1">VISA</text>
-            </svg>
-          </span>
-
-          <!-- Mastercard -->
-          <span class="pay-icon" title="Mastercard">
-            <svg viewBox="0 0 50 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="50" height="32" rx="5" fill="white" stroke="#E5E7EB" stroke-width="1.5"/>
-              <circle cx="19" cy="16" r="8" fill="#EB001B"/>
-              <circle cx="31" cy="16" r="8" fill="#F79E1B"/>
-              <path d="M25 9.5a8 8 0 010 13 8 8 0 010-13z" fill="#FF5F00"/>
-            </svg>
-          </span>
-
-          <!-- Amex -->
-          <span class="pay-icon" title="American Express">
-            <svg viewBox="0 0 50 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="50" height="32" rx="5" fill="#2E77BC"/>
-              <text x="25" y="22" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" font-weight="800" fill="white" letter-spacing="0.8">AMEX</text>
-            </svg>
-          </span>
-
-          <!-- Klarna -->
-          <span class="pay-icon" title="Klarna">
-            <svg viewBox="0 0 50 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="50" height="32" rx="5" fill="#FFB3C7" stroke="#F9A8C0" stroke-width="1.5"/>
-              <text x="25" y="22" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" font-weight="700" fill="#17120E">Klarna</text>
-            </svg>
-          </span>
-
-          <!-- Apple Pay -->
-          <span class="pay-icon" title="Apple Pay">
-            <svg viewBox="0 0 64 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="64" height="32" rx="5" fill="#1D1D1F"/>
-              <!-- Apple logo -->
-              <path d="M17.2 9.4c.5-.6 1.2-1.1 2-1.1.1.9-.3 1.7-.8 2.3-.5.6-1.2 1.1-2 1-.1-.8.3-1.6.8-2.2z" fill="white"/>
-              <path d="M19.2 12c1.1 0 2 .6 2.7.6.8 0 1.8-.7 2.9-.7 1.5 0 2.9.9 3.7 2.4-3.2 1.8-2.7 6.4.6 7.7-.5 1.1-1.8 3.8-4.1 3.8-.9 0-1.6-.6-2.8-.6-1.2 0-2 .6-3 .6-1.6 0-3.2-2.7-4-5.4-.4-1.1-.5-2.1-.5-3.1 0-3.2 2.1-5.3 4.5-5.3z" fill="white"/>
-              <!-- Pay text -->
-              <text x="49" y="21" text-anchor="middle" font-family="-apple-system,Helvetica Neue,Arial,sans-serif" font-size="11" font-weight="500" fill="white" letter-spacing="0.2">Pay</text>
-            </svg>
-          </span>
-
+          <img src="{{ 'iDEAL-Wero-2-Extra-large-Card.svg' | asset_url }}" alt="iDEAL" class="pay-logo">
+          <img src="{{ 'Visa-2-Extra-large-Card.svg' | asset_url }}" alt="Visa" class="pay-logo">
+          <img src="{{ 'Mastercard-2-Extra-large-Card.svg' | asset_url }}" alt="Mastercard" class="pay-logo">
+          <img src="{{ 'Amex-2-Extra-large-Card.svg' | asset_url }}" alt="American Express" class="pay-logo">
+          <img src="{{ 'Klarna-2-Extra-large-Card.svg' | asset_url }}" alt="Klarna" class="pay-logo">
+          <img src="{{ 'Apple-Pay-2-Extra-large-Card.svg' | asset_url }}" alt="Apple Pay" class="pay-logo">
         </div>
       </div>
 

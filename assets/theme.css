@@ -1179,8 +1179,8 @@ span.conditie-ball--empty { background: var(--primary-lighter); border: 1.5px so
   flex-wrap: wrap;
   align-items: center;
 }
-.pay-icon svg {
-  height: 22px;
+.pay-logo {
+  height: 24px;
   width: auto;
   display: block;
   border-radius: 4px;
