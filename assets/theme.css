@@ -1566,7 +1566,7 @@ span.conditie-ball--empty { background: var(--primary-lighter); border: 1.5px so
   .catalog-grid { grid-template-columns: repeat(2, 1fr); }
   .contact-grid { grid-template-columns: 1fr; }
   .contact-sidebar { position: static; }
-  .product-layout { grid-template-columns: 1fr; gap: 1.5rem; padding-top: 0.75rem; }
+  .product-layout { grid-template-columns: 1fr; gap: 0.75rem; padding-top: 0.75rem; }
   .product-gallery { position: static; }
   .product-header-mobile { display: block; }
   .product-brand-row--desktop { display: none; }
