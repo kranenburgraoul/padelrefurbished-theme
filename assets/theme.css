@@ -1569,7 +1569,7 @@ span.conditie-ball--empty { background: var(--primary-lighter); border: 1.5px so
   .contact-sidebar { position: static; }
   .product-layout { grid-template-columns: 1fr; gap: 1.5rem; padding-top: 0.75rem; }
   .product-gallery { position: static; }
-  .product-brand-row--mobile { display: flex; }
+  .product-brand-row--mobile { display: flex; margin-bottom: 0.15rem; }
   .product-brand-row--desktop { display: none; }
   .product-title--mobile { display: block; margin-bottom: 0; }
   .product-title--desktop { display: none; }
