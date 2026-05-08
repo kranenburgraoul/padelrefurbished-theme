@@ -61,7 +61,7 @@
           <span class="price-save">-{{ savings | money }}</span>
         {%- endif -%}
       </div>
-      <p class="price-note">Inclusief BTW · {{ settings.free_shipping_threshold | prepend: 'Gratis verzending v.a. €' }}</p>
+      <p class="price-note">{{ settings.free_shipping_threshold | prepend: 'Gratis verzending v.a. €' }}</p>
 
       {%- assign mf_score = product.metafields.custom.conditie_score.value | plus: 0 -%}
       {%- if mf_score > 0 -%}
