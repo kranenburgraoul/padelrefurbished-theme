@@ -119,8 +119,9 @@ function initFilters() {
       card.style.display = match ? '' : 'none';
       if (match) visible++;
     });
-    const countEl = document.getElementById('filter-count');
-    if (countEl) countEl.textContent = visible + ' racket' + (visible !== 1 ? 's' : '');
+    document.querySelectorAll('.filter-count').forEach(el => {
+      el.textContent = visible + ' racket' + (visible !== 1 ? 's' : '');
+    });
   }
 
   chips.forEach(chip => {
