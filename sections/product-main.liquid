@@ -11,10 +11,12 @@
 
   <div class="product-layout">
     <!-- Merk + titel: alleen zichtbaar op mobiel, boven de afbeelding -->
-    <div class="product-brand-row product-brand-row--mobile">
-      <span class="product-brand-badge">{{ product.vendor }}</span>
+    <div class="product-header-mobile">
+      <div class="product-brand-row">
+        <span class="product-brand-badge">{{ product.vendor }}</span>
+      </div>
+      <h1 class="product-title">{{ product.title }}</h1>
     </div>
-    <h1 class="product-title product-title--mobile">{{ product.title }}</h1>
 
     <!-- Gallery -->
     <div class="product-gallery">
@@ -49,6 +51,7 @@
         <span class="product-brand-badge">{{ product.vendor }}</span>
       </div>
       <h1 class="product-title product-title--desktop">{{ product.title }}</h1>
+
 
       <div class="price-block">
         <span class="price-now">{{ current_variant.price | money }}</span>
