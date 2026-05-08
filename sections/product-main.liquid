@@ -10,6 +10,9 @@
   </nav>
 
   <div class="product-layout">
+    <!-- Titel: alleen zichtbaar op mobiel, boven de afbeelding -->
+    <h1 class="product-title product-title--mobile">{{ product.title }}</h1>
+
     <!-- Gallery -->
     <div class="product-gallery">
       <div class="gallery-main">
@@ -42,7 +45,7 @@
       <div class="product-brand-row">
         <span class="product-brand-badge">{{ product.vendor }}</span>
       </div>
-      <h1 class="product-title">{{ product.title }}</h1>
+      <h1 class="product-title product-title--desktop">{{ product.title }}</h1>
 
       <div class="price-block">
         <span class="price-now">{{ current_variant.price | money }}</span>
