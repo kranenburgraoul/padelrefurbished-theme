@@ -88,6 +88,17 @@ function initFilters() {
   const slider = document.getElementById('score-slider');
   const sliderVal = document.getElementById('score-slider-val');
 
+  // Mobiel toggle
+  const toggleBtn = document.getElementById('filter-toggle');
+  const filterBar = document.getElementById('filter-bar');
+  if (toggleBtn && filterBar) {
+    toggleBtn.addEventListener('click', () => {
+      const open = filterBar.classList.toggle('filters-open');
+      toggleBtn.classList.toggle('active', open);
+      toggleBtn.setAttribute('aria-expanded', open);
+    });
+  }
+
   let activeBrand = 'all';
   let minScore = 0;
 

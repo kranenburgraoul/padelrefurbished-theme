@@ -875,13 +875,37 @@ button { font-family: var(--font-body); cursor: pointer; }
   margin: 0 auto;
 }
 
-.filter-top {
+/* Toolbar: altijd zichtbaar */
+.filter-toolbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0.9rem 1.5rem;
   gap: 1.5rem;
-  flex-wrap: wrap;
+}
+
+/* Toggle knop: alleen op mobiel zichtbaar */
+.filter-toggle-btn {
+  display: none;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text);
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.4rem 0.75rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.filter-toggle-btn:hover { border-color: var(--primary); color: var(--primary); }
+.filter-toggle-btn.active { background: var(--primary-pale); border-color: var(--primary); color: var(--primary); }
+
+/* Collapsible: altijd zichtbaar op desktop */
+.filter-collapsible {
+  display: flex;
+  flex-direction: column;
 }
 
 .filter-bottom {
@@ -893,7 +917,7 @@ button { font-family: var(--font-body); cursor: pointer; }
   flex-wrap: wrap;
 }
 
-.filter-groups { display: flex; gap: 1.25rem; align-items: center; flex-wrap: wrap; }
+.filter-groups { display: flex; gap: 1.25rem; align-items: center; flex-wrap: wrap; padding: 0 1.5rem 0.75rem; }
 
 .filter-label { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #6B7280; white-space: nowrap; }
 
@@ -1571,6 +1595,18 @@ span.conditie-ball--empty { background: var(--primary-lighter); border: 1.5px so
   .navbar-nav.open { display: flex; }
   .navbar-nav li { width: 100%; }
   .navbar-nav a { display: block; padding: 0.65rem 0.9rem; border-radius: 8px; font-size: 1rem; }
+
+  /* --- Filter toggle --- */
+  .filter-toggle-btn { display: flex; }
+  .filter-toolbar { padding: 0.55rem 1rem; gap: 0.75rem; }
+  .filter-collapsible { display: none; border-top: 1px solid var(--border); }
+  .filter-bar.filters-open .filter-collapsible { display: flex; }
+  .filter-groups { padding: 0.65rem 1rem 0.5rem; gap: 0.5rem; flex-direction: column; align-items: flex-start; }
+  .filter-chips { overflow-x: auto; flex-wrap: nowrap; padding-bottom: 0.25rem; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+  .filter-chips::-webkit-scrollbar { display: none; }
+  .filter-chip { font-size: 0.75rem; padding: 0.3rem 0.7rem; white-space: nowrap; }
+  .filter-bottom { padding: 0.5rem 1rem 0.75rem; border-top: 1px solid var(--border); }
+  .score-slider { width: 130px; }
 
   /* --- Products slider --- */
   .products-grid {
