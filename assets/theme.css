@@ -1127,6 +1127,7 @@ button { font-family: var(--font-body); cursor: pointer; }
 .gallery-thumb.active { border-color: var(--primary); border-width: 2px; }
 
 .product-brand-row { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem; }
+.product-brand-row--mobile { display: none; }
 
 .product-brand-badge {
   font-size: 0.72rem;
@@ -1568,6 +1569,8 @@ span.conditie-ball--empty { background: var(--primary-lighter); border: 1.5px so
   .contact-sidebar { position: static; }
   .product-layout { grid-template-columns: 1fr; gap: 1.5rem; }
   .product-gallery { position: static; }
+  .product-brand-row--mobile { display: flex; }
+  .product-brand-row--desktop { display: none; }
   .product-title--mobile { display: block; margin-bottom: 0; }
   .product-title--desktop { display: none; }
   .about-mission__inner { grid-template-columns: 1fr; gap: 2rem; }

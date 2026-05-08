@@ -10,7 +10,10 @@
   </nav>
 
   <div class="product-layout">
-    <!-- Titel: alleen zichtbaar op mobiel, boven de afbeelding -->
+    <!-- Merk + titel: alleen zichtbaar op mobiel, boven de afbeelding -->
+    <div class="product-brand-row product-brand-row--mobile">
+      <span class="product-brand-badge">{{ product.vendor }}</span>
+    </div>
     <h1 class="product-title product-title--mobile">{{ product.title }}</h1>
 
     <!-- Gallery -->
@@ -42,7 +45,7 @@
 
     <!-- Info -->
     <div class="product-info">
-      <div class="product-brand-row">
+      <div class="product-brand-row product-brand-row--desktop">
         <span class="product-brand-badge">{{ product.vendor }}</span>
       </div>
       <h1 class="product-title product-title--desktop">{{ product.title }}</h1>
